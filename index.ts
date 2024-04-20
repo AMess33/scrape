@@ -114,7 +114,7 @@ const url = "https://fantasy.espn.com/football/livedraftresults";
           auctionValue,
           auctionChange,
         });
-        fs.appendFile(
+        fs.writeFile(
           "espnADP.json",
           JSON.stringify({
             players,

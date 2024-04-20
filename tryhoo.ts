@@ -2,6 +2,9 @@ const puppeteer = require("puppeteer-extra");
 const StealthPlugin = require("puppeteer-extra-plugin-stealth");
 const fs = require("fs");
 import { Browser } from "puppeteer";
+const dayjs = require("dayjs");
+
+const currentDate = dayjs().format("MM-DD-YYYY");
 
 puppeteer.use(StealthPlugin());
 
@@ -21,7 +24,7 @@ const url =
 
   let isBtnDisabled = false;
   while (!isBtnDisabled) {
-    await page.waitForSelector("table > tbody", { timeout: 10000 });
+    await page.waitForSelector("td:nth-child(2) > div", { timeout: 10000 });
 
     const playerRows = await page.$$("table > tbody > tr");
     let players = new Array();
@@ -93,17 +96,17 @@ const url =
           adp,
           lastSevenDaysADP,
         });
-        fs.writeFile(
-          "yahooADP.json",
-          JSON.stringify({
-            players,
-          }),
-          (err) => {
-            if (err) throw err;
-          }
-        );
       }
     }
+    fs.writeFileSync(
+      `${currentDate} yahooADP.json`,
+      JSON.stringify({
+        players,
+      }),
+      (err) => {
+        if (err) throw err;
+      }
+    );
 
     await page.waitForSelector(
       "xpath/html/body/div[1]/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/section/div/div/div[2]/section/div[2]/div/div[2]/div/button[2]",
@@ -112,32 +115,16 @@ const url =
       }
     );
 
-    const is_disabled = await page.evaluate(() => {
-      const value = document.evaluate(
-        "html/body/div[1]/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/section/div/div/div[2]/section/div[2]/div/div[2]/div/button[2]",
-        document,
-        null,
-        9,
-        null
-      );
+    const btn = await page.$(
+      "xpath/html/body/div[1]/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/section/div/div/div[2]/section/div[2]/div/div[2]/div/button[2]"
+    );
 
-      console.log(value);
-      console.log(value.singleNodeValue);
-      return false;
-      //   function getElementByXpath(path) {
-      //     return document.evaluate(path, document, null, 9, null).singleNodeValue;
-      //   }
-
-      //   const el: any = getElementByXpath(
-      //     "html/body/div[1]/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/section/div/div/div[2]/section/div[2]/div/div[2]/div/button[2]"
-      //   );
-
-      //   console.log(el);
-      //   return el.disabled;
+    const is_disabled = await btn?.evaluate((b) => {
+      const button = b as HTMLButtonElement;
+      return button.disabled;
     });
-    console.log(is_disabled);
 
-    isBtnDisabled = is_disabled;
+    isBtnDisabled = !!is_disabled;
     if (!is_disabled) {
       await Promise.all([
         page.click(
@@ -148,5 +135,3 @@ const url =
   }
   await browser.close();
 })();
-
-// xpath/html/body/div[1]/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/section/div/div/div[2]/section/div[2]/div/div[2]/div/button[2]

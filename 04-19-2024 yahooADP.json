@@ -1,0 +1,28 @@
+{
+  "players": [
+    {
+      "rank": "2022",
+      "playerName": "C.J. Beathard",
+      "position": "QB",
+      "team": "Jax",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "2023",
+      "playerName": "Cooper Rush",
+      "position": "QB",
+      "team": "Dal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "2024",
+      "playerName": "Kyle Allen",
+      "position": "QB",
+      "team": "Pit",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    }
+  ]
+}
