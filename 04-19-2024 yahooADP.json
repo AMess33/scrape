@@ -1,6 +1,6726 @@
 {
   "players": [
     {
+      "rank": "1",
+      "playerName": "Christian McCaffrey",
+      "position": "RB",
+      "team": "SF",
+      "adp": "1.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "2",
+      "playerName": "Tyreek Hill",
+      "position": "WR",
+      "team": "Mia",
+      "adp": "2.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "3",
+      "playerName": "CeeDee Lamb",
+      "position": "WR",
+      "team": "Dal",
+      "adp": "3.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "4",
+      "playerName": "Breece Hall",
+      "position": "RB",
+      "team": "NYJ",
+      "adp": "4.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "5",
+      "playerName": "Ja'Marr Chase",
+      "position": "WR",
+      "team": "Cin",
+      "adp": "5.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "6",
+      "playerName": "Bijan Robinson",
+      "position": "RB",
+      "team": "Atl",
+      "adp": "6.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "7",
+      "playerName": "Justin Jefferson",
+      "position": "WR",
+      "team": "Min",
+      "adp": "7.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "8",
+      "playerName": "Jonathan Taylor",
+      "position": "RB",
+      "team": "Ind",
+      "adp": "8.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "9",
+      "playerName": "Amon-Ra St. Brown",
+      "position": "WR",
+      "team": "Det",
+      "adp": "10.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "10",
+      "playerName": "Kyren Williams",
+      "position": "RB",
+      "team": "LAR",
+      "adp": "11.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "11",
+      "playerName": "Jahmyr Gibbs",
+      "position": "RB",
+      "team": "Det",
+      "adp": "13.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "12",
+      "playerName": "Garrett Wilson",
+      "position": "WR",
+      "team": "NYJ",
+      "adp": "14.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "13",
+      "playerName": "A.J. Brown",
+      "position": "WR",
+      "team": "Phi",
+      "adp": "15.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "14",
+      "playerName": "Josh Jacobs",
+      "position": "RB",
+      "team": "GB",
+      "adp": "16.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "15",
+      "playerName": "Derrick Henry",
+      "position": "RB",
+      "team": "Bal",
+      "adp": "17.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "16",
+      "playerName": "Saquon Barkley",
+      "position": "RB",
+      "team": "Phi",
+      "adp": "18.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "17",
+      "playerName": "Puka Nacua",
+      "position": "WR",
+      "team": "LAR",
+      "adp": "19.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "18",
+      "playerName": "De'Von Achane",
+      "position": "RB",
+      "team": "Mia",
+      "adp": "20.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "19",
+      "playerName": "Isiah Pacheco",
+      "position": "RB",
+      "team": "KC",
+      "adp": "21.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "20",
+      "playerName": "Josh Allen",
+      "position": "QB",
+      "team": "Buf",
+      "adp": "22.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "21",
+      "playerName": "Deebo Samuel",
+      "position": "WR",
+      "team": "SF",
+      "adp": "23.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "22",
+      "playerName": "Rachaad White",
+      "position": "RB",
+      "team": "TB",
+      "adp": "24.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "23",
+      "playerName": "Drake London",
+      "position": "WR",
+      "team": "Atl",
+      "adp": "25.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "24",
+      "playerName": "Brandon Aiyuk",
+      "position": "WR",
+      "team": "SF",
+      "adp": "26.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "25",
+      "playerName": "Jalen Hurts",
+      "position": "QB",
+      "team": "Phi",
+      "adp": "9.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "26",
+      "playerName": "Davante Adams",
+      "position": "WR",
+      "team": "LV",
+      "adp": "27.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "27",
+      "playerName": "Joe Mixon",
+      "position": "RB",
+      "team": "Hou",
+      "adp": "28.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "28",
+      "playerName": "Sam LaPorta",
+      "position": "TE",
+      "team": "Det",
+      "adp": "30.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "29",
+      "playerName": "Michael Pittman Jr.",
+      "position": "WR",
+      "team": "Ind",
+      "adp": "31.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "30",
+      "playerName": "DJ Moore",
+      "position": "WR",
+      "team": "Chi",
+      "adp": "33.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "31",
+      "playerName": "Nico Collins",
+      "position": "WR",
+      "team": "Hou",
+      "adp": "35.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "32",
+      "playerName": "Mike Evans",
+      "position": "WR",
+      "team": "TB",
+      "adp": "29.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "33",
+      "playerName": "Chris Olave",
+      "position": "WR",
+      "team": "NO",
+      "adp": "36.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "34",
+      "playerName": "Travis Kelce",
+      "position": "TE",
+      "team": "KC",
+      "adp": "34.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "35",
+      "playerName": "Lamar Jackson",
+      "position": "QB",
+      "team": "Bal",
+      "adp": "12.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "36",
+      "playerName": "Cooper Kupp",
+      "position": "WR",
+      "team": "LAR",
+      "adp": "37.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "37",
+      "playerName": "Stefon Diggs",
+      "position": "WR",
+      "team": "Hou",
+      "adp": "38.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "38",
+      "playerName": "Rashee Rice",
+      "position": "WR",
+      "team": "KC",
+      "adp": "39.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "39",
+      "playerName": "DK Metcalf",
+      "position": "WR",
+      "team": "Sea",
+      "adp": "40.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "40",
+      "playerName": "Patrick Mahomes",
+      "position": "QB",
+      "team": "KC",
+      "adp": "32.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "41",
+      "playerName": "Jaylen Waddle",
+      "position": "WR",
+      "team": "Mia",
+      "adp": "41.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "42",
+      "playerName": "Amari Cooper",
+      "position": "WR",
+      "team": "Cle",
+      "adp": "44.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "43",
+      "playerName": "Travis Etienne Jr.",
+      "position": "RB",
+      "team": "Jax",
+      "adp": "42.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "44",
+      "playerName": "C.J. Stroud",
+      "position": "QB",
+      "team": "Hou",
+      "adp": "43.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "45",
+      "playerName": "DeVonta Smith",
+      "position": "WR",
+      "team": "Phi",
+      "adp": "48.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "46",
+      "playerName": "James Cook",
+      "position": "RB",
+      "team": "Buf",
+      "adp": "45.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "47",
+      "playerName": "Tank Dell",
+      "position": "WR",
+      "team": "Hou",
+      "adp": "50.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "48",
+      "playerName": "Trey McBride",
+      "position": "TE",
+      "team": "Ari",
+      "adp": "46.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "49",
+      "playerName": "Kenneth Walker III",
+      "position": "RB",
+      "team": "Sea",
+      "adp": "47.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "50",
+      "playerName": "Anthony Richardson",
+      "position": "QB",
+      "team": "Ind",
+      "adp": "51.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "51",
+      "playerName": "Keenan Allen",
+      "position": "WR",
+      "team": "Chi",
+      "adp": "91.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "52",
+      "playerName": "George Pickens",
+      "position": "WR",
+      "team": "Pit",
+      "adp": "49.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "53",
+      "playerName": "Alvin Kamara",
+      "position": "RB",
+      "team": "NO",
+      "adp": "54.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "54",
+      "playerName": "Aaron Jones",
+      "position": "RB",
+      "team": "Min",
+      "adp": "55.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "55",
+      "playerName": "Christian Kirk",
+      "position": "WR",
+      "team": "Jax",
+      "adp": "93.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "56",
+      "playerName": "David Montgomery",
+      "position": "RB",
+      "team": "Det",
+      "adp": "58.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "57",
+      "playerName": "Terry McLaurin",
+      "position": "WR",
+      "team": "Was",
+      "adp": "94.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "58",
+      "playerName": "Zay Flowers",
+      "position": "WR",
+      "team": "Bal",
+      "adp": "95.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "59",
+      "playerName": "Tee Higgins",
+      "position": "WR",
+      "team": "Cin",
+      "adp": "96.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "60",
+      "playerName": "Rhamondre Stevenson",
+      "position": "RB",
+      "team": "NE",
+      "adp": "59.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "61",
+      "playerName": "Joe Burrow",
+      "position": "QB",
+      "team": "Cin",
+      "adp": "53.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "62",
+      "playerName": "James Conner",
+      "position": "RB",
+      "team": "Ari",
+      "adp": "52.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "63",
+      "playerName": "Kyler Murray",
+      "position": "QB",
+      "team": "Ari",
+      "adp": "56.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "64",
+      "playerName": "Marquise Brown",
+      "position": "WR",
+      "team": "KC",
+      "adp": "97.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "65",
+      "playerName": "Najee Harris",
+      "position": "RB",
+      "team": "Pit",
+      "adp": "70.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "66",
+      "playerName": "Zack Moss",
+      "position": "RB",
+      "team": "Cin",
+      "adp": "98.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "67",
+      "playerName": "Calvin Ridley",
+      "position": "WR",
+      "team": "Ten",
+      "adp": "99.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "68",
+      "playerName": "George Kittle",
+      "position": "TE",
+      "team": "SF",
+      "adp": "57.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "69",
+      "playerName": "Jordan Love",
+      "position": "QB",
+      "team": "GB",
+      "adp": "60.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "70",
+      "playerName": "Tony Pollard",
+      "position": "RB",
+      "team": "Ten",
+      "adp": "100.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "71",
+      "playerName": "Mark Andrews",
+      "position": "TE",
+      "team": "Bal",
+      "adp": "61.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "72",
+      "playerName": "Jayden Reed",
+      "position": "WR",
+      "team": "GB",
+      "adp": "101.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "73",
+      "playerName": "Chris Godwin",
+      "position": "WR",
+      "team": "TB",
+      "adp": "69.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "74",
+      "playerName": "Raheem Mostert",
+      "position": "RB",
+      "team": "Mia",
+      "adp": "102.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "75",
+      "playerName": "Dak Prescott",
+      "position": "QB",
+      "team": "Dal",
+      "adp": "64.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "76",
+      "playerName": "Brian Robinson Jr.",
+      "position": "RB",
+      "team": "Was",
+      "adp": "103.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "77",
+      "playerName": "Courtland Sutton",
+      "position": "WR",
+      "team": "Den",
+      "adp": "104.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "78",
+      "playerName": "Jordan Addison",
+      "position": "WR",
+      "team": "Min",
+      "adp": "105.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "79",
+      "playerName": "DeAndre Hopkins",
+      "position": "WR",
+      "team": "Ten",
+      "adp": "92.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "80",
+      "playerName": "D'Andre Swift",
+      "position": "RB",
+      "team": "Chi",
+      "adp": "106.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "81",
+      "playerName": "Christian Watson",
+      "position": "WR",
+      "team": "GB",
+      "adp": "72.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "82",
+      "playerName": "Zamir White",
+      "position": "RB",
+      "team": "LV",
+      "adp": "107.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "83",
+      "playerName": "Javonte Williams",
+      "position": "RB",
+      "team": "Den",
+      "adp": "108.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "84",
+      "playerName": "Brock Purdy",
+      "position": "QB",
+      "team": "SF",
+      "adp": "66.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "85",
+      "playerName": "Curtis Samuel",
+      "position": "WR",
+      "team": "Buf",
+      "adp": "110.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "86",
+      "playerName": "Tyler Lockett",
+      "position": "WR",
+      "team": "Sea",
+      "adp": "89.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "87",
+      "playerName": "Jaylen Warren",
+      "position": "RB",
+      "team": "Pit",
+      "adp": "111.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "88",
+      "playerName": "Austin Ekeler",
+      "position": "RB",
+      "team": "Was",
+      "adp": "116.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "89",
+      "playerName": "Diontae Johnson",
+      "position": "WR",
+      "team": "Car",
+      "adp": "113.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "90",
+      "playerName": "Evan Engram",
+      "position": "TE",
+      "team": "Jax",
+      "adp": "62.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "91",
+      "playerName": "Kyle Pitts",
+      "position": "TE",
+      "team": "Atl",
+      "adp": "63.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "92",
+      "playerName": "Nick Chubb",
+      "position": "RB",
+      "team": "Cle",
+      "adp": "117.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "93",
+      "playerName": "Devin Singletary",
+      "position": "RB",
+      "team": "NYG",
+      "adp": "120.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "94",
+      "playerName": "Dalton Kincaid",
+      "position": "TE",
+      "team": "Buf",
+      "adp": "65.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "95",
+      "playerName": "Gus Edwards",
+      "position": "RB",
+      "team": "LAC",
+      "adp": "149.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "96",
+      "playerName": "Mike Williams",
+      "position": "WR",
+      "team": "NYJ",
+      "adp": "114.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "97",
+      "playerName": "David Njoku",
+      "position": "TE",
+      "team": "Cle",
+      "adp": "68.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "98",
+      "playerName": "Jaxon Smith-Njigba",
+      "position": "WR",
+      "team": "Sea",
+      "adp": "115.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "99",
+      "playerName": "Jakobi Meyers",
+      "position": "WR",
+      "team": "LV",
+      "adp": "118.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "100",
+      "playerName": "Josh Downs",
+      "position": "WR",
+      "team": "Ind",
+      "adp": "119.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "101",
+      "playerName": "Chuba Hubbard",
+      "position": "RB",
+      "team": "Car",
+      "adp": "109.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "102",
+      "playerName": "Jake Ferguson",
+      "position": "TE",
+      "team": "Dal",
+      "adp": "121.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "103",
+      "playerName": "Jameson Williams",
+      "position": "WR",
+      "team": "Det",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "104",
+      "playerName": "Tyjae Spears",
+      "position": "RB",
+      "team": "Ten",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "105",
+      "playerName": "Chase Brown",
+      "position": "RB",
+      "team": "Cin",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "106",
+      "playerName": "Tua Tagovailoa",
+      "position": "QB",
+      "team": "Mia",
+      "adp": "67.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "107",
+      "playerName": "Khalil Herbert",
+      "position": "RB",
+      "team": "Chi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "108",
+      "playerName": "Romeo Doubs",
+      "position": "WR",
+      "team": "GB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "109",
+      "playerName": "Ty Chandler",
+      "position": "RB",
+      "team": "Min",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "110",
+      "playerName": "Brandin Cooks",
+      "position": "WR",
+      "team": "Dal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "111",
+      "playerName": "Jerry Jeudy",
+      "position": "WR",
+      "team": "Cle",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "112",
+      "playerName": "Adam Thielen",
+      "position": "WR",
+      "team": "Car",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "113",
+      "playerName": "Rashid Shaheed",
+      "position": "WR",
+      "team": "NO",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "114",
+      "playerName": "Antonio Gibson",
+      "position": "RB",
+      "team": "NE",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "115",
+      "playerName": "Kirk Cousins",
+      "position": "QB",
+      "team": "Atl",
+      "adp": "122.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "116",
+      "playerName": "Dontayvion Wicks",
+      "position": "WR",
+      "team": "GB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "117",
+      "playerName": "Zach Charbonnet",
+      "position": "RB",
+      "team": "Sea",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "118",
+      "playerName": "Jared Goff",
+      "position": "QB",
+      "team": "Det",
+      "adp": "123.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "119",
+      "playerName": "Jahan Dotson",
+      "position": "WR",
+      "team": "Was",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "120",
+      "playerName": "Matthew Stafford",
+      "position": "QB",
+      "team": "LAR",
+      "adp": "124.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "121",
+      "playerName": "Joshua Palmer",
+      "position": "WR",
+      "team": "LAC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "122",
+      "playerName": "Aaron Rodgers",
+      "position": "QB",
+      "team": "NYJ",
+      "adp": "125.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "123",
+      "playerName": "Zay Jones",
+      "position": "WR",
+      "team": "Jax",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "124",
+      "playerName": "Gabe Davis",
+      "position": "WR",
+      "team": "Jax",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "125",
+      "playerName": "Tyler Allgeier",
+      "position": "RB",
+      "team": "Atl",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "126",
+      "playerName": "Dallas Goedert",
+      "position": "TE",
+      "team": "Phi",
+      "adp": "126.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "127",
+      "playerName": "Marvin Mims Jr.",
+      "position": "WR",
+      "team": "Den",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "128",
+      "playerName": "Dalton Schultz",
+      "position": "TE",
+      "team": "Hou",
+      "adp": "127.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "129",
+      "playerName": "Cole Kmet",
+      "position": "TE",
+      "team": "Chi",
+      "adp": "128.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "130",
+      "playerName": "AJ Dillon",
+      "position": "RB",
+      "team": "GB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "131",
+      "playerName": "Ezekiel Elliott",
+      "position": "RB",
+      "team": "NE",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "132",
+      "playerName": "Elijah Moore",
+      "position": "WR",
+      "team": "Cle",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "133",
+      "playerName": "Wan'Dale Robinson",
+      "position": "WR",
+      "team": "NYG",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "134",
+      "playerName": "Quentin Johnston",
+      "position": "WR",
+      "team": "LAC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "135",
+      "playerName": "Rashod Bateman",
+      "position": "WR",
+      "team": "Bal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "136",
+      "playerName": "Michael Wilson",
+      "position": "WR",
+      "team": "Ari",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "137",
+      "playerName": "Khalil Shakir",
+      "position": "WR",
+      "team": "Buf",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "138",
+      "playerName": "J.K. Dobbins",
+      "position": "RB",
+      "team": "LAC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "139",
+      "playerName": "Kendre Miller",
+      "position": "RB",
+      "team": "NO",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "140",
+      "playerName": "Justin Herbert",
+      "position": "QB",
+      "team": "LAC",
+      "adp": "130.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "141",
+      "playerName": "Trevor Lawrence",
+      "position": "QB",
+      "team": "Jax",
+      "adp": "133.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "142",
+      "playerName": "Darius Slayton",
+      "position": "WR",
+      "team": "NYG",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "143",
+      "playerName": "Chigoziem Okonkwo",
+      "position": "TE",
+      "team": "Ten",
+      "adp": "131.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "144",
+      "playerName": "T.J. Hockenson",
+      "position": "TE",
+      "team": "Min",
+      "adp": "136.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "145",
+      "playerName": "Roschon Johnson",
+      "position": "RB",
+      "team": "Chi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "146",
+      "playerName": "Alexander Mattison",
+      "position": "RB",
+      "team": "LV",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "147",
+      "playerName": "Jaleel McLaughlin",
+      "position": "RB",
+      "team": "Den",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "148",
+      "playerName": "Demario Douglas",
+      "position": "WR",
+      "team": "NE",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "149",
+      "playerName": "Pat Freiermuth",
+      "position": "TE",
+      "team": "Pit",
+      "adp": "137.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "150",
+      "playerName": "Jalin Hyatt",
+      "position": "WR",
+      "team": "NYG",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "151",
+      "playerName": "Baker Mayfield",
+      "position": "QB",
+      "team": "TB",
+      "adp": "134.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "152",
+      "playerName": "Jerome Ford",
+      "position": "RB",
+      "team": "Cle",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "153",
+      "playerName": "Darren Waller",
+      "position": "TE",
+      "team": "NYG",
+      "adp": "138.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "154",
+      "playerName": "San Francisco",
+      "position": "DEF",
+      "team": "SF ",
+      "adp": "71.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "155",
+      "playerName": "Baltimore",
+      "position": "DEF",
+      "team": "Bal ",
+      "adp": "73.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "156",
+      "playerName": "Deshaun Watson",
+      "position": "QB",
+      "team": "Cle",
+      "adp": "135.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "157",
+      "playerName": "Odell Beckham Jr.",
+      "position": "WR",
+      "team": "Bal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "158",
+      "playerName": "Jonathan Mingo",
+      "position": "WR",
+      "team": "Car",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "159",
+      "playerName": "Geno Smith",
+      "position": "QB",
+      "team": "Sea",
+      "adp": "140.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "160",
+      "playerName": "Kenneth Gainwell",
+      "position": "RB",
+      "team": "Phi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "161",
+      "playerName": "Tyler Boyd",
+      "position": "WR",
+      "team": "Cin",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "162",
+      "playerName": "Dameon Pierce",
+      "position": "RB",
+      "team": "Hou",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "163",
+      "playerName": "Noah Brown",
+      "position": "WR",
+      "team": "Hou",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "164",
+      "playerName": "Miles Sanders",
+      "position": "RB",
+      "team": "Car",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "165",
+      "playerName": "Darnell Mooney",
+      "position": "WR",
+      "team": "Atl",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "166",
+      "playerName": "Isaiah Likely",
+      "position": "TE",
+      "team": "Bal",
+      "adp": "139.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "167",
+      "playerName": "Keaton Mitchell",
+      "position": "RB",
+      "team": "Bal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "168",
+      "playerName": "Luke Musgrave",
+      "position": "TE",
+      "team": "GB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "169",
+      "playerName": "Noah Fant",
+      "position": "TE",
+      "team": "Sea",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "170",
+      "playerName": "Brandon Aubrey",
+      "position": "K",
+      "team": "Da",
+      "adp": "74.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "171",
+      "playerName": "Justin Tucker",
+      "position": "K",
+      "team": "Ba",
+      "adp": "75.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "172",
+      "playerName": "Jerick McKinnon",
+      "position": "RB",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "173",
+      "playerName": "Greg Dortch",
+      "position": "WR",
+      "team": "Ari",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "174",
+      "playerName": "New York",
+      "position": "DEF",
+      "team": "NYJ ",
+      "adp": "76.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "175",
+      "playerName": "Treylon Burks",
+      "position": "WR",
+      "team": "Ten",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "176",
+      "playerName": "Dallas",
+      "position": "DEF",
+      "team": "Dal ",
+      "adp": "77.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "177",
+      "playerName": "Rashaad Penny",
+      "position": "RB",
+      "team": "Phi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "178",
+      "playerName": "Michael Mayer",
+      "position": "TE",
+      "team": "LV",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "179",
+      "playerName": "Kendrick Bourne",
+      "position": "WR",
+      "team": "NE",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "180",
+      "playerName": "Tre Tucker",
+      "position": "WR",
+      "team": "LV",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "181",
+      "playerName": "Will Levis",
+      "position": "QB",
+      "team": "Ten",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "182",
+      "playerName": "Hunter Henry",
+      "position": "TE",
+      "team": "NE",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "183",
+      "playerName": "Buffalo",
+      "position": "DEF",
+      "team": "Buf ",
+      "adp": "78.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "184",
+      "playerName": "Cleveland",
+      "position": "DEF",
+      "team": "Cle ",
+      "adp": "79.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "185",
+      "playerName": "Daniel Jones",
+      "position": "QB",
+      "team": "NYG",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "186",
+      "playerName": "Justice Hill",
+      "position": "RB",
+      "team": "Bal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "187",
+      "playerName": "Russell Wilson",
+      "position": "QB",
+      "team": "Pit",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "188",
+      "playerName": "Jake Elliott",
+      "position": "K",
+      "team": "Ph",
+      "adp": "80.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "189",
+      "playerName": "Sam Darnold",
+      "position": "QB",
+      "team": "Min",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "190",
+      "playerName": "Cedric Tillman",
+      "position": "WR",
+      "team": "Cle",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "191",
+      "playerName": "D'Onta Foreman",
+      "position": "RB",
+      "team": "Cle",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "192",
+      "playerName": "Elijah Mitchell",
+      "position": "RB",
+      "team": "SF",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "193",
+      "playerName": "Michael Gallup",
+      "position": "WR",
+      "team": "Dal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "194",
+      "playerName": "Cade Otton",
+      "position": "TE",
+      "team": "TB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "195",
+      "playerName": "Israel Abanikanda",
+      "position": "RB",
+      "team": "NYJ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "196",
+      "playerName": "John Metchie III",
+      "position": "WR",
+      "team": "Hou",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "197",
+      "playerName": "Tucker Kraft",
+      "position": "TE",
+      "team": "GB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "198",
+      "playerName": "Alec Pierce",
+      "position": "WR",
+      "team": "Ind",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "199",
+      "playerName": "Emari Demercado",
+      "position": "RB",
+      "team": "Ari",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "200",
+      "playerName": "Rico Dowdle",
+      "position": "RB",
+      "team": "Dal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "201",
+      "playerName": "Harrison Butker",
+      "position": "K",
+      "team": "K",
+      "adp": "82.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "202",
+      "playerName": "Derek Carr",
+      "position": "QB",
+      "team": "NO",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "203",
+      "playerName": "Kansas City",
+      "position": "DEF",
+      "team": "KC ",
+      "adp": "81.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "204",
+      "playerName": "Jason Sanders",
+      "position": "K",
+      "team": "Mi",
+      "adp": "83.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "205",
+      "playerName": "DJ Chark Jr.",
+      "position": "WR",
+      "team": "Car",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "206",
+      "playerName": "Chris Rodriguez Jr.",
+      "position": "RB",
+      "team": "Was",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "207",
+      "playerName": "Michael Thomas",
+      "position": "WR",
+      "team": "NO",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "208",
+      "playerName": "Philadelphia",
+      "position": "DEF",
+      "team": "Phi ",
+      "adp": "86.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "209",
+      "playerName": "Jamaal Williams",
+      "position": "RB",
+      "team": "NO",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "210",
+      "playerName": "Miami",
+      "position": "DEF",
+      "team": "Mia ",
+      "adp": "87.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "211",
+      "playerName": "Chicago",
+      "position": "DEF",
+      "team": "Chi ",
+      "adp": "141.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "212",
+      "playerName": "Demarcus Robinson",
+      "position": "WR",
+      "team": "LAR",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "213",
+      "playerName": "Jake Moody",
+      "position": "K",
+      "team": "S",
+      "adp": "84.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "214",
+      "playerName": "Trey Palmer",
+      "position": "WR",
+      "team": "TB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "215",
+      "playerName": "A.T. Perry",
+      "position": "WR",
+      "team": "NO",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "216",
+      "playerName": "K.J. Osborn",
+      "position": "WR",
+      "team": "NE",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "217",
+      "playerName": "Pittsburgh",
+      "position": "DEF",
+      "team": "Pit ",
+      "adp": "142.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "218",
+      "playerName": "Clyde Edwards-Helaire",
+      "position": "RB",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "219",
+      "playerName": "Jeff Wilson Jr.",
+      "position": "RB",
+      "team": "Mia",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "220",
+      "playerName": "Houston",
+      "position": "DEF",
+      "team": "Hou ",
+      "adp": "143.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "221",
+      "playerName": "Minnesota",
+      "position": "DEF",
+      "team": "Min ",
+      "adp": "144.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "222",
+      "playerName": "Justin Fields",
+      "position": "QB",
+      "team": "Pit",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "223",
+      "playerName": "Andrei Iosivas",
+      "position": "WR",
+      "team": "Cin",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "224",
+      "playerName": "Tutu Atwell",
+      "position": "WR",
+      "team": "LAR",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "225",
+      "playerName": "Tyler Bass",
+      "position": "K",
+      "team": "Bu",
+      "adp": "85.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "226",
+      "playerName": "Kadarius Toney",
+      "position": "WR",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "227",
+      "playerName": "Hunter Renfrow",
+      "position": "WR",
+      "team": "LV",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "228",
+      "playerName": "Younghoe Koo",
+      "position": "K",
+      "team": "At",
+      "adp": "88.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "229",
+      "playerName": "Rondale Moore",
+      "position": "WR",
+      "team": "Atl",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "230",
+      "playerName": "New Orleans",
+      "position": "DEF",
+      "team": "NO ",
+      "adp": "145.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "231",
+      "playerName": "Juwan Johnson",
+      "position": "TE",
+      "team": "NO",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "232",
+      "playerName": "Cameron Dicker",
+      "position": "K",
+      "team": "LA",
+      "adp": "90.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "233",
+      "playerName": "DeVante Parker",
+      "position": "WR",
+      "team": "Phi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "234",
+      "playerName": "Las Vegas",
+      "position": "DEF",
+      "team": "LV ",
+      "adp": "146.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "235",
+      "playerName": "Evan McPherson",
+      "position": "K",
+      "team": "Ci",
+      "adp": "147.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "236",
+      "playerName": "Marquez Valdes-Scantling",
+      "position": "WR",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "237",
+      "playerName": "Denver",
+      "position": "DEF",
+      "team": "Den ",
+      "adp": "148.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "238",
+      "playerName": "Ka'imi Fairbairn",
+      "position": "K",
+      "team": "Ho",
+      "adp": "150.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "239",
+      "playerName": "Detroit",
+      "position": "DEF",
+      "team": "Det ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "240",
+      "playerName": "Dalvin Cook",
+      "position": "RB",
+      "team": "Bal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "241",
+      "playerName": "Carolina",
+      "position": "DEF",
+      "team": "Car ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "242",
+      "playerName": "Blake Grupe",
+      "position": "K",
+      "team": "N",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "243",
+      "playerName": "Taysom Hill",
+      "position": "QB",
+      "team": "NO",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "244",
+      "playerName": "Michael Carter",
+      "position": "RB",
+      "team": "Ari",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "245",
+      "playerName": "Gerald Everett",
+      "position": "TE",
+      "team": "Chi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "246",
+      "playerName": "Kareem Hunt",
+      "position": "RB",
+      "team": "Cle",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "247",
+      "playerName": "Cairo Santos",
+      "position": "K",
+      "team": "Ch",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "248",
+      "playerName": "Pierre Strong Jr.",
+      "position": "RB",
+      "team": "Cle",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "249",
+      "playerName": "New England",
+      "position": "DEF",
+      "team": "NE ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "250",
+      "playerName": "Dustin Hopkins",
+      "position": "K",
+      "team": "Cl",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "251",
+      "playerName": "Matt Gay",
+      "position": "K",
+      "team": "In",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "252",
+      "playerName": "Chase McLaughlin",
+      "position": "K",
+      "team": "T",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "253",
+      "playerName": "Samaje Perine",
+      "position": "RB",
+      "team": "Den",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "254",
+      "playerName": "Greg Dulcich",
+      "position": "TE",
+      "team": "Den",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "255",
+      "playerName": "Indianapolis",
+      "position": "DEF",
+      "team": "Ind ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "256",
+      "playerName": "Bo Melton",
+      "position": "WR",
+      "team": "GB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "257",
+      "playerName": "Jason Myers",
+      "position": "K",
+      "team": "Se",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "258",
+      "playerName": "Dawson Knox",
+      "position": "TE",
+      "team": "Buf",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "259",
+      "playerName": "Tyler Scott",
+      "position": "WR",
+      "team": "Chi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "260",
+      "playerName": "Bryce Young",
+      "position": "QB",
+      "team": "Car",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "261",
+      "playerName": "Tyler Higbee",
+      "position": "TE",
+      "team": "LAR",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "262",
+      "playerName": "Zach Ertz",
+      "position": "TE",
+      "team": "Was",
+      "adp": "132.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "263",
+      "playerName": "Joshua Kelley",
+      "position": "RB",
+      "team": "LAC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "264",
+      "playerName": "Evan Hull",
+      "position": "RB",
+      "team": "Ind",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "265",
+      "playerName": "Cincinnati",
+      "position": "DEF",
+      "team": "Cin ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "266",
+      "playerName": "Tyler Conklin",
+      "position": "TE",
+      "team": "NYJ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "267",
+      "playerName": "Daniel Carlson",
+      "position": "K",
+      "team": "L",
+      "adp": "112.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "268",
+      "playerName": "Jordan Mason",
+      "position": "RB",
+      "team": "SF",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "269",
+      "playerName": "Tanner Hudson",
+      "position": "TE",
+      "team": "Cin",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "270",
+      "playerName": "Logan Thomas",
+      "position": "TE",
+      "team": "Was",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "271",
+      "playerName": "Greg Joseph",
+      "position": "K",
+      "team": "G",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "272",
+      "playerName": "Wil Lutz",
+      "position": "K",
+      "team": "De",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "273",
+      "playerName": "Deuce Vaughn",
+      "position": "RB",
+      "team": "Dal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "274",
+      "playerName": "Brandon McManus",
+      "position": "K",
+      "team": "Wa",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "275",
+      "playerName": "Chris Boswell",
+      "position": "K",
+      "team": "Pi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "276",
+      "playerName": "Jacksonville",
+      "position": "DEF",
+      "team": "Jax ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "277",
+      "playerName": "Los Angeles",
+      "position": "DEF",
+      "team": "LAR ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "278",
+      "playerName": "Brett Maher",
+      "position": "K",
+      "team": "LA",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "279",
+      "playerName": "Chase Edmonds",
+      "position": "RB",
+      "team": "TB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "280",
+      "playerName": "Tank Bigsby",
+      "position": "RB",
+      "team": "Jax",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "281",
+      "playerName": "Seattle",
+      "position": "DEF",
+      "team": "Sea ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "282",
+      "playerName": "Cordarrelle Patterson",
+      "position": "RB",
+      "team": "Pit",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "283",
+      "playerName": "Michael Badgley",
+      "position": "K",
+      "team": "De",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "284",
+      "playerName": "Tampa Bay",
+      "position": "DEF",
+      "team": "TB ",
+      "adp": "129.0",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "285",
+      "playerName": "Isaiah Spiller",
+      "position": "RB",
+      "team": "LAC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "286",
+      "playerName": "Gardner Minshew",
+      "position": "QB",
+      "team": "LV",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "287",
+      "playerName": "Greg Zuerlein",
+      "position": "K",
+      "team": "NY",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "288",
+      "playerName": "Eddy Pineiro",
+      "position": "K",
+      "team": "Ca",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "289",
+      "playerName": "Green Bay",
+      "position": "DEF",
+      "team": "GB ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "290",
+      "playerName": "Anders Carlson",
+      "position": "K",
+      "team": "G",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "291",
+      "playerName": "Graham Gano",
+      "position": "K",
+      "team": "NY",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "292",
+      "playerName": "Atlanta",
+      "position": "DEF",
+      "team": "Atl ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "293",
+      "playerName": "Matt Prater",
+      "position": "K",
+      "team": "Ar",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "294",
+      "playerName": "Joe Flacco",
+      "position": "QB",
+      "team": "Ind",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "295",
+      "playerName": "Jake Browning",
+      "position": "QB",
+      "team": "Cin",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "296",
+      "playerName": "Sam Howell",
+      "position": "QB",
+      "team": "Sea",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "297",
+      "playerName": "Joshua Dobbs",
+      "position": "QB",
+      "team": "SF",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "298",
+      "playerName": "Jonnu Smith",
+      "position": "TE",
+      "team": "Mia",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "299",
+      "playerName": "Jimmy Graham",
+      "position": "TE",
+      "team": "NO",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "300",
+      "playerName": "Josh Reynolds",
+      "position": "WR",
+      "team": "Den",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "301",
+      "playerName": "Taylor Heinicke",
+      "position": "QB",
+      "team": "Atl",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "302",
+      "playerName": "New York",
+      "position": "DEF",
+      "team": "NYG ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "303",
+      "playerName": "Nick Folk",
+      "position": "K",
+      "team": "Te",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "304",
+      "playerName": "Donald Parham Jr.",
+      "position": "TE",
+      "team": "LAC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "308",
+      "playerName": "Cam Akers",
+      "position": "RB",
+      "team": "Min",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "315",
+      "playerName": "Los Angeles",
+      "position": "DEF",
+      "team": "LAC ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1487",
+      "playerName": "Hayden Hurst",
+      "position": "TE",
+      "team": "LAC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1488",
+      "playerName": "Brevin Jordan",
+      "position": "TE",
+      "team": "Hou",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1489",
+      "playerName": "Durham Smythe",
+      "position": "TE",
+      "team": "Mia",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1490",
+      "playerName": "Kylen Granson",
+      "position": "TE",
+      "team": "Ind",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1491",
+      "playerName": "Nick Mullens",
+      "position": "QB",
+      "team": "Min",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1492",
+      "playerName": "Lucas Havrisik",
+      "position": "K",
+      "team": "Cl",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1494",
+      "playerName": "Latavius Murray",
+      "position": "RB",
+      "team": "Buf",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1495",
+      "playerName": "Nick Westbrook-Ikhine",
+      "position": "WR",
+      "team": "Ten",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1496",
+      "playerName": "Mike Gesicki",
+      "position": "TE",
+      "team": "Cin",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1497",
+      "playerName": "Easton Stick",
+      "position": "QB",
+      "team": "LAC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1498",
+      "playerName": "Quez Watkins",
+      "position": "WR",
+      "team": "Pit",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1499",
+      "playerName": "Colby Parkinson",
+      "position": "TE",
+      "team": "LAR",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1500",
+      "playerName": "JuJu Smith-Schuster",
+      "position": "WR",
+      "team": "NE",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1501",
+      "playerName": "Foster Moreau",
+      "position": "TE",
+      "team": "NO",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1502",
+      "playerName": "Noah Gray",
+      "position": "TE",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1503",
+      "playerName": "Brandon Johnson",
+      "position": "WR",
+      "team": "Den",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1504",
+      "playerName": "Tennessee",
+      "position": "DEF",
+      "team": "Ten ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1505",
+      "playerName": "Robert Woods",
+      "position": "WR",
+      "team": "Hou",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1506",
+      "playerName": "Josh Oliver",
+      "position": "TE",
+      "team": "Min",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1507",
+      "playerName": "Riley Patterson",
+      "position": "K",
+      "team": "Ja",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1508",
+      "playerName": "Allen Lazard",
+      "position": "WR",
+      "team": "NYJ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1509",
+      "playerName": "Daniel Bellinger",
+      "position": "TE",
+      "team": "NYG",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1510",
+      "playerName": "Kalif Raymond",
+      "position": "WR",
+      "team": "Det",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1511",
+      "playerName": "Davis Allen",
+      "position": "TE",
+      "team": "LAR",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1512",
+      "playerName": "Desmond Ridder",
+      "position": "QB",
+      "team": "Ari",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1513",
+      "playerName": "Tommy Tremble",
+      "position": "TE",
+      "team": "Car",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1514",
+      "playerName": "Nelson Agholor",
+      "position": "WR",
+      "team": "Bal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1515",
+      "playerName": "Lawrence Cager",
+      "position": "TE",
+      "team": "NYG",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1516",
+      "playerName": "Mo Alie-Cox",
+      "position": "TE",
+      "team": "Ind",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1517",
+      "playerName": "Will Dissly",
+      "position": "TE",
+      "team": "LAC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1518",
+      "playerName": "Isaiah Hodgins",
+      "position": "WR",
+      "team": "NYG",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1519",
+      "playerName": "Adam Trautman",
+      "position": "TE",
+      "team": "Den",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1520",
+      "playerName": "Justin Watson",
+      "position": "WR",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1521",
+      "playerName": "Johnny Mundt",
+      "position": "TE",
+      "team": "Min",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1522",
+      "playerName": "Trenton Irwin",
+      "position": "WR",
+      "team": "Cin",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1523",
+      "playerName": "Cedrick Wilson Jr.",
+      "position": "WR",
+      "team": "NO",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1524",
+      "playerName": "Joey Slye",
+      "position": "K",
+      "team": "Ja",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1525",
+      "playerName": "Irv Smith",
+      "position": "TE",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1526",
+      "playerName": "Jelani Woods",
+      "position": "TE",
+      "team": "Ind",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1527",
+      "playerName": "Alex Erickson",
+      "position": "WR",
+      "team": "LAC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1528",
+      "playerName": "Brock Wright",
+      "position": "TE",
+      "team": "Det",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1529",
+      "playerName": "Austin Hooper",
+      "position": "TE",
+      "team": "NE",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1530",
+      "playerName": "Lucas Krull",
+      "position": "TE",
+      "team": "Den",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1531",
+      "playerName": "Pharaoh Brown",
+      "position": "TE",
+      "team": "Sea",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1532",
+      "playerName": "MyCole Pruitt",
+      "position": "TE",
+      "team": "Pit",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1533",
+      "playerName": "Julio Jones",
+      "position": "WR",
+      "team": "Phi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1534",
+      "playerName": "Will Mallory",
+      "position": "TE",
+      "team": "Ind",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1535",
+      "playerName": "Jimmy Garoppolo",
+      "position": "QB",
+      "team": "LAR",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1536",
+      "playerName": "Elijah Higgins",
+      "position": "TE",
+      "team": "Ari",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1537",
+      "playerName": "Jordan Akins",
+      "position": "TE",
+      "team": "Cle",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1538",
+      "playerName": "Shane Zylstra",
+      "position": "TE",
+      "team": "Det",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1539",
+      "playerName": "Teagan Quitoriano",
+      "position": "TE",
+      "team": "Hou",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1540",
+      "playerName": "Drew Sample",
+      "position": "TE",
+      "team": "Cin",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1541",
+      "playerName": "David Bell",
+      "position": "WR",
+      "team": "Cle",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1542",
+      "playerName": "Marcedes Lewis",
+      "position": "TE",
+      "team": "Chi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1543",
+      "playerName": "Ross Dwelley",
+      "position": "TE",
+      "team": "SF",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1544",
+      "playerName": "Mecole Hardman",
+      "position": "WR",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1545",
+      "playerName": "Albert Okwuegbunam",
+      "position": "TE",
+      "team": "Phi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1546",
+      "playerName": "Brycen Hopkins",
+      "position": "TE",
+      "team": "LAR",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1547",
+      "playerName": "Josh Whyle",
+      "position": "TE",
+      "team": "Ten",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1548",
+      "playerName": "Eric Tomlinson",
+      "position": "TE",
+      "team": "Ind",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1549",
+      "playerName": "Robbie Chosen",
+      "position": "WR",
+      "team": "Mia",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1550",
+      "playerName": "Mac Jones",
+      "position": "QB",
+      "team": "Jax",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1551",
+      "playerName": "Aidan O'Connell",
+      "position": "QB",
+      "team": "LV",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1552",
+      "playerName": "James Mitchell",
+      "position": "TE",
+      "team": "Det",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1553",
+      "playerName": "Mack Hollins",
+      "position": "WR",
+      "team": "Buf",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1554",
+      "playerName": "Harrison Bryant",
+      "position": "TE",
+      "team": "LV",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1555",
+      "playerName": "Matthew Wright",
+      "position": "K",
+      "team": "Pi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1556",
+      "playerName": "Jeremy Ruckert",
+      "position": "TE",
+      "team": "NYJ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1557",
+      "playerName": "Chris Moore",
+      "position": "WR",
+      "team": "Ari",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1558",
+      "playerName": "Tony Jones",
+      "position": "RB",
+      "team": "Ari",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1559",
+      "playerName": "Jody Fortson",
+      "position": "TE",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1560",
+      "playerName": "Stone Smartt",
+      "position": "TE",
+      "team": "LAC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1561",
+      "playerName": "Johnny Lumpkin",
+      "position": "TE",
+      "team": "Den",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1562",
+      "playerName": "Zach Davidson",
+      "position": "TE",
+      "team": "Buf",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1563",
+      "playerName": "Zack Kuntz",
+      "position": "TE",
+      "team": "NYJ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1564",
+      "playerName": "Tommy Hudson",
+      "position": "TE",
+      "team": "NO",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1565",
+      "playerName": "Jake Tonges",
+      "position": "TE",
+      "team": "SF",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1566",
+      "playerName": "Jordan Murray",
+      "position": "TE",
+      "team": "Ind",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1567",
+      "playerName": "Tucker Fisk",
+      "position": "TE",
+      "team": "Atl",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1568",
+      "playerName": "Noah Togiai",
+      "position": "TE",
+      "team": "Phi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1569",
+      "playerName": "Hunter Long",
+      "position": "TE",
+      "team": "LAR",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1570",
+      "playerName": "La'Michael Pettway",
+      "position": "TE",
+      "team": "NE",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1571",
+      "playerName": "Blake Whiteheart",
+      "position": "TE",
+      "team": "Ari",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1572",
+      "playerName": "Dalton Keene",
+      "position": "TE",
+      "team": "Hou",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1573",
+      "playerName": "Bernhard Seikovits",
+      "position": "TE",
+      "team": "Ari",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1574",
+      "playerName": "Cameron Latu",
+      "position": "TE",
+      "team": "SF",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1575",
+      "playerName": "Tyler Mabry",
+      "position": "TE",
+      "team": "Sea",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1576",
+      "playerName": "Chris Pierce",
+      "position": "TE",
+      "team": "Car",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1577",
+      "playerName": "Izaiah Gathings",
+      "position": "TE",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1578",
+      "playerName": "David Wells",
+      "position": "TE",
+      "team": "TB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1579",
+      "playerName": "Matt Bushman",
+      "position": "TE",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1580",
+      "playerName": "Ryan Jones",
+      "position": "TE",
+      "team": "NYG",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1581",
+      "playerName": "Hunter Kampmoyer",
+      "position": "TE",
+      "team": "LAC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1582",
+      "playerName": "John FitzPatrick",
+      "position": "TE",
+      "team": "Atl",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1583",
+      "playerName": "Matt Sokol",
+      "position": "TE",
+      "team": "NE",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1584",
+      "playerName": "Princeton Fant",
+      "position": "TE",
+      "team": "Dal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1585",
+      "playerName": "Nikola Kalinic",
+      "position": "TE",
+      "team": "LAR",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1586",
+      "playerName": "Gerrit Prince",
+      "position": "TE",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1587",
+      "playerName": "Scotty Washington",
+      "position": "TE",
+      "team": "Bal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1588",
+      "playerName": "Feleipe Franks",
+      "position": "TE",
+      "team": "Atl",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1589",
+      "playerName": "Miller Forristall",
+      "position": "TE",
+      "team": "LAR",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1590",
+      "playerName": "Kenny Yeboah",
+      "position": "TE",
+      "team": "NYJ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1591",
+      "playerName": "E.J. Jenkins",
+      "position": "TE",
+      "team": "Phi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1592",
+      "playerName": "Troy Fumagalli",
+      "position": "TE",
+      "team": "Min",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1593",
+      "playerName": "Tanner Conner",
+      "position": "TE",
+      "team": "Mia",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1594",
+      "playerName": "Michael Jacobson",
+      "position": "TE",
+      "team": "NO",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1595",
+      "playerName": "Travis Vokolek",
+      "position": "TE",
+      "team": "Ari",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1596",
+      "playerName": "Cole Fotheringham",
+      "position": "TE",
+      "team": "LV",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1597",
+      "playerName": "Tyree Jackson",
+      "position": "TE",
+      "team": "NYG",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1598",
+      "playerName": "John Samuel Shenker",
+      "position": "TE",
+      "team": "LV",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1599",
+      "playerName": "Stephen Carlson",
+      "position": "TE",
+      "team": "Chi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1600",
+      "playerName": "Josh Pederson",
+      "position": "TE",
+      "team": "Jax",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1601",
+      "playerName": "Thomas Odukoya",
+      "position": "TE",
+      "team": "Ten",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1602",
+      "playerName": "Nick Bowers",
+      "position": "TE",
+      "team": "Mia",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1603",
+      "playerName": "Brayden Willis",
+      "position": "TE",
+      "team": "SF",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1604",
+      "playerName": "Zaire Mitchell-Paden",
+      "position": "TE",
+      "team": "Cle",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1605",
+      "playerName": "Joel Wilson",
+      "position": "TE",
+      "team": "GB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1606",
+      "playerName": "Jordan Matthews",
+      "position": "TE",
+      "team": "Car",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1607",
+      "playerName": "Tanner Taula",
+      "position": "TE",
+      "team": "TB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1608",
+      "playerName": "Nick Muse",
+      "position": "TE",
+      "team": "Min",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1609",
+      "playerName": "Grant Calcaterra",
+      "position": "TE",
+      "team": "Phi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1610",
+      "playerName": "Quintin Morris",
+      "position": "TE",
+      "team": "Buf",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1611",
+      "playerName": "Eric Saubert",
+      "position": "TE",
+      "team": "SF",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1612",
+      "playerName": "Tyson Bagent",
+      "position": "QB",
+      "team": "Chi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1613",
+      "playerName": "Kevin Harris",
+      "position": "RB",
+      "team": "NE",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1614",
+      "playerName": "Anthony Firkser",
+      "position": "TE",
+      "team": "Det",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1615",
+      "playerName": "Connor Heyward",
+      "position": "TE",
+      "team": "Pit",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1616",
+      "playerName": "Robert Tonyan",
+      "position": "TE",
+      "team": "Chi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1617",
+      "playerName": "Zach Gentry",
+      "position": "TE",
+      "team": "LV",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1618",
+      "playerName": "Armani Rogers",
+      "position": "TE",
+      "team": "Was",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1619",
+      "playerName": "Charlie Kolar",
+      "position": "TE",
+      "team": "Bal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1620",
+      "playerName": "River Cracraft",
+      "position": "WR",
+      "team": "Mia",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1621",
+      "playerName": "James Robinson",
+      "position": "RB",
+      "team": "NO",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1622",
+      "playerName": "Luke Farrell",
+      "position": "TE",
+      "team": "Jax",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1623",
+      "playerName": "Tre' McKitty",
+      "position": "TE",
+      "team": "Buf",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1624",
+      "playerName": "Brenton Strange",
+      "position": "TE",
+      "team": "Jax",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1625",
+      "playerName": "Parker Hesse",
+      "position": "TE",
+      "team": "Atl",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1626",
+      "playerName": "Zonovan Knight",
+      "position": "RB",
+      "team": "Det",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1627",
+      "playerName": "Tyler Kroft",
+      "position": "TE",
+      "team": "Mia",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1628",
+      "playerName": "Mitch Trubisky",
+      "position": "QB",
+      "team": "Buf",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1629",
+      "playerName": "Nick Vannett",
+      "position": "TE",
+      "team": "LAC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1630",
+      "playerName": "Trevon Wesco",
+      "position": "TE",
+      "team": "Ten",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1631",
+      "playerName": "Lil'Jordan Humphrey",
+      "position": "WR",
+      "team": "Den",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1632",
+      "playerName": "Darrynton Evans",
+      "position": "RB",
+      "team": "Buf",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1633",
+      "playerName": "Jauan Jennings",
+      "position": "WR",
+      "team": "SF",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1634",
+      "playerName": "Zach Wilson",
+      "position": "QB",
+      "team": "NYJ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1635",
+      "playerName": "Luke Schoonmaker",
+      "position": "TE",
+      "team": "Dal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1636",
+      "playerName": "Royce Freeman",
+      "position": "RB",
+      "team": "Dal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1637",
+      "playerName": "John Bates",
+      "position": "TE",
+      "team": "Was",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1638",
+      "playerName": "Olamide Zaccheaus",
+      "position": "WR",
+      "team": "Was",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1639",
+      "playerName": "Tyler Davis",
+      "position": "TE",
+      "team": "GB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1640",
+      "playerName": "Jason Brownlee",
+      "position": "WR",
+      "team": "NYJ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1641",
+      "playerName": "Devin Asiasi",
+      "position": "TE",
+      "team": "Ten",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1642",
+      "playerName": "Cole Turner",
+      "position": "TE",
+      "team": "Was",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1643",
+      "playerName": "Arizona",
+      "position": "DEF",
+      "team": "Ari ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1644",
+      "playerName": "Stephen Anderson",
+      "position": "TE",
+      "team": "LAC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1645",
+      "playerName": "Tre'Quan Smith",
+      "position": "WR",
+      "team": "Det",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1646",
+      "playerName": "Parker Washington",
+      "position": "WR",
+      "team": "Jax",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1647",
+      "playerName": "Terrace Marshall Jr.",
+      "position": "WR",
+      "team": "Car",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1648",
+      "playerName": "Jalen Tolbert",
+      "position": "WR",
+      "team": "Dal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1649",
+      "playerName": "Geoff Swaim",
+      "position": "TE",
+      "team": "Ari",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1650",
+      "playerName": "Randy Bullock",
+      "position": "K",
+      "team": "NY",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1651",
+      "playerName": "Jake Bobo",
+      "position": "WR",
+      "team": "Sea",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1652",
+      "playerName": "Eno Benjamin",
+      "position": "RB",
+      "team": "NO",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1653",
+      "playerName": "Washington",
+      "position": "DEF",
+      "team": "Was ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1654",
+      "playerName": "Ryan Tannehill",
+      "position": "QB",
+      "team": "Ten",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1655",
+      "playerName": "Deon Jackson",
+      "position": "RB",
+      "team": "NYG",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1656",
+      "playerName": "Salvon Ahmed",
+      "position": "RB",
+      "team": "Mia",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1657",
+      "playerName": "Stephen Sullivan",
+      "position": "TE",
+      "team": "Car",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1658",
+      "playerName": "Ben Sims",
+      "position": "TE",
+      "team": "GB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1659",
+      "playerName": "Jamal Agnew",
+      "position": "WR",
+      "team": "Jax",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1660",
+      "playerName": "Malik Davis",
+      "position": "RB",
+      "team": "Dal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1661",
+      "playerName": "Jalen Nailor",
+      "position": "WR",
+      "team": "Min",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1662",
+      "playerName": "N'Keal Harry",
+      "position": "WR",
+      "team": "Min",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1663",
+      "playerName": "Ashton Dulin",
+      "position": "WR",
+      "team": "Ind",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1664",
+      "playerName": "Payne Durham",
+      "position": "TE",
+      "team": "TB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1665",
+      "playerName": "Mathew Sexton",
+      "position": "WR",
+      "team": "Mia",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1666",
+      "playerName": "Duece Watts",
+      "position": "WR",
+      "team": "Pit",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1667",
+      "playerName": "Simi Fehoko",
+      "position": "WR",
+      "team": "LAC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1668",
+      "playerName": "Kearis Jackson",
+      "position": "WR",
+      "team": "Ten",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1669",
+      "playerName": "Daylen Baldwin",
+      "position": "WR",
+      "team": "Min",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1670",
+      "playerName": "Dylan Drummond",
+      "position": "WR",
+      "team": "NYG",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1671",
+      "playerName": "Raleigh Webb",
+      "position": "WR",
+      "team": "TB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1672",
+      "playerName": "Xavier Smith",
+      "position": "WR",
+      "team": "LAR",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1673",
+      "playerName": "Nsimba Webster",
+      "position": "WR",
+      "team": "Chi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1674",
+      "playerName": "Chase Cota",
+      "position": "WR",
+      "team": "NYG",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1675",
+      "playerName": "D.J. Montgomery",
+      "position": "WR",
+      "team": "Ind",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1676",
+      "playerName": "Kawaan Baker",
+      "position": "WR",
+      "team": "NE",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1677",
+      "playerName": "Juwann Winfree",
+      "position": "WR",
+      "team": "Ind",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1678",
+      "playerName": "Dez Fitzpatrick",
+      "position": "WR",
+      "team": "Pit",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1679",
+      "playerName": "Kazmeir Allen",
+      "position": "WR",
+      "team": "Was",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1680",
+      "playerName": "Tim Patrick",
+      "position": "WR",
+      "team": "Den",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1681",
+      "playerName": "Griffin Hebert",
+      "position": "WR",
+      "team": "Phi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1682",
+      "playerName": "Austin Watkins Jr.",
+      "position": "WR",
+      "team": "Phi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1683",
+      "playerName": "David Durden",
+      "position": "WR",
+      "team": "Dal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1684",
+      "playerName": "Justin Shorter",
+      "position": "WR",
+      "team": "Buf",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1685",
+      "playerName": "Tay Martin",
+      "position": "WR",
+      "team": "SF",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1686",
+      "playerName": "Willie Snead IV",
+      "position": "WR",
+      "team": "SF",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1687",
+      "playerName": "Kendric Pryor",
+      "position": "WR",
+      "team": "Cin",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1688",
+      "playerName": "Collin Johnson",
+      "position": "WR",
+      "team": "Chi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1689",
+      "playerName": "Ethan Fernea",
+      "position": "WR",
+      "team": "Ind",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1690",
+      "playerName": "Jacob Harris",
+      "position": "WR",
+      "team": "Phi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1691",
+      "playerName": "Ryan Miller",
+      "position": "WR",
+      "team": "TB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1692",
+      "playerName": "Cody Thompson",
+      "position": "WR",
+      "team": "Sea",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1693",
+      "playerName": "Kwamie Lassiter II",
+      "position": "WR",
+      "team": "Cin",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1694",
+      "playerName": "T.J. Luther",
+      "position": "WR",
+      "team": "NE",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1695",
+      "playerName": "Keilahn Harris",
+      "position": "WR",
+      "team": "Pit",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1696",
+      "playerName": "Tre'Shaun Harrison",
+      "position": "WR",
+      "team": "Ten",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1697",
+      "playerName": "Jaylon Moore",
+      "position": "WR",
+      "team": "Jax",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1698",
+      "playerName": "Braylon Sanders",
+      "position": "WR",
+      "team": "Mia",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1699",
+      "playerName": "Freddie Swain",
+      "position": "WR",
+      "team": "Mia",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1700",
+      "playerName": "Derek Wright",
+      "position": "WR",
+      "team": "Car",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1701",
+      "playerName": "Elijah Cooks",
+      "position": "WR",
+      "team": "Jax",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1702",
+      "playerName": "Bryan Thompson",
+      "position": "WR",
+      "team": "Buf",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1703",
+      "playerName": "Cornell Powell",
+      "position": "WR",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1704",
+      "playerName": "Maurice Alexander",
+      "position": "WR",
+      "team": "Det",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1705",
+      "playerName": "Jacob Copeland",
+      "position": "WR",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1706",
+      "playerName": "Daurice Fountain",
+      "position": "WR",
+      "team": "Det",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1707",
+      "playerName": "Antoine Green",
+      "position": "WR",
+      "team": "Det",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1708",
+      "playerName": "Devon Allen",
+      "position": "WR",
+      "team": "Phi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1709",
+      "playerName": "Erik Ezukanma",
+      "position": "WR",
+      "team": "Mia",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1710",
+      "playerName": "Frank Darby",
+      "position": "WR",
+      "team": "Atl",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1711",
+      "playerName": "Daniel Arias",
+      "position": "WR",
+      "team": "Ari",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1712",
+      "playerName": "Brycen Tremayne",
+      "position": "WR",
+      "team": "Was",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1713",
+      "playerName": "Anthony Miller",
+      "position": "WR",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1714",
+      "playerName": "Jared Wayne",
+      "position": "WR",
+      "team": "Hou",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1715",
+      "playerName": "Mitchell Tinsley",
+      "position": "WR",
+      "team": "Was",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1716",
+      "playerName": "Jalen Cropper",
+      "position": "WR",
+      "team": "Dal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1717",
+      "playerName": "Trishton Jackson",
+      "position": "WR",
+      "team": "Min",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1718",
+      "playerName": "Bryce Ford-Wheaton",
+      "position": "WR",
+      "team": "NYG",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1719",
+      "playerName": "Chris Blair",
+      "position": "WR",
+      "team": "Atl",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1720",
+      "playerName": "Tyler Johnson",
+      "position": "WR",
+      "team": "LAR",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1721",
+      "playerName": "Kristian Wilkerson",
+      "position": "WR",
+      "team": "LV",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1722",
+      "playerName": "Thyrick Pitts",
+      "position": "WR",
+      "team": "GB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1723",
+      "playerName": "Keelan Doss",
+      "position": "WR",
+      "team": "LAC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1724",
+      "playerName": "Easop Winston Jr.",
+      "position": "WR",
+      "team": "Sea",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1725",
+      "playerName": "Cade Johnson",
+      "position": "WR",
+      "team": "Sea",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1726",
+      "playerName": "Tre Nixon",
+      "position": "WR",
+      "team": "NE",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1727",
+      "playerName": "Kayshon Boutte",
+      "position": "WR",
+      "team": "NE",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1728",
+      "playerName": "Austin Mack",
+      "position": "WR",
+      "team": "Atl",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1729",
+      "playerName": "Johnny Johnson III",
+      "position": "WR",
+      "team": "Hou",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1730",
+      "playerName": "Dennis Houston",
+      "position": "WR",
+      "team": "NYG",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1731",
+      "playerName": "Shedrick Jackson",
+      "position": "WR",
+      "team": "Cin",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1732",
+      "playerName": "Sean Ryan",
+      "position": "WR",
+      "team": "Bal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1733",
+      "playerName": "Malik Knowles",
+      "position": "WR",
+      "team": "Min",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1734",
+      "playerName": "Joseph Ngata",
+      "position": "WR",
+      "team": "Phi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1735",
+      "playerName": "Shaquan Davis",
+      "position": "WR",
+      "team": "Phi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1736",
+      "playerName": "Cody White",
+      "position": "WR",
+      "team": "Sea",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1737",
+      "playerName": "Jalen Camp",
+      "position": "WR",
+      "team": "Car",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1738",
+      "playerName": "Seth Williams",
+      "position": "WR",
+      "team": "Jax",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1739",
+      "playerName": "Thayer Thomas",
+      "position": "WR",
+      "team": "Min",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1740",
+      "playerName": "John Stephens Jr.",
+      "position": "WR",
+      "team": "Dal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1741",
+      "playerName": "Dan Chisena",
+      "position": "WR",
+      "team": "Ari",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1742",
+      "playerName": "Kaden Davis",
+      "position": "WR",
+      "team": "Ari",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1743",
+      "playerName": "Malik Taylor",
+      "position": "WR",
+      "team": "NYJ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1744",
+      "playerName": "Grant DuBose",
+      "position": "WR",
+      "team": "GB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1745",
+      "playerName": "Davion Davis",
+      "position": "WR",
+      "team": "Was",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1746",
+      "playerName": "Josh Ali",
+      "position": "WR",
+      "team": "Atl",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1747",
+      "playerName": "Jakeem Grant Sr.",
+      "position": "WR",
+      "team": "Cle",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1748",
+      "playerName": "Jaydon Mickens",
+      "position": "WR",
+      "team": "Ind",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1749",
+      "playerName": "Greg Ward",
+      "position": "WR",
+      "team": "Phi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1750",
+      "playerName": "Martavis Bryant",
+      "position": "WR",
+      "team": "Dal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1751",
+      "playerName": "Tyrell Shavers",
+      "position": "WR",
+      "team": "Buf",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1752",
+      "playerName": "Lucky Jackson",
+      "position": "WR",
+      "team": "Min",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1753",
+      "playerName": "Cephus Johnson III",
+      "position": "WR",
+      "team": "TB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1754",
+      "playerName": "Terrell Bynum",
+      "position": "WR",
+      "team": "Ind",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1755",
+      "playerName": "Marlon Mack",
+      "position": "RB",
+      "team": "Ari",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1756",
+      "playerName": "KJ Hamler",
+      "position": "WR",
+      "team": "Buf",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1757",
+      "playerName": "Blake Bell",
+      "position": "TE",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1758",
+      "playerName": "Marquez Callaway",
+      "position": "WR",
+      "team": "Pit",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1759",
+      "playerName": "Phillip Dorsett",
+      "position": "WR",
+      "team": "Den",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1760",
+      "playerName": "Shi Smith",
+      "position": "WR",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1761",
+      "playerName": "Josiah Deguara",
+      "position": "TE",
+      "team": "Jax",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1762",
+      "playerName": "David Moore",
+      "position": "WR",
+      "team": "Car",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1763",
+      "playerName": "Darnell Washington",
+      "position": "TE",
+      "team": "Pit",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1764",
+      "playerName": "Denzel Mims",
+      "position": "WR",
+      "team": "Pit",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1765",
+      "playerName": "Parris Campbell",
+      "position": "WR",
+      "team": "Phi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1766",
+      "playerName": "JaMycal Hasty",
+      "position": "RB",
+      "team": "NE",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1767",
+      "playerName": "Cade York",
+      "position": "K",
+      "team": "Cl",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1768",
+      "playerName": "Van Jefferson",
+      "position": "WR",
+      "team": "Pit",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1769",
+      "playerName": "Tom Kennedy",
+      "position": "WR",
+      "team": "Det",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1770",
+      "playerName": "Mason Crosby",
+      "position": "K",
+      "team": "NY",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1771",
+      "playerName": "Nyheim Hines",
+      "position": "RB",
+      "team": "Cle",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1772",
+      "playerName": "Jeff Smith",
+      "position": "WR",
+      "team": "Ari",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1773",
+      "playerName": "Chad Ryland",
+      "position": "K",
+      "team": "N",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1774",
+      "playerName": "Ian Thomas",
+      "position": "TE",
+      "team": "Car",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1775",
+      "playerName": "Anthony Schwartz",
+      "position": "WR",
+      "team": "Mia",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1776",
+      "playerName": "Donovan Peoples-Jones",
+      "position": "WR",
+      "team": "Det",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1777",
+      "playerName": "David Sills",
+      "position": "WR",
+      "team": "Den",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1778",
+      "playerName": "Jalen Guyton",
+      "position": "WR",
+      "team": "LAC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1779",
+      "playerName": "Xavier Gipson",
+      "position": "WR",
+      "team": "NYJ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1780",
+      "playerName": "Mitchell Wilcox",
+      "position": "TE",
+      "team": "Cin",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1781",
+      "playerName": "Nate Adkins",
+      "position": "TE",
+      "team": "Den",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1782",
+      "playerName": "Keelan Cole Sr.",
+      "position": "WR",
+      "team": "LV",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1783",
+      "playerName": "Brandon Powell",
+      "position": "WR",
+      "team": "Min",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1784",
+      "playerName": "Steven Sims",
+      "position": "WR",
+      "team": "Hou",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1785",
+      "playerName": "Skyy Moore",
+      "position": "WR",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1786",
+      "playerName": "Calvin Austin III",
+      "position": "WR",
+      "team": "Pit",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1787",
+      "playerName": "Patrick Laird",
+      "position": "RB",
+      "team": "TB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1788",
+      "playerName": "Ben Mason",
+      "position": "RB",
+      "team": "LAC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1789",
+      "playerName": "Jake Funk",
+      "position": "RB",
+      "team": "Det",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1790",
+      "playerName": "Jack Colletto",
+      "position": "RB",
+      "team": "Pit",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1791",
+      "playerName": "Jacques Patrick",
+      "position": "RB",
+      "team": "NYJ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1792",
+      "playerName": "Tyler Badie",
+      "position": "RB",
+      "team": "Den",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1793",
+      "playerName": "Lew Nichols",
+      "position": "RB",
+      "team": "Phi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1794",
+      "playerName": "Derrick Gore",
+      "position": "RB",
+      "team": "Was",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1795",
+      "playerName": "John Kelly Jr.",
+      "position": "RB",
+      "team": "Cle",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1796",
+      "playerName": "DeWayne McBride",
+      "position": "RB",
+      "team": "Min",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1797",
+      "playerName": "Zavier Scott",
+      "position": "RB",
+      "team": "Ind",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1798",
+      "playerName": "Kenny McIntosh",
+      "position": "RB",
+      "team": "Sea",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1799",
+      "playerName": "SaRodorick Thompson Jr.",
+      "position": "RB",
+      "team": "Dal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1800",
+      "playerName": "Jordan Mims",
+      "position": "RB",
+      "team": "NO",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1801",
+      "playerName": "Louis Rees-Zammit",
+      "position": "RB",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1802",
+      "playerName": "Ellis Merriweather",
+      "position": "RB",
+      "team": "GB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1803",
+      "playerName": "Xazavian Valladay",
+      "position": "RB",
+      "team": "NYJ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1804",
+      "playerName": "Tarik Cohen",
+      "position": "RB",
+      "team": "Car",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1805",
+      "playerName": "Austin Walter",
+      "position": "RB",
+      "team": "LV",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1806",
+      "playerName": "Tyreik McAllister",
+      "position": "RB",
+      "team": "LV",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1807",
+      "playerName": "Brittain Brown",
+      "position": "RB",
+      "team": "LV",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1808",
+      "playerName": "Jeremy McNichols",
+      "position": "RB",
+      "team": "Was",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1809",
+      "playerName": "Jermar Jefferson",
+      "position": "RB",
+      "team": "Det",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1810",
+      "playerName": "Spencer Brown",
+      "position": "RB",
+      "team": "Car",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1811",
+      "playerName": "Hassan Hall",
+      "position": "RB",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1812",
+      "playerName": "Sincere McCormick",
+      "position": "RB",
+      "team": "LV",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1813",
+      "playerName": "Deneric Prince",
+      "position": "RB",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1814",
+      "playerName": "Jashaun Corbin",
+      "position": "RB",
+      "team": "NYG",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1815",
+      "playerName": "Dante Miller",
+      "position": "RB",
+      "team": "NYG",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1816",
+      "playerName": "J.J. Taylor",
+      "position": "RB",
+      "team": "Hou",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1817",
+      "playerName": "Robert Burns",
+      "position": "RB",
+      "team": "Atl",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1818",
+      "playerName": "Aaron Shampklin",
+      "position": "RB",
+      "team": "Pit",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1819",
+      "playerName": "Jaret Patterson",
+      "position": "RB",
+      "team": "LAC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1820",
+      "playerName": "La'Mical Perine",
+      "position": "RB",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1821",
+      "playerName": "Myles Gaskin",
+      "position": "RB",
+      "team": "Min",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1822",
+      "playerName": "Chris Brooks",
+      "position": "RB",
+      "team": "Mia",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1823",
+      "playerName": "Carlos Washington Jr.",
+      "position": "RB",
+      "team": "Atl",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1824",
+      "playerName": "Elijah Dotson",
+      "position": "RB",
+      "team": "LAC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1825",
+      "playerName": "Henry Pearson",
+      "position": "RB",
+      "team": "GB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1826",
+      "playerName": "Owen Wright",
+      "position": "RB",
+      "team": "Bal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1827",
+      "playerName": "Kenny Pickett",
+      "position": "QB",
+      "team": "Phi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1828",
+      "playerName": "Jack Stoll",
+      "position": "TE",
+      "team": "NYG",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1829",
+      "playerName": "Jalen Virgil",
+      "position": "WR",
+      "team": "Den",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1830",
+      "playerName": "Julian Hill",
+      "position": "TE",
+      "team": "Mia",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1831",
+      "playerName": "Michael Bandy",
+      "position": "WR",
+      "team": "Den",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1832",
+      "playerName": "Chris Conley",
+      "position": "WR",
+      "team": "SF",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1833",
+      "playerName": "Peyton Hendershot",
+      "position": "TE",
+      "team": "Dal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1834",
+      "playerName": "Andre Baccellia",
+      "position": "WR",
+      "team": "Ari",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1835",
+      "playerName": "Braxton Berrios",
+      "position": "WR",
+      "team": "Mia",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1836",
+      "playerName": "Tyquan Thornton",
+      "position": "WR",
+      "team": "NE",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1837",
+      "playerName": "Racey McMath",
+      "position": "WR",
+      "team": "Dal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1838",
+      "playerName": "Scott Miller",
+      "position": "WR",
+      "team": "Atl",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1839",
+      "playerName": "Kyle Philips",
+      "position": "WR",
+      "team": "Ten",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1840",
+      "playerName": "Mike Strachan",
+      "position": "WR",
+      "team": "Car",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1841",
+      "playerName": "Cam Sims",
+      "position": "WR",
+      "team": "Car",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1842",
+      "playerName": "KaVontae Turpin",
+      "position": "WR",
+      "team": "Dal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1843",
+      "playerName": "Jonathan Williams",
+      "position": "RB",
+      "team": "Was",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1844",
+      "playerName": "Dax Milne",
+      "position": "WR",
+      "team": "Was",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1845",
+      "playerName": "Michael Woods II",
+      "position": "WR",
+      "team": "Cle",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1846",
+      "playerName": "Andy Isabella",
+      "position": "WR",
+      "team": "Buf",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1847",
+      "playerName": "Tyrie Cleveland",
+      "position": "WR",
+      "team": "Ind",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1848",
+      "playerName": "Dareke Young",
+      "position": "WR",
+      "team": "Sea",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1849",
+      "playerName": "Richie James",
+      "position": "WR",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1850",
+      "playerName": "Kyle Juszczyk",
+      "position": "RB",
+      "team": "SF",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1851",
+      "playerName": "Snoop Conner",
+      "position": "RB",
+      "team": "Dal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1852",
+      "playerName": "Danny Gray",
+      "position": "WR",
+      "team": "SF",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1853",
+      "playerName": "Zander Horvath",
+      "position": "RB",
+      "team": "NO",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1854",
+      "playerName": "Laviska Shenault Jr.",
+      "position": "WR",
+      "team": "Sea",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1855",
+      "playerName": "Ty Johnson",
+      "position": "RB",
+      "team": "Buf",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1856",
+      "playerName": "Tyrion Davis-Price",
+      "position": "RB",
+      "team": "Phi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1857",
+      "playerName": "Jaelon Darden",
+      "position": "WR",
+      "team": "Cle",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1858",
+      "playerName": "Jalen Brooks",
+      "position": "WR",
+      "team": "Dal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1859",
+      "playerName": "Ronnie Bell",
+      "position": "WR",
+      "team": "SF",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1860",
+      "playerName": "Jalen Reagor",
+      "position": "WR",
+      "team": "NE",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1861",
+      "playerName": "Stanley Morgan",
+      "position": "WR",
+      "team": "Cin",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1862",
+      "playerName": "Lance McCutcheon",
+      "position": "WR",
+      "team": "NYJ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1863",
+      "playerName": "Avery Williams",
+      "position": "RB",
+      "team": "Atl",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1864",
+      "playerName": "Trent Sherfield",
+      "position": "WR",
+      "team": "Min",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1865",
+      "playerName": "Hassan Haskins",
+      "position": "RB",
+      "team": "Ten",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1866",
+      "playerName": "Ko Kieft",
+      "position": "TE",
+      "team": "TB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1867",
+      "playerName": "Chris Evans",
+      "position": "RB",
+      "team": "Cin",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1868",
+      "playerName": "Jack Podlesny",
+      "position": "K",
+      "team": "G",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1869",
+      "playerName": "Charlie Smyth",
+      "position": "K",
+      "team": "N",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1870",
+      "playerName": "John Parker Romo",
+      "position": "K",
+      "team": "Mi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1871",
+      "playerName": "Austin Seibert",
+      "position": "K",
+      "team": "NY",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1872",
+      "playerName": "Tanner Brown",
+      "position": "K",
+      "team": "LA",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1873",
+      "playerName": "Malik Heath",
+      "position": "WR",
+      "team": "GB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1874",
+      "playerName": "Julius Chestnut",
+      "position": "RB",
+      "team": "Ten",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1875",
+      "playerName": "Chase Claypool",
+      "position": "WR",
+      "team": "Mia",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1876",
+      "playerName": "Jonathan Ward",
+      "position": "RB",
+      "team": "Ten",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1877",
+      "playerName": "Lynn Bowden Jr.",
+      "position": "WR",
+      "team": "NO",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1878",
+      "playerName": "Dwayne Washington",
+      "position": "RB",
+      "team": "Den",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1879",
+      "playerName": "Randall Cobb",
+      "position": "WR",
+      "team": "NYJ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1880",
+      "playerName": "KhaDarel Hodge",
+      "position": "WR",
+      "team": "Atl",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1881",
+      "playerName": "Troy Hairston",
+      "position": "RB",
+      "team": "Hou",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1882",
+      "playerName": "Mason Rudolph",
+      "position": "QB",
+      "team": "Ten",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1883",
+      "playerName": "Demetric Felton",
+      "position": "RB",
+      "team": "Cin",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1884",
+      "playerName": "Chris Manhertz",
+      "position": "TE",
+      "team": "NYG",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1885",
+      "playerName": "Marquise Goodwin",
+      "position": "WR",
+      "team": "Cle",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1886",
+      "playerName": "Emanuel Wilson",
+      "position": "RB",
+      "team": "GB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1887",
+      "playerName": "Dyami Brown",
+      "position": "WR",
+      "team": "Was",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1888",
+      "playerName": "Ray-Ray McCloud III",
+      "position": "WR",
+      "team": "Atl",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1889",
+      "playerName": "Tyler Goodson",
+      "position": "RB",
+      "team": "Ind",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1890",
+      "playerName": "Equanimeous St. Brown",
+      "position": "WR",
+      "team": "Chi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1891",
+      "playerName": "Rodney Williams",
+      "position": "TE",
+      "team": "Pit",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1892",
+      "playerName": "Sean McKeon",
+      "position": "TE",
+      "team": "Dal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1893",
+      "playerName": "Brady Russell",
+      "position": "TE",
+      "team": "Sea",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1894",
+      "playerName": "Byron Pringle",
+      "position": "WR",
+      "team": "Was",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1895",
+      "playerName": "Keith Kirkwood",
+      "position": "WR",
+      "team": "NO",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1896",
+      "playerName": "Tommy DeVito",
+      "position": "QB",
+      "team": "NYG",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1897",
+      "playerName": "Samori Toure",
+      "position": "WR",
+      "team": "GB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1898",
+      "playerName": "Matt Breida",
+      "position": "RB",
+      "team": "NYG",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1899",
+      "playerName": "Ben Skowronek",
+      "position": "WR",
+      "team": "LAR",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1900",
+      "playerName": "Isaiah McKenzie",
+      "position": "WR",
+      "team": "NYG",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1901",
+      "playerName": "Charlie Woerner",
+      "position": "TE",
+      "team": "Atl",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1902",
+      "playerName": "Derius Davis",
+      "position": "WR",
+      "team": "LAC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1903",
+      "playerName": "Giovanni Ricci",
+      "position": "TE",
+      "team": "Cle",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1904",
+      "playerName": "Trey Sermon",
+      "position": "RB",
+      "team": "Ind",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1905",
+      "playerName": "Craig Reynolds",
+      "position": "RB",
+      "team": "Det",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1906",
+      "playerName": "Charlie Jones",
+      "position": "WR",
+      "team": "Cin",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1907",
+      "playerName": "Jesper Horsted",
+      "position": "TE",
+      "team": "LV",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1908",
+      "playerName": "Sterling Shepard",
+      "position": "WR",
+      "team": "NYG",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1909",
+      "playerName": "Xavier Hutchinson",
+      "position": "WR",
+      "team": "Hou",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1910",
+      "playerName": "Jamison Crowder",
+      "position": "WR",
+      "team": "Was",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1911",
+      "playerName": "Justyn Ross",
+      "position": "WR",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1912",
+      "playerName": "Kevin Rader",
+      "position": "TE",
+      "team": "Ten",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1913",
+      "playerName": "Devin Duvernay",
+      "position": "WR",
+      "team": "Jax",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1914",
+      "playerName": "Nick Bawden",
+      "position": "RB",
+      "team": "NYJ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1915",
+      "playerName": "Ronnie Rivers",
+      "position": "RB",
+      "team": "LAR",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1916",
+      "playerName": "Andrew Beck",
+      "position": "RB",
+      "team": "Hou",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1917",
+      "playerName": "Marcus Mariota",
+      "position": "QB",
+      "team": "Was",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1918",
+      "playerName": "Deven Thompkins",
+      "position": "WR",
+      "team": "TB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1919",
+      "playerName": "Rakim Jarrett",
+      "position": "WR",
+      "team": "TB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1920",
+      "playerName": "Gary Brightwell",
+      "position": "RB",
+      "team": "NYG",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1921",
+      "playerName": "Tyrod Taylor",
+      "position": "QB",
+      "team": "NYJ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1922",
+      "playerName": "Brandon Bolden",
+      "position": "RB",
+      "team": "LV",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1923",
+      "playerName": "Ameer Abdullah",
+      "position": "RB",
+      "team": "LV",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1924",
+      "playerName": "Carson Wentz",
+      "position": "QB",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1925",
+      "playerName": "Patrick Ricard",
+      "position": "RB",
+      "team": "Bal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1926",
+      "playerName": "DeAndre Carter",
+      "position": "WR",
+      "team": "LV",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1927",
+      "playerName": "Alec Ingold",
+      "position": "RB",
+      "team": "Mia",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1928",
+      "playerName": "Ihmir Smith-Marsette",
+      "position": "WR",
+      "team": "Car",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1929",
+      "playerName": "Patrick Taylor",
+      "position": "RB",
+      "team": "SF",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1930",
+      "playerName": "Tim Jones",
+      "position": "WR",
+      "team": "Jax",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1931",
+      "playerName": "Raheem Blackshear",
+      "position": "RB",
+      "team": "Car",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1932",
+      "playerName": "Tylan Wallace",
+      "position": "WR",
+      "team": "Bal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1933",
+      "playerName": "Bailey Zappe",
+      "position": "QB",
+      "team": "NE",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1934",
+      "playerName": "Velus Jones Jr.",
+      "position": "WR",
+      "team": "Chi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1935",
+      "playerName": "Keaontay Ingram",
+      "position": "RB",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1936",
+      "playerName": "Andy Dalton",
+      "position": "QB",
+      "team": "Car",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1937",
+      "playerName": "D'Ernest Johnson",
+      "position": "RB",
+      "team": "Jax",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1938",
+      "playerName": "Sean Tucker",
+      "position": "RB",
+      "team": "TB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1939",
+      "playerName": "Jacoby Brissett",
+      "position": "QB",
+      "team": "NE",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1940",
+      "playerName": "Hunter Luepke",
+      "position": "RB",
+      "team": "Dal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1941",
+      "playerName": "Boston Scott",
+      "position": "RB",
+      "team": "Phi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1942",
+      "playerName": "Mike Boone",
+      "position": "RB",
+      "team": "Car",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1943",
+      "playerName": "Colton Dowell",
+      "position": "WR",
+      "team": "Ten",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1944",
+      "playerName": "Austin Trammell",
+      "position": "WR",
+      "team": "LAR",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1945",
+      "playerName": "Mason Kinsey",
+      "position": "WR",
+      "team": "Ten",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1946",
+      "playerName": "Eric Gray",
+      "position": "RB",
+      "team": "NYG",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1947",
+      "playerName": "Drew Lock",
+      "position": "QB",
+      "team": "NYG",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1948",
+      "playerName": "Dare Ogunbowale",
+      "position": "RB",
+      "team": "Hou",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1949",
+      "playerName": "Zach Pascal",
+      "position": "WR",
+      "team": "Ari",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1950",
+      "playerName": "Irvin Charles",
+      "position": "WR",
+      "team": "NYJ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1951",
+      "playerName": "Alex Armah",
+      "position": "RB",
+      "team": "Was",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1952",
+      "playerName": "Zach Evans",
+      "position": "RB",
+      "team": "LAR",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1953",
+      "playerName": "C.J. Ham",
+      "position": "RB",
+      "team": "Min",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1954",
+      "playerName": "Ke'Shawn Vaughn",
+      "position": "RB",
+      "team": "NE",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1955",
+      "playerName": "Miles Boykin",
+      "position": "WR",
+      "team": "NYG",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1956",
+      "playerName": "Sam Ehlinger",
+      "position": "QB",
+      "team": "Ind",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1957",
+      "playerName": "Britain Covey",
+      "position": "WR",
+      "team": "Phi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1958",
+      "playerName": "Dee Eskridge",
+      "position": "WR",
+      "team": "Sea",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1959",
+      "playerName": "Gunner Olszewski",
+      "position": "WR",
+      "team": "NYG",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1960",
+      "playerName": "Trayveon Williams",
+      "position": "RB",
+      "team": "Cin",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1961",
+      "playerName": "DeeJay Dallas",
+      "position": "RB",
+      "team": "Ari",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1962",
+      "playerName": "DJ Turner",
+      "position": "WR",
+      "team": "LV",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1963",
+      "playerName": "Reggie Gilliam",
+      "position": "RB",
+      "team": "Buf",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1964",
+      "playerName": "Montrell Washington",
+      "position": "WR",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1965",
+      "playerName": "James Proche",
+      "position": "WR",
+      "team": "Cle",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1966",
+      "playerName": "Travis Homer",
+      "position": "RB",
+      "team": "Chi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1967",
+      "playerName": "Trent Taylor",
+      "position": "WR",
+      "team": "SF",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1968",
+      "playerName": "Jake Fromm",
+      "position": "QB",
+      "team": "Was",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1969",
+      "playerName": "E.J. Perry",
+      "position": "QB",
+      "team": "Jax",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1970",
+      "playerName": "Max Duggan",
+      "position": "QB",
+      "team": "LAC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1971",
+      "playerName": "Will Grier",
+      "position": "QB",
+      "team": "Phi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1972",
+      "playerName": "Trey Lance",
+      "position": "QB",
+      "team": "Dal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1973",
+      "playerName": "Drew Plitt",
+      "position": "QB",
+      "team": "Cin",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1974",
+      "playerName": "Hendon Hooker",
+      "position": "QB",
+      "team": "Det",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1975",
+      "playerName": "Alex McGough",
+      "position": "QB",
+      "team": "GB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1976",
+      "playerName": "Ben DiNucci",
+      "position": "QB",
+      "team": "Den",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1977",
+      "playerName": "Malik Cunningham",
+      "position": "QB",
+      "team": "Bal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1978",
+      "playerName": "Chris Oladokun",
+      "position": "QB",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1979",
+      "playerName": "Tanner McKee",
+      "position": "QB",
+      "team": "Phi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1980",
+      "playerName": "Kellen Mond",
+      "position": "QB",
+      "team": "Ind",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1981",
+      "playerName": "Nathan Rourke",
+      "position": "QB",
+      "team": "NE",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1982",
+      "playerName": "Stetson Bennett",
+      "position": "QB",
+      "team": "LAR",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1983",
+      "playerName": "Jake Haener",
+      "position": "QB",
+      "team": "NO",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1984",
+      "playerName": "Sean Clifford",
+      "position": "QB",
+      "team": "GB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1985",
+      "playerName": "Brandon Allen",
+      "position": "QB",
+      "team": "SF",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1986",
+      "playerName": "Tim Boyle",
+      "position": "QB",
+      "team": "Hou",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1987",
+      "playerName": "John Wolford",
+      "position": "QB",
+      "team": "TB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1988",
+      "playerName": "Matt Barkley",
+      "position": "QB",
+      "team": "Jax",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1989",
+      "playerName": "Kyle Trask",
+      "position": "QB",
+      "team": "TB",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1990",
+      "playerName": "Jaren Hall",
+      "position": "QB",
+      "team": "Min",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1991",
+      "playerName": "Ian Book",
+      "position": "QB",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1992",
+      "playerName": "Jarrett Stidham",
+      "position": "QB",
+      "team": "Den",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1993",
+      "playerName": "Dresser Winn",
+      "position": "QB",
+      "team": "LAR",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1994",
+      "playerName": "Shane Buechele",
+      "position": "QB",
+      "team": "Buf",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1995",
+      "playerName": "Nate Sudfeld",
+      "position": "QB",
+      "team": "Det",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1996",
+      "playerName": "Nathan Peterman",
+      "position": "QB",
+      "team": "NO",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1997",
+      "playerName": "Case Keenum",
+      "position": "QB",
+      "team": "Hou",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1998",
+      "playerName": "Blaine Gabbert",
+      "position": "QB",
+      "team": "KC",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "1999",
+      "playerName": "Anthony Brown Jr.",
+      "position": "QB",
+      "team": "LV",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "2000",
+      "playerName": "Josh Johnson",
+      "position": "QB",
+      "team": "Bal",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "2001",
+      "playerName": "Jacob Eason",
+      "position": "QB",
+      "team": "NYG",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "2002",
+      "playerName": "Logan Woodside",
+      "position": "QB",
+      "team": "Atl",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "2003",
+      "playerName": "Michael Burton",
+      "position": "RB",
+      "team": "Den",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "2004",
+      "playerName": "Khari Blasingame",
+      "position": "RB",
+      "team": "Chi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "2005",
+      "playerName": "Keith Smith",
+      "position": "RB",
+      "team": "Atl",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "2006",
+      "playerName": "Jakob Johnson",
+      "position": "RB",
+      "team": "LV",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "2007",
+      "playerName": "Adam Prentice",
+      "position": "RB",
+      "team": "NO",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "2008",
+      "playerName": "Kene Nwangwu",
+      "position": "RB",
+      "team": "Min",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "2009",
+      "playerName": "Brett Rypien",
+      "position": "QB",
+      "team": "Chi",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "2010",
+      "playerName": "Godwin Igwebuike",
+      "position": "RB",
+      "team": "Pit",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "2011",
+      "playerName": "Trevor Siemian",
+      "position": "QB",
+      "team": "NYJ",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "2012",
+      "playerName": "Malik Willis",
+      "position": "QB",
+      "team": "Ten",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "2013",
+      "playerName": "Tyler Huntley",
+      "position": "QB",
+      "team": "Cle",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "2014",
+      "playerName": "Skylar Thompson",
+      "position": "QB",
+      "team": "Mia",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "2015",
+      "playerName": "Jeff Driskel",
+      "position": "QB",
+      "team": "Was",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "2016",
+      "playerName": "Davis Mills",
+      "position": "QB",
+      "team": "Hou",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "2017",
+      "playerName": "P.J. Walker",
+      "position": "QB",
+      "team": "Cle",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "2018",
+      "playerName": "Dorian Thompson-Robinson",
+      "position": "QB",
+      "team": "Cle",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "2019",
+      "playerName": "Jameis Winston",
+      "position": "QB",
+      "team": "Cle",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "2020",
+      "playerName": "Mike White",
+      "position": "QB",
+      "team": "Mia",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
+      "rank": "2021",
+      "playerName": "Clayton Tune",
+      "position": "QB",
+      "team": "Ari",
+      "adp": "-",
+      "lastSevenDaysADP": "-"
+    },
+    {
       "rank": "2022",
       "playerName": "C.J. Beathard",
       "position": "QB",

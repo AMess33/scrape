@@ -17,7 +17,9 @@ const url = "https://fantasy.espn.com/football/livedraftresults";
   });
   const page = await browser.newPage();
   await page.goto(url);
-
+  let players = new Array();
+  // global player name variable to check if player name has changed
+  let firstplayer = players[0].playerName;
   let isBtnDisabled = false;
   while (!isBtnDisabled) {
     await page.waitForSelector(
@@ -26,7 +28,7 @@ const url = "https://fantasy.espn.com/football/livedraftresults";
     );
 
     const playerRows = await page.$$(".Table__TBODY > tr");
-    let players = new Array();
+
     for (const playerData of playerRows) {
       let rank: any = "Null";
       let playerName: any = "Null";
@@ -142,4 +144,3 @@ const url = "https://fantasy.espn.com/football/livedraftresults";
 })();
 
 // webpage does not load fast enough once next page button is hit, need to slow down the process and give it time to load/read
-// json file has never exceeded 50 entries, not sure why, it usually shows the 2nd page, players 51-100
