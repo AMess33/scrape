@@ -23,11 +23,12 @@ const url =
   await page.goto(url);
 
   let isBtnDisabled = false;
+  let players = new Array();
+
   while (!isBtnDisabled) {
     await page.waitForSelector("td:nth-child(2) > div", { timeout: 10000 });
 
     const playerRows = await page.$$("table > tbody > tr");
-    let players = new Array();
     for (const playerData of playerRows) {
       let rank: any = "Null";
       let playerName: any = "Null";
@@ -98,15 +99,6 @@ const url =
         });
       }
     }
-    fs.writeFileSync(
-      `${currentDate} yahooADP.json`,
-      JSON.stringify({
-        players,
-      }),
-      (err) => {
-        if (err) throw err;
-      }
-    );
 
     await page.waitForSelector(
       "xpath/html/body/div[1]/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/section/div/div/div[2]/section/div[2]/div/div[2]/div/button[2]",
@@ -133,5 +125,15 @@ const url =
       ]);
     }
   }
+  fs.writeFileSync(
+    `${currentDate} yahooADP.json`,
+    JSON.stringify({
+      players,
+    }),
+    (err: any) => {
+      if (err) throw err;
+    }
+  );
+
   await browser.close();
 })();

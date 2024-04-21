@@ -19,7 +19,6 @@ const url = "https://fantasy.espn.com/football/livedraftresults";
   await page.goto(url);
   let players = new Array();
   // global player name variable to check if player name has changed
-  let firstplayer = players[0].playerName;
   let isBtnDisabled = false;
   while (!isBtnDisabled) {
     await page.waitForSelector(

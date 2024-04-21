@@ -1,5 +1,3 @@
-// WORKING AS INTENDED
-// only need to set up DB posts instead of file creations
 const puppeteer = require("puppeteer");
 const fs = require("fs");
 import { Browser } from "puppeteer";

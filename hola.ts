@@ -1,9 +1,10 @@
 const puppeteer = require("puppeteer");
 
 // call scrape function inside launch browser function based on next page button status
-
+let firstPlayer = "";
 async function scrapePage(page) {
   await page.waitForSelector(".Table__TBODY > tr", { timeout: 10000 });
+
   const playerRows = await page.$$(".Table__TBODY > tr");
 
   if (playerRows.length > 0) {
@@ -49,7 +50,7 @@ async function scrapePage(page) {
         player
       );
 
-      console.log(player);
+      console.log(player.value);
     }
   } else {
     console.log("No players found on the page.");
@@ -65,15 +66,15 @@ async function scrapePage(page) {
 
   while (!lastPageReached) {
     const nextPageLink = await page.$("Button.Pagination__Button--next");
-
+    // let currentPlayer = await page.$eval(
+    //   "td:nth-child(2) > div > div > div.jsx-1811044066.player-column_info.flex.flex-column > div > div.jsx-1811044066.player-column__athlete.flex > span > a"
+    // );
     if (!nextPageLink) {
       console.log("Last page reached.");
       lastPageReached = true;
     } else {
       await nextPageLink.click();
-      await page.waitForNavigation();
-      const URL = page.url();
-      console.log(URL);
+      // await page.waitForNavigation(firstPlayer !== currentPlayer);
       await scrapePage(page);
     }
   }

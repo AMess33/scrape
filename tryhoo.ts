@@ -130,7 +130,7 @@ const url =
     JSON.stringify({
       players,
     }),
-    (err) => {
+    (err: any) => {
       if (err) throw err;
     }
   );
