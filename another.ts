@@ -43,8 +43,6 @@ const ESPN_ADP = async (tablePage: { name: string; selector: string }) => {
 
   await page.waitForSelector(".Pagination__Button--next", { timeout: 10000 });
   await page.click(`${tablePage.selector}`);
-  // await page.waitForNavigation({ waitUntil: "networkidle0" });
-  console.log(`${tablePage.selector}`);
 
   await page.waitForSelector("td:nth-child(1) > div", { timeout: 10000 });
 
@@ -87,3 +85,5 @@ const ESPN_ADP = async (tablePage: { name: string; selector: string }) => {
 };
 
 tablePage.forEach((tablePage) => ESPN_ADP(tablePage));
+
+// working as intended, dont want to create file for each table page, need to combine them
