@@ -45,6 +45,7 @@ const GET_NFFC_ADP = async (draft_type: { lable: string; value: string }) => {
   await page.goto(url);
 
   // inject date range values
+  // await page.type("#from_date", pastMonth);
   await page.type("#from_date", twoWeeks);
   await page.type("#to_date", inputDate);
 
