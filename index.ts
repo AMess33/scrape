@@ -17,14 +17,44 @@ const url = "https://fantasy.espn.com/football/livedraftresults";
   });
   const page = await browser.newPage();
   await page.goto(url);
+
   let players = new Array();
-  // global player name variable to check if player name has changed
   let isBtnDisabled = false;
+  let firstPlayer = "";
+
+  await page.waitForSelector("tbody > tr");
+
   while (!isBtnDisabled) {
-    await page.waitForSelector(
-      "td:nth-child(2) > div > div > div.jsx-1811044066.player-column_info.flex.flex-column > div > div.jsx-1811044066.player-column__athlete.flex > span > a",
-      { timeout: 10000 }
+    console.log("*** RUNNING SCRAPE ***");
+    console.log({ firstPlayer });
+
+    await page.waitForFunction(
+      (p) => {
+        const player = document.querySelector<HTMLDivElement>(
+          "tbody > tr > td:nth-child(2) > div"
+        )?.title;
+
+        if (!p || player !== p) {
+          console.log("*** NEW PAGE, SETTING PLAYER ***");
+          return true;
+        }
+
+        console.log("*** RETURNING FALSE ***");
+        return false;
+      },
+      { polling: 5000, timeout: 60000 },
+      firstPlayer
     );
+
+    const first = await page.evaluate(() => {
+      return document.querySelector<HTMLElement>(
+        "tbody > tr > td:nth-child(2) > div"
+      )?.title;
+    });
+
+    firstPlayer = first ?? "";
+
+    console.log("*** GETTING PLAYER ROWS ***");
 
     const playerRows = await page.$$(".Table__TBODY > tr");
 
@@ -115,17 +145,10 @@ const url = "https://fantasy.espn.com/football/livedraftresults";
           auctionValue,
           auctionChange,
         });
-        fs.writeFile(
-          "espnADP.json",
-          JSON.stringify({
-            players,
-          }),
-          (err) => {
-            if (err) throw err;
-          }
-        );
       }
     }
+
+    console.log("*** FINDING NEXT BTN ***");
 
     await page.waitForSelector(".Pagination__Button--next", {
       visible: true,
@@ -135,10 +158,24 @@ const url = "https://fantasy.espn.com/football/livedraftresults";
       (await page.$(".Pagination__Button--next.Button--disabled")) !== null;
 
     isBtnDisabled = is_disabled;
+    console.log("*** DISABLED:", is_disabled, "***");
+
     if (!is_disabled) {
-      await Promise.all([page.click(".Pagination__Button--next")]);
+      console.log("*** CLICKING NEXT ***");
+      await page.click(".Pagination__Button--next");
     }
   }
+
+  fs.writeFile(
+    "espnADP.json",
+    JSON.stringify({
+      players,
+    }),
+    (err) => {
+      if (err) throw err;
+    }
+  );
+
   await browser.close();
 })();
 
