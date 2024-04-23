@@ -1,3 +1,4 @@
+require("dotenv").config();
 const puppeteer = require("puppeteer-extra");
 const StealthPlugin = require("puppeteer-extra-plugin-stealth");
 const fs = require("fs");
@@ -6,6 +7,8 @@ import { Browser } from "puppeteer";
 puppeteer.use(StealthPlugin());
 
 const { executablePath } = require("puppeteer");
+const username = process.env.USERNAME;
+const password = process.env.PASSWORD;
 // login page for cbs fantasy football
 const url =
   "https://www.cbssports.com/user/login/?redirectUrl=https%3A%2F%2Fwww.cbssports.com%2Ffantasy%2Ffootball%2F";
@@ -20,18 +23,20 @@ const CBS_League_Settings = async () => {
   await page.goto(url, { waitUntil: "domcontentloaded" });
 
   // enter login credentials and click login
-  await page.type(
-    "xpath/html/body/div[2]/div[4]/div/main/div/div[1]/form/div[1]/input",
-    "username",
-    { delay: 50 }
-  );
-  await page.type(
-    "xpath/html/body/div[2]/div[4]/div/main/div/div[1]/form/div[2]/input",
-    "password123123123123"
-  );
+  const enterCredentials = await Promise.all([
+    await page.type(
+      "xpath/html/body/div[2]/div[4]/div/main/div/div[1]/form/div[1]/input",
+      `${username}`
+    ),
+    await page.type(
+      "xpath/html/body/div[2]/div[4]/div/main/div/div[1]/form/div[2]/input",
+      `${password}`
+    ),
+  ]);
+
   // click login button after entering credentials
   await page.click("#app_login > div:nth-child(10) > button");
-  // await browser.close();
+  await browser.close();
 };
 
 CBS_League_Settings();
