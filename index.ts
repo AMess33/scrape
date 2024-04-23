@@ -39,7 +39,21 @@ const CBS_League_Settings = async () => {
   // click login button after entering credentials
   await page.click("#app_login > div:nth-child(10) > button");
 
-  // click on MyTeams button
+  // // click on MyTeams button
+  await page.waitForSelector(
+    "xpath/html/body/div[2]/header/div[2]/div/div[3]/ul/li[5]/span"
+  );
+
+  // const [res] = await Promise.all([
+  //   page.waitForNavigation({ waitUntil: "domcontentloaded" }),
+  //   page.click(
+  //     "/html/body/div[2]/header/div[2]/div/div[3]/ul/li[5]/div/div[1]/div/div[1]/div[2]/table[2]/tbody/tr/td[2]/p[1]/a"
+  //   ),
+  // ]);
+
+  // await page.hover(
+  //   "xpath/html/body/div[2]/header/div[2]/div/div[3]/ul/li[5]/div"
+  // );
 
   // click on league
 
