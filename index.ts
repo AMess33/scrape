@@ -6,10 +6,11 @@ import { Browser } from "puppeteer";
 puppeteer.use(StealthPlugin());
 
 const { executablePath } = require("puppeteer");
+// login page for cbs fantasy football
+const url =
+  "https://www.cbssports.com/user/login/?redirectUrl=https%3A%2F%2Fwww.cbssports.com%2Ffantasy%2Ffootball%2F";
 
-const url = "https://www.cbssports.com/fantasy/football/";
-
-(async () => {
+const CBS_League_Settings = async () => {
   const browser: Browser = await puppeteer.launch({
     headless: false,
     defaultViewport: false,
@@ -17,17 +18,23 @@ const url = "https://www.cbssports.com/fantasy/football/";
   });
   const page = await browser.newPage();
   await page.goto(url, { waitUntil: "domcontentloaded" });
-  // navigate to login page
-  await page.click(
-    "xpath/html/body/div[2]/header/div[2]/div/div[3]/ul/li[4]/a/span"
-  );
-  // await page.waitForNavigation({ waitUntil: "domcontentloaded" });
+
   // enter login credentials and click login
-  await page.type("#app_login_username", "username");
-  await page.type("#app_login_password", "password");
-  // await page.click("#app_login > div:nth-child(10) > button");
+  await page.type(
+    "xpath/html/body/div[2]/div[4]/div/main/div/div[1]/form/div[1]/input",
+    "username",
+    { delay: 50 }
+  );
+  await page.type(
+    "xpath/html/body/div[2]/div[4]/div/main/div/div[1]/form/div[2]/input",
+    "password123123123123"
+  );
+  // click login button after entering credentials
+  await page.click("#app_login > div:nth-child(10) > button");
   // await browser.close();
-})();
+};
+
+CBS_League_Settings();
 
 // scrape code from chrome extension
 
