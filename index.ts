@@ -20,6 +20,9 @@ const CBS_League_Settings = async () => {
     executablePath: executablePath(),
   });
   const page = await browser.newPage();
+  await page.setUserAgent(
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
+  );
   await page.goto(url, { waitUntil: "domcontentloaded" });
 
   // enter login credentials and click login
@@ -33,10 +36,16 @@ const CBS_League_Settings = async () => {
       `${password}`
     ),
   ]);
-
   // click login button after entering credentials
   await page.click("#app_login > div:nth-child(10) > button");
-  await browser.close();
+
+  // click on MyTeams button
+
+  // click on league
+
+  // click on
+
+  // await browser.close();
 };
 
 CBS_League_Settings();
