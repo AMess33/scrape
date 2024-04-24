@@ -11,7 +11,7 @@ const username = process.env.USERNAME;
 const password = process.env.PASSWORD;
 // login page for cbs fantasy football
 const url =
-  "https://www.cbssports.com/user/login/?redirectUrl=https%3A%2F%2Fwww.cbssports.com%2Ffantasy%2Ffootball%2F";
+  "https://www.cbssports.com/user/login/?redirectUrl=https%3A%2F%2Fwww.cbssports.com%2Ffantasy%2Fgames%2Fmy-teams%2F";
 
 const CBS_League_Settings = async () => {
   const browser: Browser = await puppeteer.launch({
@@ -26,7 +26,7 @@ const CBS_League_Settings = async () => {
   await page.goto(url, { waitUntil: "domcontentloaded" });
 
   // enter login credentials and click login
-  const enterCredentials = await Promise.all([
+  await Promise.all([
     await page.type(
       "xpath/html/body/div[2]/div[4]/div/main/div/div[1]/form/div[1]/input",
       `${username}`
@@ -37,19 +37,22 @@ const CBS_League_Settings = async () => {
     ),
   ]);
   // click login button after entering credentials
+  // await Promise.all([
+  //   await page.click("#app_login > div:nth-child(10) > button"),
+  //   await page.waitForNavigation(),
+  // ]);
   await page.click("#app_login > div:nth-child(10) > button");
 
   // // click on MyTeams button
-  await page.waitForSelector(
-    "xpath/html/body/div[2]/header/div[2]/div/div[3]/ul/li[5]/span"
-  );
+  // await page.waitForSelector(
+  //   "#cbs-site-nav > div > nav > ul > li:nth-child(1) > a"
+  // );
 
-  // const [res] = await Promise.all([
-  //   page.waitForNavigation({ waitUntil: "domcontentloaded" }),
-  //   page.click(
-  //     "/html/body/div[2]/header/div[2]/div/div[3]/ul/li[5]/div/div[1]/div/div[1]/div[2]/table[2]/tbody/tr/td[2]/p[1]/a"
-  //   ),
+  // await Promise.all([
+  //   await page.click("#cbs-site-nav > div > nav > ul > li:nth-child(1) > a"),
+  //   await page.waitForNavigation(),
   // ]);
+  // await page.click("#cbs-site-nav > div > nav > ul > li:nth-child(1) > a");
 
   // await page.hover(
   //   "xpath/html/body/div[2]/header/div[2]/div/div[3]/ul/li[5]/div"
