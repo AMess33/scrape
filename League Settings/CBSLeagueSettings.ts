@@ -59,6 +59,9 @@ const CBS_League_Settings = async () => {
 
   // scrape league settings from league details page
 
+  // go to owners page
+  // scrape owner information
+
   // await browser.close();
 };
 

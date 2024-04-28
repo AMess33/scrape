@@ -25,11 +25,37 @@ const ESPN_League_Settings = async () => {
   );
   await page.goto(url, { waitUntil: "domcontentloaded" });
 
-  // click on user icon
-  await page.type(
-    "##did-ui-view > div > section > section > form > section > div:nth-child(2) > div > label > span.input-wrapper > input",
-    "mess33_09"
+  // login form is inside an IFrame
+  const frame = page
+    .frames()
+    .find((frame) => frame.name() === "#disneyid-iframe");
+  const text = await frame.$eval(
+    "#disneyid-iframe",
+    (element) => element.textContent
   );
+  console.log(text);
+
+  await page.waitForSelector(
+    "#did-ui-view > div > section > section > form > section > div:nth-child(1) > div > label > span.input-wrapper > input"
+  );
+  // await page.click("text/Username or Email Address");
+  await page.type(
+    "#did-ui-view > div > section > section > form > section > div:nth-child(1) > div > label > span.input-wrapper > input",
+    `${username}`
+  );
+  // click on user icon
+  // await page.waitForSelector("#global-user-trigger");
+  // await page.hover("#global-user-trigger");
+
+  // await page.waitForSelector(
+  //   "xpath/html/body/div[5]/div[2]/header/div[2]/ul/li[2]/div/div/ul[1]/li[8]/a"
+  // );
+  // await page.click(
+  //   "xpath/html/body/div[5]/div[2]/header/div[2]/ul/li[2]/div/div/ul[1]/li[8]/a"
+  // );
+  // wait for login modal, click on sign in with username
+  // await page.waitForSelector("#LaunchLogin > a");
+  // await page.click("#LaunchLogin > a");
   // click on login (not working)
   // await page.click(
   //   "#global-viewport > div.global-user > div > ul.account-management > li:nth-child(8)"
