@@ -9,14 +9,12 @@ puppeteer.use(StealthPlugin());
 const { executablePath } = require("puppeteer");
 const username = process.env.USERNAME;
 const password = process.env.PASSWORD;
-const ypassword = process.env.PASSWORDY;
-const leagueID = "11864040";
+// const with users team name to use in site navigation
 // login page for cbs fantasy football w/ redirect to my teams webpage
-const settingsURL = `https://fantasy.nfl.com/league/${leagueID}/settings`;
-const ownersURL = `https://fantasy.nfl.com/league/${leagueID}/owners`;
+const url =
+  "https://www.cbssports.com/user/login/?redirectUrl=https%3A%2F%2Fwww.cbssports.com%2Ffantasy%2Fgames%2Fmy-teams%2F";
 
-const NFL_League_Settings = async () => {
-  // if user knows league id, go directly to league settings page/ if not, set up log in routes to league settings page
+const CBS_League_Settings = async () => {
   const browser: Browser = await puppeteer.launch({
     headless: false,
     defaultViewport: false,
@@ -26,60 +24,61 @@ const NFL_League_Settings = async () => {
   await page.setUserAgent(
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
   );
-  await page.goto(settingsURL, { waitUntil: "domcontentloaded" });
+  await page.goto(url, { waitUntil: "load" });
 
-  await page.waitForSelector(
-    "xpath/html/body/div[1]/div[3]/div/div[1]/div/div/div/div[1]/div/div/div[1]/ul"
+  // enter login credentials and click login
+  await page.type(
+    "xpath/html/body/div[2]/div[4]/div/main/div/div[1]/form/div[1]/input",
+    `${username}`
+  );
+  await page.type(
+    "xpath/html/body/div[2]/div[4]/div/main/div/div[1]/form/div[2]/input",
+    `${password}`
   );
 
+  // click login button after entering credentials
+  await page.click("#app_login > div:nth-child(10) > button");
+
+  // wait for navigation to my teams page
+  // use users team name to select correct team
+  await page.waitForSelector("text/Wild Falconcats");
+
+  await page.click("text/Wild Falconcats");
+
+  // hover over the League nav tab
+  await page.waitForSelector(
+    "#fantNavContainer > div > div > div.fantNavBar > div.fantNavFastFacts > ul > li.fantNavItem.fant-drop.selected.drop.main-nav"
+  );
+  await page.hover(
+    "#fantNavContainer > div > div > div.fantNavBar > div.fantNavFastFacts > ul > li.fantNavItem.fant-drop.selected.drop.main-nav"
+  );
+
+  // click on league details from drop down
+  await page.waitForSelector("text/League Details", { timeout: 10000 });
+  await page.click("text/League Details");
+
+  // scrape league settings from league details page
+  await page.waitForSelector(
+    "xpath/html/body/div[2]/div[6]/div[1]/div/div[2]/div[2]/div[1]/div[1]/div[2]/div/div/div/table/tbody/tr[1]/th[1]"
+  );
   const rulesData = await page.evaluate(() => {
-    const ruleRows = Array.from(document.querySelectorAll("ul.formItems > li"));
+    const ruleRows = Array.from(
+      document.querySelectorAll("tbody > tr:nth-child(2)")
+    );
 
     const data = ruleRows.map((rule: any) => ({
-      rule: rule.querySelector("em").innerText,
-      setting: rule.querySelector("div").innerText,
+      rule: rule.querySelector("td:nth-child(1)").innerText,
+      setting: rule.querySelector("td:nth-child(2)").innerText,
     }));
     return data;
   });
   console.log(rulesData);
-  fs.writeFileSync(
-    "NFLLeagueRules.json",
-    JSON.stringify(rulesData),
-    (err: any) => {
-      if (err) throw err;
-    }
-  );
-  await page.goto(ownersURL, { waitUntil: "domcontentloaded" });
+  // unable to read null value of inner text
 
-  // scrape owners info table
-  await page.waitForSelector("div.tableWrap > table > tbody > tr");
+  // go to owners page
+  // scrape owner information
 
-  const ownerData = await page.evaluate(() => {
-    const ownerRows = Array.from(
-      document.querySelectorAll("div.tableWrap > table > tbody > tr")
-    );
-
-    const data = ownerRows.map((owner: any) => ({
-      team: owner.querySelector("td:nth-child(1) > div > a:nth-child(2)")
-        .innerText,
-      manager: owner.querySelector("td:nth-child(2) > ul > li > span")
-        .innerText,
-      waiver: owner.querySelector("td:nth-child(4)").innerText,
-      moves: owner.querySelector("td:nth-child(5)").innerText,
-      trades: owner.querySelector("td:nth-child(6)").innerText,
-      lastActivity: owner.querySelector("td:nth-child(7)").innerText,
-    }));
-    return data;
-  });
-  console.log(ownerData);
-  fs.writeFileSync(
-    "NFLLeagueOwners.json",
-    JSON.stringify(ownerData),
-    (err: any) => {
-      if (err) throw err;
-    }
-  );
-  await browser.close();
+  // await browser.close();
 };
 
-NFL_League_Settings();
+CBS_League_Settings();

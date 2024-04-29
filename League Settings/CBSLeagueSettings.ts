@@ -58,6 +58,22 @@ const CBS_League_Settings = async () => {
   await page.click("text/League Details");
 
   // scrape league settings from league details page
+  await page.waitForSelector(
+    "xpath/html/body/div[2]/div[6]/div[1]/div/div[2]/div[2]/div[1]/div[1]/div[2]/div/div/div/table/tbody/tr[1]/th[1]"
+  );
+  const rulesData = await page.evaluate(() => {
+    const ruleRows = Array.from(
+      document.querySelectorAll("tbody > tr:nth-child(2)")
+    );
+
+    const data = ruleRows.map((rule: any) => ({
+      rule: rule.querySelector("td:nth-child(1)").innerText,
+      setting: rule.querySelector("td:nth-child(2)").innerText,
+    }));
+    return data;
+  });
+  console.log(rulesData);
+  // unable to read null value of inner text
 
   // go to owners page
   // scrape owner information
