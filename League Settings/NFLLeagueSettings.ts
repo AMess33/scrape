@@ -49,13 +49,37 @@ const NFL_League_Settings = async () => {
       if (err) throw err;
     }
   );
-  await page.waitForNavigation({ waitUntil: "domcontentloaded" });
   await page.goto(ownersURL, { waitUntil: "domcontentloaded" });
-  await page.waitForNavigation({ waitUntil: "domcontentloaded" });
 
   // scrape owners info table
+  await page.waitForSelector("div.tableWrap > table > tbody > tr");
 
-  // await browser.close();
+  const ownerData = await page.evaluate(() => {
+    const ownerRows = Array.from(
+      document.querySelectorAll("div.tableWrap > table > tbody > tr")
+    );
+
+    const data = ownerRows.map((owner: any) => ({
+      team: owner.querySelector("td:nth-child(1) > div > a:nth-child(2)")
+        .innerText,
+      manager: owner.querySelector("td:nth-child(2) > ul > li > span")
+        .innerText,
+      waiver: owner.querySelector("td:nth-child(4)").innerText,
+      moves: owner.querySelector("td:nth-child(5)").innerText,
+      trades: owner.querySelector("td:nth-child(6)").innerText,
+      lastActivity: owner.querySelector("td:nth-child(7)").innerText,
+    }));
+    return data;
+  });
+  console.log(ownerData);
+  fs.writeFileSync(
+    "NFLLeagueOwners.json",
+    JSON.stringify(ownerData),
+    (err: any) => {
+      if (err) throw err;
+    }
+  );
+  await browser.close();
 };
 
 NFL_League_Settings();
