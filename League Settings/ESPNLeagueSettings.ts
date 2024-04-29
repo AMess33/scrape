@@ -2,14 +2,14 @@ require("dotenv").config();
 const puppeteer = require("puppeteer-extra");
 const StealthPlugin = require("puppeteer-extra-plugin-stealth");
 const fs = require("fs");
-import { Browser } from "puppeteer";
+import { Browser, Frame } from "puppeteer";
 
 puppeteer.use(StealthPlugin());
 
 const { executablePath } = require("puppeteer");
-const username = process.env.USERNAME;
-const password = process.env.PASSWORD;
-const ypassword = process.env.PASSWORDY;
+const username = process.env.ESPNUSERNAME;
+const password = process.env.ESPNPASSWORD;
+// const ypassword = process.env.PASSWORDY;
 // login page for cbs fantasy football w/ redirect to my teams webpage
 const url = "https://www.espn.com/login";
 
@@ -21,27 +21,48 @@ const ESPN_League_Settings = async () => {
   });
   const page = await browser.newPage();
   await page.setUserAgent(
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
   );
-  await page.goto(url, { waitUntil: "domcontentloaded" });
+  await page.goto(url, { waitUntil: "load" });
 
   // login form is inside an IFrame
-  const frame = page
-    .frames()
-    .find((frame) => frame.name() === "#disneyid-iframe");
-  const text = await frame.$eval(
-    "#disneyid-iframe",
-    (element) => element.textContent
-  );
-  console.log(text);
+  let frame: Frame | null = null;
 
-  await page.waitForSelector(
+  for (const f of page.frames()) {
+    const element = await f.frameElement();
+    const id = await element?.evaluate((f) => f.id);
+    if (id === "disneyid-iframe") {
+      frame = f;
+      break;
+    }
+  }
+  console.log(frame);
+
+  await frame?.waitForSelector(
     "#did-ui-view > div > section > section > form > section > div:nth-child(1) > div > label > span.input-wrapper > input"
   );
-  // await page.click("text/Username or Email Address");
-  await page.type(
+  // await frame?.click("text/Username or Email Address");
+  await frame?.type(
     "#did-ui-view > div > section > section > form > section > div:nth-child(1) > div > label > span.input-wrapper > input",
     `${username}`
+  );
+
+  await frame?.type(
+    "#did-ui-view > div > section > section > form > section > div:nth-child(2) > div > label > span.input-wrapper > input",
+    `${password}`
+  );
+
+  await frame?.click(
+    "#did-ui-view > div > section > section > form > section > div.btn-group.touch-print-btn-group-wrapper > button"
+  );
+
+  await page.waitForNavigation({ waitUntil: "domcontentloaded" });
+
+  await page.hover(
+    "#global-nav > ul > li.pillar.logo.fantasy.fantasy > a > span > span.link-text"
+  );
+  await page.click(
+    "#submenu-pillarlogofantasyfantasy > ul:nth-child(1) > li:nth-child(8) > a"
   );
   // click on user icon
   // await page.waitForSelector("#global-user-trigger");
