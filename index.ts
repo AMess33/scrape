@@ -9,14 +9,13 @@ puppeteer.use(StealthPlugin());
 const { executablePath } = require("puppeteer");
 const username = process.env.USERNAME;
 const password = process.env.PASSWORD;
-// yahoo league id will give unique url for settings and owners page, league must be set to 'publicly viewable'
-const leagueID = "393";
+const leagueName = "Wisconsin Fantasy Football League";
 // const with users team name to use in site navigation
 // login page for cbs fantasy football w/ redirect to my teams webpage
-const settingsURL = `https://football.fantasysports.yahoo.com/f1/${leagueID}/settings`;
-const ownersURL = `https://football.fantasysports.yahoo.com/f1/${leagueID}/teams`;
+const url =
+  "https://www.cbssports.com/user/login/?redirectUrl=https%3A%2F%2Fwww.cbssports.com%2Ffantasy%2Fgames%2Fmy-teams%2F";
 
-const Yahoo_League_Settings = async () => {
+const CBS_League_Settings = async () => {
   const browser: Browser = await puppeteer.launch({
     headless: false,
     defaultViewport: false,
@@ -26,66 +25,83 @@ const Yahoo_League_Settings = async () => {
   await page.setUserAgent(
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
   );
-  await page.goto(settingsURL, { waitUntil: "load" });
+  await page.goto(url, { waitUntil: "load" });
+
+  // enter login credentials and click login
+  await page.type(
+    "xpath/html/body/div[2]/div[4]/div/main/div/div[1]/form/div[1]/input",
+    `${username}`
+  );
+  await page.type(
+    "xpath/html/body/div[2]/div[4]/div/main/div/div[1]/form/div[2]/input",
+    `${password}`
+  );
+
+  // click login button after entering credentials
+  await page.click("#app_login > div:nth-child(10) > button");
+
+  // wait for navigation to my teams page
+  // use users team name to select correct team
+  await page.waitForSelector(`text/${leagueName}`);
+
+  await page.click(`text/${leagueName}`);
+
+  // hover over the League nav tab
+  await page.waitForSelector(
+    "#fantNavContainer > div > div > div.fantNavBar > div.fantNavFastFacts > ul > li.fantNavItem.fant-drop.selected.drop.main-nav"
+  );
+  await page.hover(
+    "#fantNavContainer > div > div > div.fantNavBar > div.fantNavFastFacts > ul > li.fantNavItem.fant-drop.selected.drop.main-nav"
+  );
+
+  // click on league details from drop down
+  await page.waitForSelector("text/League Details", { timeout: 10000 });
+  await page.click("text/League Details");
 
   // scrape league settings from league details page
   await page.waitForSelector(
-    "xpath/html/body/div[1]/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/section[1]/div/div/div[3]/section[1]/div/table/thead/tr/th[1]"
+    "xpath/html/body/div[2]/div[6]/div[1]/div/div[2]/div[2]/div[1]/div[1]/div[2]/div/div/div/table/tbody/tr[1]/th[1]"
   );
-  const rulesData = await page.evaluate(() => {
-    const ruleRows = Array.from(
-      document.querySelectorAll("table > tbody > tr")
-    );
+  // const rulesData = await page.evaluate(() => {
+  //   const ruleRows = Array.from(
+  //     document.querySelectorAll("#cardConainerId > div > table > tbody")
+  //   );
 
-    const data = ruleRows.map((rule: any) => ({
-      rule: rule.querySelector("td:nth-child(1)").innerText,
-      setting: rule.querySelector("td:nth-child(2)").innerText,
-    }));
-    return data;
-  });
-  console.log(rulesData);
-  fs.writeFileSync(
-    "YahooLeagueRules.json",
-    JSON.stringify(rulesData),
-    (err: any) => {
-      if (err) throw err;
-    }
-  );
-
-  await page.goto(ownersURL, { waitUntil: "domcontentloaded" });
-
+  //   const data = ruleRows.map((rule: any) => ({
+  //     rule: rule.querySelector("tr > td:nth-child(1)").innerText,
+  //     setting: rule.querySelector("tr > td:nth-child(2)").innerText,
+  //   }));
+  //   return data;
+  // });
+  // console.log(rulesData);
+  // unable to read null value of inner text
   await page.waitForSelector(
-    "xpath/html/body/div[1]/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/section/div/div/div[3]/section/div/table/tbody/tr"
+    "#container > div:nth-child(7) > div:nth-child(2) > div > div.box-Rg.box-white > div.fantasyHeaderNav > ul > li:nth-child(2) > a"
+  );
+  await page.click(
+    "#container > div:nth-child(7) > div:nth-child(2) > div > div.box-Rg.box-white > div.fantasyHeaderNav > ul > li:nth-child(2) > a"
+  );
+  await page.waitForSelector(
+    "#container > div:nth-child(7) > div:nth-child(2) > div > div.box-Rg.box-white > table > tbody > tr:nth-child(3) > td:nth-child(1) > a"
   );
 
-  const ownerData = await page.evaluate(() => {
-    const ownerRows = Array.from(
-      document.querySelectorAll("table > tbody > tr")
+  const ownersData = await page.evaluate(() => {
+    const ownerRows = Array.from(document.querySelectorAll("tr.row1")).concat(
+      Array.from(document.querySelectorAll("tr.row2"))
     );
-    // yahoo hides manager name and email without being logged in
+
     const data = ownerRows.map((owner: any) => ({
-      team: owner.querySelector("td:nth-child(1) > a:nth-child(2)").innerText,
-      // owner: owner.querySelector("td:nth-child(2) > span > a").innerText,
-      // email: owner.querySelector("td:nth-child(3) > a").innerText,
-      budget: owner.querySelector("td:nth-child(4)").innerText,
-      priority: owner.querySelector("td:nth-child(5)").innerText,
-      moves: owner.querySelector("td:nth-child(6)").innerText,
-      trades: owner.querySelector("td:nth-child(7)").innerText,
-      active: owner.querySelector("td:nth-child(8)").innerText,
+      team: owner.querySelector("td:nth-child(1) > a").innerText,
+      manager: owner.querySelector("td:nth-child(2)").innerText,
+      email: owner.querySelector("td:nth-child(4) > a").innerText,
     }));
     return data;
   });
-  console.log(ownerData);
-
-  fs.writeFileSync(
-    "YahooLeagueOwners.json",
-    JSON.stringify(ownerData),
-    (err): any => {
-      if (err) throw err;
-    }
-  );
+  console.log(ownersData);
+  // go to owners page
+  // scrape owner information
 
   // await browser.close();
 };
 
-Yahoo_League_Settings();
+CBS_League_Settings();
