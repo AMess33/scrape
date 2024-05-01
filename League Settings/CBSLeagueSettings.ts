@@ -59,45 +59,55 @@ const CBS_League_Settings = async () => {
   await page.click("text/League Details");
 
   // scrape league settings from league details page
+  // league identity/ roster limits/ scoring system/ draft settings
   await page.waitForSelector(
     "xpath/html/body/div[2]/div[6]/div[1]/div/div[2]/div[2]/div[1]/div[1]/div[2]/div/div/div/table/tbody/tr[1]/th[1]"
   );
-  // const rulesData = await page.evaluate(() => {
-  //   const ruleRows = Array.from(
-  //     document.querySelectorAll("#cardConainerId > div > table > tbody")
-  //   );
+  const rulesData = await page.evaluate(() => {
+    const ruleRows = Array.from(
+      document.querySelectorAll(
+        "div:nth-child(2) > div:nth-child(6) > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div > div > div > table > tbody > tr.row1"
+      )
+    ).concat(
+      Array.from(
+        document.querySelectorAll(
+          "div:nth-child(2) > div:nth-child(6) > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div > div > div > table > tbody > tr.row2"
+        )
+      )
+    );
 
-  //   const data = ruleRows.map((rule: any) => ({
-  //     rule: rule.querySelector("tr > td:nth-child(1)").innerText,
-  //     setting: rule.querySelector("tr > td:nth-child(2)").innerText,
-  //   }));
-  //   return data;
-  // });
-  // console.log(rulesData);
+    const data = ruleRows.map((rule: any) => ({
+      rule: rule.querySelector("td:nth-child(1)").innerText,
+      setting: rule.querySelector("td:nth-child(2)").innerText,
+    }));
+    return data;
+  });
+  console.log(rulesData);
+  fs.writeFileSync("CBSLeagueRules.json", JSON.stringify(rulesData));
   // unable to read null value of inner text
   await page.waitForSelector(
     "#container > div:nth-child(7) > div:nth-child(2) > div > div.box-Rg.box-white > div.fantasyHeaderNav > ul > li:nth-child(2) > a"
   );
-  await page.click(
-    "#container > div:nth-child(7) > div:nth-child(2) > div > div.box-Rg.box-white > div.fantasyHeaderNav > ul > li:nth-child(2) > a"
-  );
-  await page.waitForSelector(
-    "#container > div:nth-child(7) > div:nth-child(2) > div > div.box-Rg.box-white > table > tbody > tr:nth-child(3) > td:nth-child(1) > a"
-  );
+  // await page.click(
+  //   "#container > div:nth-child(7) > div:nth-child(2) > div > div.box-Rg.box-white > div.fantasyHeaderNav > ul > li:nth-child(2) > a"
+  // );
+  // await page.waitForSelector(
+  //   "#container > div:nth-child(7) > div:nth-child(2) > div > div.box-Rg.box-white > table > tbody > tr:nth-child(3) > td:nth-child(1) > a"
+  // );
 
-  const ownersData = await page.evaluate(() => {
-    const ownerRows = Array.from(document.querySelectorAll("tr.row1")).concat(
-      Array.from(document.querySelectorAll("tr.row2"))
-    );
+  // const ownersData = await page.evaluate(() => {
+  //   const ownerRows = Array.from(document.querySelectorAll("tr.row1")).concat(
+  //     Array.from(document.querySelectorAll("tr.row2"))
+  //   );
 
-    const data = ownerRows.map((owner: any) => ({
-      team: owner.querySelector("td:nth-child(1) > a").innerText,
-      manager: owner.querySelector("td:nth-child(2)").innerText,
-      email: owner.querySelector("td:nth-child(4) > a").innerText,
-    }));
-    return data;
-  });
-  console.log(ownersData);
+  //   const data = ownerRows.map((owner: any) => ({
+  //     team: owner.querySelector("td:nth-child(1) > a").innerText,
+  //     manager: owner.querySelector("td:nth-child(2)").innerText,
+  //     email: owner.querySelector("td:nth-child(4) > a").innerText,
+  //   }));
+  //   return data;
+  // });
+  // console.log(ownersData);
   // go to owners page
   // scrape owner information
 
