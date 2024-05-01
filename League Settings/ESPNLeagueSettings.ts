@@ -51,43 +51,63 @@ const ESPN_League_Settings = async () => {
     "#did-ui-view > div > section > section > form > section > div:nth-child(2) > div > label > span.input-wrapper > input",
     `${password}`
   );
-
+  // log in
   await frame?.click(
     "#did-ui-view > div > section > section > form > section > div.btn-group.touch-print-btn-group-wrapper > button"
   );
-
+  // wait for redirect to espn.com
   await page.waitForNavigation({ waitUntil: "domcontentloaded" });
 
   await page.hover(
     "#global-nav > ul > li.pillar.logo.fantasy.fantasy > a > span > span.link-text"
   );
+  // click on fantasy football page
   await page.click(
     "#submenu-pillarlogofantasyfantasy > ul:nth-child(1) > li:nth-child(8) > a"
   );
-  // click on user icon
-  // await page.waitForSelector("#global-user-trigger");
-  // await page.hover("#global-user-trigger");
 
-  // await page.waitForSelector(
-  //   "xpath/html/body/div[5]/div[2]/header/div[2]/ul/li[2]/div/div/ul[1]/li[8]/a"
-  // );
-  // await page.click(
-  //   "xpath/html/body/div[5]/div[2]/header/div[2]/ul/li[2]/div/div/ul[1]/li[8]/a"
-  // );
-  // wait for login modal, click on sign in with username
-  // await page.waitForSelector("#LaunchLogin > a");
-  // await page.click("#LaunchLogin > a");
-  // click on login (not working)
-  // await page.click(
-  //   "#global-viewport > div.global-user > div > ul.account-management > li:nth-child(8)"
-  // );
+  // click on team based on league name
+  await page.click(
+    "#fantasy-feed-items > div.favItem.favItem--offseason > a.favItem__team > div > div.favItem__headline > div.favItem__subHead"
+  );
 
-  // wait for navigation to my teams page
+  await page.waitForNavigation({ waitUntil: "domcontentloaded" });
+  // hover on 'league' drop down
+  await page.waitForSelector("text/League");
+  await page.hover("text/League");
+  // click 'settings' in drop down menu
+  await page.waitForSelector("text/Settings");
+  await page.click("text/Settings");
 
-  // click on intended team using text selector and team name
+  await page.waitForNavigation({ waitUntil: "domcontentloaded" });
+  // scrape settings page for rules/settings
 
-  // click on league
-  // click on
+  // navigate to 'members' page
+  await page.waitForSelector("text/League");
+  await page.hover("text/League");
+  // select 'members' from league drop down menu
+  await page.waitForSelector("text/Members");
+  await page.click("text/Members");
+
+  // scrape managers page
+
+  await page.waitForSelector(
+    "table > tbody > tr:nth-child(1) > td:nth-child(3) > div > span"
+  );
+
+  const ownerData = await page.evaluate(() => {
+    const ownerRows = Array.from(
+      document.querySelectorAll("table > tbody > tr")
+    );
+
+    const data = ownerRows.map((owner: any) => ({
+      team: owner.querySelector("td:nth-child(3) > div > span").innerText,
+      division: owner.querySelector("td:nth-child(4) > div").innerText,
+      manager: owner.querySelector("td:nth-child(5) > div").innerText,
+    }));
+    return data;
+  });
+  console.log(ownerData);
 
   // await browser.close();
 };
