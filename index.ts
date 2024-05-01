@@ -80,7 +80,31 @@ const ESPN_League_Settings = async () => {
   await page.click("text/Settings");
 
   await page.waitForNavigation({ waitUntil: "domcontentloaded" });
-  // scrape settings page for rules/settings
+  // scrape ESPN league settings
+
+  await page.waitForSelector("text/Basic Settings");
+  await page.click("text/Basic Settings");
+  //scrape basic settings table
+
+  await page.waitForSelector("text/Draft");
+  await page.click("text/Draft");
+  // scrape draft table
+
+  await page.waitForSelector("text/Rosters");
+  await page.click("text/Rosters");
+  // scrape rosters table
+
+  await page.waitForSelector("text/Scoring");
+  await page.click("text/Scoring");
+  // scrape scoring table
+
+  await page.waitForSelector("text/Transactions and Keepers");
+  await page.click("text/Transactions and Keepers");
+  // scrape keeper table
+
+  await page.waitForSelector("text/Schedule");
+  await page.click("text/Schedule");
+  // scrape schedule table
 
   // navigate to 'members' page
   await page.waitForSelector("text/League");
