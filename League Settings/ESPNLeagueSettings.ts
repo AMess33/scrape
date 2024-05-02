@@ -28,60 +28,60 @@ const ESPN_League_Settings = async () => {
   await page.goto(url, { waitUntil: "load" });
 
   // login form is inside an IFrame
-  let frame: Frame | null = null;
+  // let frame: Frame | null = null;
 
-  for (const f of page.frames()) {
-    const element = await f.frameElement();
-    const id = await element?.evaluate((f) => f.id);
-    if (id === "disneyid-iframe") {
-      frame = f;
-      break;
-    }
-  }
-  console.log(frame);
+  // for (const f of page.frames()) {
+  //   const element = await f.frameElement();
+  //   const id = await element?.evaluate((f) => f.id);
+  //   if (id === "disneyid-iframe") {
+  //     frame = f;
+  //     break;
+  //   }
+  // }
+  // console.log(frame);
 
-  await frame?.waitForSelector(
-    "#did-ui-view > div > section > section > form > section > div:nth-child(1) > div > label > span.input-wrapper > input"
-  );
-  // await frame?.click("text/Username or Email Address");
-  await frame?.type(
-    "#did-ui-view > div > section > section > form > section > div:nth-child(1) > div > label > span.input-wrapper > input",
-    `${username}`
-  );
+  // await frame?.waitForSelector(
+  //   "#did-ui-view > div > section > section > form > section > div:nth-child(1) > div > label > span.input-wrapper > input"
+  // );
+  // // await frame?.click("text/Username or Email Address");
+  // await frame?.type(
+  //   "#did-ui-view > div > section > section > form > section > div:nth-child(1) > div > label > span.input-wrapper > input",
+  //   `${username}`
+  // );
 
-  await frame?.type(
-    "#did-ui-view > div > section > section > form > section > div:nth-child(2) > div > label > span.input-wrapper > input",
-    `${password}`
-  );
-  // log in
-  await frame?.click(
-    "#did-ui-view > div > section > section > form > section > div.btn-group.touch-print-btn-group-wrapper > button"
-  );
-  // wait for redirect to espn.com
-  await page.waitForNavigation({ waitUntil: "domcontentloaded" });
+  // await frame?.type(
+  //   "#did-ui-view > div > section > section > form > section > div:nth-child(2) > div > label > span.input-wrapper > input",
+  //   `${password}`
+  // );
+  // // log in
+  // await frame?.click(
+  //   "#did-ui-view > div > section > section > form > section > div.btn-group.touch-print-btn-group-wrapper > button"
+  // );
+  // // wait for redirect to espn.com
+  // await page.waitForNavigation({ waitUntil: "domcontentloaded" });
 
-  await page.hover(
-    "#global-nav > ul > li.pillar.logo.fantasy.fantasy > a > span > span.link-text"
-  );
-  // click on fantasy football page
-  await page.click(
-    "#submenu-pillarlogofantasyfantasy > ul:nth-child(1) > li:nth-child(8) > a"
-  );
+  // await page.hover(
+  //   "#global-nav > ul > li.pillar.logo.fantasy.fantasy > a > span > span.link-text"
+  // );
+  // // click on fantasy football page
+  // await page.click(
+  //   "#submenu-pillarlogofantasyfantasy > ul:nth-child(1) > li:nth-child(8) > a"
+  // );
 
-  // click on team based on league name
-  await page.click(
-    "#fantasy-feed-items > div.favItem.favItem--offseason > a.favItem__team > div > div.favItem__headline > div.favItem__subHead"
-  );
+  // // click on team based on league name
+  // await page.click(
+  //   "#fantasy-feed-items > div.favItem.favItem--offseason > a.favItem__team > div > div.favItem__headline > div.favItem__subHead"
+  // );
 
-  await page.waitForNavigation({ waitUntil: "domcontentloaded" });
-  // hover on 'league' drop down
-  await page.waitForSelector("text/League");
-  await page.hover("text/League");
-  // click 'settings' in drop down menu
-  await page.waitForSelector("text/Settings");
-  await page.click("text/Settings");
+  // await page.waitForNavigation({ waitUntil: "domcontentloaded" });
+  // // hover on 'league' drop down
+  // await page.waitForSelector("text/League");
+  // await page.hover("text/League");
+  // // click 'settings' in drop down menu
+  // await page.waitForSelector("text/Settings");
+  // await page.click("text/Settings");
 
-  await page.waitForNavigation({ waitUntil: "domcontentloaded" });
+  // await page.waitForNavigation({ waitUntil: "domcontentloaded" });
   // scrape ESPN league settings
   // navigate to basic settings
   await page.waitForSelector("text/Basic Settings");
@@ -163,18 +163,57 @@ const ESPN_League_Settings = async () => {
   console.log(positionSettings);
 
   // navigate to scoring settings
-  // await page.waitForSelector("text/Scoring");
-  // await page.click("text/Scoring");
+  await page.waitForSelector(
+    "#fitt-analytics > div > div.jsx-3010562182.shell-container > div > div.layout.is-full > div > div > div.jsx-559466336.AnchorList > ul > li:nth-child(5) > span"
+  );
+  await page.click(
+    "#fitt-analytics > div > div.jsx-3010562182.shell-container > div > div.layout.is-full > div > div > div.jsx-559466336.AnchorList > ul > li:nth-child(5) > span"
+  );
+  await page.waitForSelector("text/Passing Yards (PY)");
   // scrape scoring table
-  // const scoringSettings = await page.evaluate(() => {
-  //   const rulesRows = Array.from(
-  //     document.querySelectorAll("table > tbody > tr")
-  //   );
-  //   const data = rulesRows.map((rule: any) => ({
-  //     rule: rule.querySelector("td:nth-child(1) > div > span").innerText,
-  //     setting: rule.querySelector("td:nth-child(2) > div > span").innerText,
-  //   }));
-  // });
+  interface RowData {
+    rule: string | null;
+    setting: string | null;
+  }
+  const scoringSettings = await page.evaluate(() => {
+    const tables = Array.from(
+      document.querySelectorAll(
+        "#fitt-analytics > div > div.jsx-3010562182.shell-container > div > div.layout.is-full > div > div > div:nth-child(4) > div.league--settings--table.scoring--settings.multipleCategories.isViewing > div > div "
+      )
+    );
+    const tableData = tables.map((table: any) => {
+      const rows = Array.from(table.querySelectorAll("tr"));
+
+      const data: RowData[] = rows.map((row: any) => {
+        const ruleElement = row.querySelector(
+          "td:nth-child(1) > div > div > div:nth-child(1)"
+        );
+        const settingElement = row.querySelector(
+          "td:nth-child(1) > div > div > div:nth-child(2)"
+        );
+        const rowData: RowData = { rule: null, setting: null };
+
+        if (ruleElement && ruleElement.innerText !== "") {
+          rowData.rule = ruleElement.innerText;
+        } else {
+          rowData.rule = null;
+        }
+
+        // Check if settingElement exists and its innerText is not 'n/a'
+        if (settingElement && settingElement.innerText !== "") {
+          rowData.setting = settingElement.innerText;
+        } else {
+          rowData.setting = null;
+        }
+
+        return rowData;
+      });
+
+      return data;
+    });
+    return tableData;
+  });
+  console.log(scoringSettings);
 
   await page.waitForSelector(
     "#fitt-analytics > div > div.jsx-3010562182.shell-container > div > div.layout.is-full > div > div > div.jsx-559466336.AnchorList > ul > li:nth-child(7) > span"
@@ -232,33 +271,56 @@ const ESPN_League_Settings = async () => {
   console.log(scheduleSettings);
 
   // navigate to 'members' page
-  await page.waitForSelector("text/League");
-  await page.hover("text/League");
+  await page.waitForSelector(
+    "#fitt-analytics > div > div.navigation__container.sticky.top-0.Site__Header > nav > ul > li.league.active.NavSecondary__Item > a > span > span"
+  );
+  await page.hover(
+    "#fitt-analytics > div > div.navigation__container.sticky.top-0.Site__Header > nav > ul > li.league.active.NavSecondary__Item > a > span > span"
+  );
   // select 'members' from league drop down menu
-  await page.waitForSelector("text/Members");
-  await page.click("text/Members");
+  await page.waitForSelector(
+    "#fitt-analytics > div > div.navigation__container.sticky.top-0.Site__Header > nav > ul > li.league.active.NavSecondary__Item > div > div > div > ul:nth-child(1) > li:nth-child(3) > a > span > span"
+  );
+  await page.click(
+    "#fitt-analytics > div > div.navigation__container.sticky.top-0.Site__Header > nav > ul > li.league.active.NavSecondary__Item > div > div > div > ul:nth-child(1) > li:nth-child(3) > a > span > span"
+  );
 
   // scrape managers page
 
-  await page.waitForSelector(
-    "table > tbody > tr:nth-child(1) > td:nth-child(3) > div > span"
-  );
+  await page.waitForSelector("text/TEAM NAME");
 
   const ownerData = await page.evaluate(() => {
     const ownerRows = Array.from(
-      document.querySelectorAll("table > tbody > tr")
+      document.querySelectorAll(
+        "#fitt-analytics > div > div.jsx-3010562182.shell-container > div > div.layout.is-full > div > div > div.jsx-641403846.members-container > div.jsx-2893748710.leagueMembersTable.pa3 > div > div > div > div:nth-child(2) > table > tbody > tr"
+      )
     );
 
     const data = ownerRows.map((owner: any) => ({
-      team: owner.querySelector("td:nth-child(3) > div > span").innerText,
-      division: owner.querySelector("td:nth-child(4) > div").innerText,
-      manager: owner.querySelector("td:nth-child(5) > div").innerText,
+      team: owner.querySelector("td:nth-child(3) > div > div > div > a > span")
+        .innerText,
+      manager: owner.querySelector("td:nth-child(4) > div > div").innerText,
     }));
     return data;
   });
   console.log(ownerData);
-
-  // await browser.close();
+  fs.writeFileSync(
+    "ESPNLeagueSettings.json",
+    JSON.stringify([
+      ownerData,
+      basicSettings,
+      draftSettings,
+      rosterSettings,
+      positionSettings,
+      scoringSettings,
+      scheduleSettings,
+      transactionSettings,
+    ]),
+    (err): any => {
+      if (err) throw err;
+    }
+  );
+  await browser.close();
 };
 
 ESPN_League_Settings();
