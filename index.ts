@@ -9,11 +9,13 @@ puppeteer.use(StealthPlugin());
 const { executablePath } = require("puppeteer");
 const username = process.env.ESPNUSERNAME;
 const password = process.env.ESPNPASSWORD;
-// const ypassword = process.env.PASSWORDY;
-// login page for cbs fantasy football w/ redirect to my teams webpage
-// const url = "https://www.espn.com/login";
-const url =
-  "https://fantasy.espn.com/football/league/settings?leagueId=695637497&view=summary";
+
+// login page
+const url = "https://www.espn.com/login";
+
+// scrape testing url
+// const url =
+//   "https://fantasy.espn.com/football/league/settings?leagueId=695637497&view=summary";
 
 const ESPN_League_Settings = async () => {
   const browser: Browser = await puppeteer.launch({
@@ -28,61 +30,69 @@ const ESPN_League_Settings = async () => {
   await page.goto(url, { waitUntil: "load" });
 
   // login form is inside an IFrame
-  // let frame: Frame | null = null;
+  let frame: Frame | null = null;
 
-  // for (const f of page.frames()) {
-  //   const element = await f.frameElement();
-  //   const id = await element?.evaluate((f) => f.id);
-  //   if (id === "disneyid-iframe") {
-  //     frame = f;
-  //     break;
-  //   }
-  // }
-  // console.log(frame);
+  for (const f of page.frames()) {
+    const element = await f.frameElement();
+    const id = await element?.evaluate((f) => f.id);
+    if (id === "disneyid-iframe") {
+      frame = f;
+      break;
+    }
+  }
+  console.log(frame);
 
-  // await frame?.waitForSelector(
-  //   "#did-ui-view > div > section > section > form > section > div:nth-child(1) > div > label > span.input-wrapper > input"
-  // );
-  // // await frame?.click("text/Username or Email Address");
-  // await frame?.type(
-  //   "#did-ui-view > div > section > section > form > section > div:nth-child(1) > div > label > span.input-wrapper > input",
-  //   `${username}`
-  // );
+  await frame?.waitForSelector(
+    "#did-ui-view > div > section > section > form > section > div:nth-child(1) > div > label > span.input-wrapper > input"
+  );
+  // await frame?.click("text/Username or Email Address");
+  await frame?.type(
+    "#did-ui-view > div > section > section > form > section > div:nth-child(1) > div > label > span.input-wrapper > input",
+    `${username}`
+  );
 
-  // await frame?.type(
-  //   "#did-ui-view > div > section > section > form > section > div:nth-child(2) > div > label > span.input-wrapper > input",
-  //   `${password}`
-  // );
-  // // log in
-  // await frame?.click(
-  //   "#did-ui-view > div > section > section > form > section > div.btn-group.touch-print-btn-group-wrapper > button"
-  // );
-  // // wait for redirect to espn.com
-  // await page.waitForNavigation({ waitUntil: "domcontentloaded" });
+  await frame?.type(
+    "#did-ui-view > div > section > section > form > section > div:nth-child(2) > div > label > span.input-wrapper > input",
+    `${password}`
+  );
+  // log in
+  await frame?.click(
+    "#did-ui-view > div > section > section > form > section > div.btn-group.touch-print-btn-group-wrapper > button"
+  );
+  // wait for redirect to espn.com
+  await page.waitForSelector(
+    "#global-nav > ul > li.pillar.logo.fantasy.fantasy > a > span > span.link-text"
+  );
+  // hover to show fantasy drop down
+  await page.hover(
+    "#global-nav > ul > li.pillar.logo.fantasy.fantasy > a > span > span.link-text"
+  );
+  // click on fantasy football page
+  await page.click(
+    "#submenu-pillarlogofantasyfantasy > ul:nth-child(1) > li:nth-child(8) > a"
+  );
 
-  // await page.hover(
-  //   "#global-nav > ul > li.pillar.logo.fantasy.fantasy > a > span > span.link-text"
-  // );
-  // // click on fantasy football page
-  // await page.click(
-  //   "#submenu-pillarlogofantasyfantasy > ul:nth-child(1) > li:nth-child(8) > a"
-  // );
+  // wait for selector to load
+  // await page.waitForSelector(`text/${leagueName}`);
+  await page.waitForSelector(
+    "#fantasy-feed-items > div.favItem.favItem--offseason > a.favItem__team > div > div.favItem__headline > div.favItem__subHead"
+  );
+  // click on team based on users league name
+  // await page.click(`text/${leagueName}`);
+  await page.click(
+    "#fantasy-feed-items > div.favItem.favItem--offseason > a.favItem__team > div > div.favItem__headline > div.favItem__subHead"
+  );
 
-  // // click on team based on league name
-  // await page.click(
-  //   "#fantasy-feed-items > div.favItem.favItem--offseason > a.favItem__team > div > div.favItem__headline > div.favItem__subHead"
-  // );
+  await page.waitForNavigation({ waitUntil: "domcontentloaded" });
+  // hover on 'league' drop down
+  await page.waitForSelector("text/League");
+  await page.hover("text/League");
+  // click 'settings' in drop down menu
+  await page.waitForSelector("text/Settings");
+  await page.click("text/Settings");
 
-  // await page.waitForNavigation({ waitUntil: "domcontentloaded" });
-  // // hover on 'league' drop down
-  // await page.waitForSelector("text/League");
-  // await page.hover("text/League");
-  // // click 'settings' in drop down menu
-  // await page.waitForSelector("text/Settings");
-  // await page.click("text/Settings");
+  await page.waitForNavigation({ waitUntil: "domcontentloaded" });
 
-  // await page.waitForNavigation({ waitUntil: "domcontentloaded" });
-  // scrape ESPN league settings
   // navigate to basic settings
   await page.waitForSelector("text/Basic Settings");
   await page.click("text/Basic Settings");
@@ -170,7 +180,7 @@ const ESPN_League_Settings = async () => {
     "#fitt-analytics > div > div.jsx-3010562182.shell-container > div > div.layout.is-full > div > div > div.jsx-559466336.AnchorList > ul > li:nth-child(5) > span"
   );
   await page.waitForSelector("text/Passing Yards (PY)");
-  // scrape scoring table
+  // scrape scoring tables
   interface RowData {
     rule: string | null;
     setting: string | null;
@@ -199,7 +209,8 @@ const ESPN_League_Settings = async () => {
           rowData.rule = null;
         }
 
-        // Check if settingElement exists and its innerText is not 'n/a'
+        // Check if settingElement exists and its innerText is not empty
+        // these tables have a lot of empty rows for no real reason
         if (settingElement && settingElement.innerText !== "") {
           rowData.setting = settingElement.innerText;
         } else {
@@ -215,6 +226,7 @@ const ESPN_League_Settings = async () => {
   });
   console.log(scoringSettings);
 
+  // navigate to transaction settings
   await page.waitForSelector(
     "#fitt-analytics > div > div.jsx-3010562182.shell-container > div > div.layout.is-full > div > div > div.jsx-559466336.AnchorList > ul > li:nth-child(7) > span"
   );
@@ -222,7 +234,7 @@ const ESPN_League_Settings = async () => {
     "#fitt-analytics > div > div.jsx-3010562182.shell-container > div > div.layout.is-full > div > div > div.jsx-559466336.AnchorList > ul > li:nth-child(7) > span"
   );
   await page.waitForSelector("text/Passing");
-  // scrape keeper table
+  // scrape transactions tables
   const transactionSettings = await page.evaluate(() => {
     const tables = Array.from(
       document.querySelectorAll(
@@ -242,7 +254,7 @@ const ESPN_League_Settings = async () => {
     return tableData;
   });
   console.log(transactionSettings);
-
+  // navigate to schedule settings
   await page.waitForSelector(
     "#fitt-analytics > div > div.jsx-3010562182.shell-container > div > div.layout.is-full > div > div > div.jsx-559466336.AnchorList > ul > li:nth-child(8) > span"
   );
@@ -304,6 +316,7 @@ const ESPN_League_Settings = async () => {
     return data;
   });
   console.log(ownerData);
+  // create json file with all scraped data
   fs.writeFileSync(
     "ESPNLeagueSettings.json",
     JSON.stringify([

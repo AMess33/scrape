@@ -60,8 +60,10 @@ const ESPN_League_Settings = async () => {
     "#did-ui-view > div > section > section > form > section > div.btn-group.touch-print-btn-group-wrapper > button"
   );
   // wait for redirect to espn.com
-  await page.waitForNavigation({ waitUntil: "domcontentloaded" });
-
+  await page.waitForSelector(
+    "#global-nav > ul > li.pillar.logo.fantasy.fantasy > a > span > span.link-text"
+  );
+  // hover to show fantasy drop down
   await page.hover(
     "#global-nav > ul > li.pillar.logo.fantasy.fantasy > a > span > span.link-text"
   );
@@ -70,7 +72,13 @@ const ESPN_League_Settings = async () => {
     "#submenu-pillarlogofantasyfantasy > ul:nth-child(1) > li:nth-child(8) > a"
   );
 
-  // click on team based on league name
+  // wait for selector to load
+  // await page.waitForSelector(`text/${leagueName}`);
+  await page.waitForSelector(
+    "#fantasy-feed-items > div.favItem.favItem--offseason > a.favItem__team > div > div.favItem__headline > div.favItem__subHead"
+  );
+  // click on team based on users league name
+  // await page.click(`text/${leagueName}`);
   await page.click(
     "#fantasy-feed-items > div.favItem.favItem--offseason > a.favItem__team > div > div.favItem__headline > div.favItem__subHead"
   );
