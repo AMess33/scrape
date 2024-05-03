@@ -7,13 +7,15 @@ import { Browser } from "puppeteer";
 puppeteer.use(StealthPlugin());
 
 const { executablePath } = require("puppeteer");
-const username = process.env.USERNAME;
-const password = process.env.PASSWORD;
+const username = "dmesser_19";
+const password = process.env.PASSWORDY;
 // yahoo league id will give unique url for settings and owners page, league must be set to 'publicly viewable'
 const leagueID = "393";
 // const with users team name to use in site navigation
 // login page for cbs fantasy football w/ redirect to my teams webpage
-const settingsURL = `https://football.fantasysports.yahoo.com/f1/${leagueID}/settings`;
+// sign in then redirect to league settings page based off league id
+const signInURL = `https://login.yahoo.com/config/login?.intl=us&.lang=en-US&.src=ym&.done=https://football.fantasysports.yahoo.com/f1/393/settings`;
+// https://login.yahoo.com/config/login?.intl=us&.lang=en-US&.src=ym&.done=https://football.fantasysports.yahoo.com/f1/${leagueID}/settings
 const ownersURL = `https://football.fantasysports.yahoo.com/f1/${leagueID}/teams`;
 
 const Yahoo_League_Settings = async () => {
@@ -26,7 +28,15 @@ const Yahoo_League_Settings = async () => {
   await page.setUserAgent(
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
   );
-  await page.goto(settingsURL, { waitUntil: "load" });
+  await page.goto(signInURL, { waitUntil: "load" });
+  await page.waitForSelector("#login-username");
+  await page.type("#login-username", `${username}`);
+  await page.click("#login-signin");
+  await page.waitForSelector("#login-passwd");
+  await page.type("#login-passwd", `${password}`);
+  await page.click("#login-signin");
+
+  // need to get 2fa headers passed in for 2fa login
 
   // scrape league settings from league details page
   await page.waitForSelector(
@@ -85,7 +95,7 @@ const Yahoo_League_Settings = async () => {
     }
   );
 
-  // await browser.close();
+  await browser.close();
 };
 
 Yahoo_League_Settings();
