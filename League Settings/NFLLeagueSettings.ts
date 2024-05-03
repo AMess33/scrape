@@ -72,7 +72,7 @@ const NFL_League_Settings = async () => {
       if (err) throw err;
     }
   );
-  // go to owners tabe
+  // go to owners page
   await page.waitForSelector("text/Team Managers");
   await page.click("text/Team Managers");
   await page.goto(ownersURL, { waitUntil: "domcontentloaded" });
