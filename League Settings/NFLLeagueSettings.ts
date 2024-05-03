@@ -7,11 +7,13 @@ import { Browser } from "puppeteer";
 puppeteer.use(StealthPlugin());
 
 const { executablePath } = require("puppeteer");
-const username = process.env.USERNAME;
-const password = process.env.PASSWORD;
-const ypassword = process.env.PASSWORDY;
+const email = process.env.EMAIL;
+const password = process.env.PASSWORDN;
 const leagueID = "11864040";
+const leagueName = "Wisconsin Fantasy Football League";
 // login page for cbs fantasy football w/ redirect to my teams webpage
+const homeURL = "https://id.nfl.com/account/sign-in";
+const fantasyURL = "https://fantasy.nfl.com/myleagues";
 const settingsURL = `https://fantasy.nfl.com/league/${leagueID}/settings`;
 const ownersURL = `https://fantasy.nfl.com/league/${leagueID}/owners`;
 
@@ -26,8 +28,29 @@ const NFL_League_Settings = async () => {
   await page.setUserAgent(
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
   );
-  await page.goto(settingsURL, { waitUntil: "domcontentloaded" });
-
+  // if league id is not available, go to login page and run through log in process
+  await page.goto(homeURL, { waitUntil: "domcontentloaded" });
+  // email input, continue click
+  await page.waitForSelector("#email-input-field");
+  await page.type("#email-input-field", `${email}`);
+  await page.click(
+    "#__next > div > div > div > div > div.css-175oi2r.r-qn3fzs > button"
+  );
+  // wait for password input to load
+  await page.waitForSelector("#password-input-field");
+  // password input, sign in click
+  await page.type("#password-input-field", `${password}`);
+  await page.click(
+    "#__next > div > div > div.styles__BodyWrapper-sc-1858ovt-1.ffwlTn > div > div.css-175oi2r.r-knv0ih.r-w7s2jr > button"
+  );
+  // wait for page load after login, then go to fantasy/myleagues page
+  await page.waitForNavigation({ waitUntil: "domcontentloaded" });
+  await page.goto(fantasyURL, { waitUntil: "domcontentloaded" });
+  // go to league of based on league name
+  await page.click(`text/${leagueName}`);
+  // click on settings tab
+  await page.waitForSelector("text/Settings");
+  // scrape settings info table
   await page.waitForSelector(
     "xpath/html/body/div[1]/div[3]/div/div[1]/div/div/div/div[1]/div/div/div[1]/ul"
   );
@@ -49,6 +72,9 @@ const NFL_League_Settings = async () => {
       if (err) throw err;
     }
   );
+  // go to owners tabe
+  await page.waitForSelector("text/Team Managers");
+  await page.click("text/Team Managers");
   await page.goto(ownersURL, { waitUntil: "domcontentloaded" });
 
   // scrape owners info table
