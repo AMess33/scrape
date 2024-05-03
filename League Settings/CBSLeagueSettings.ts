@@ -10,7 +10,6 @@ const { executablePath } = require("puppeteer");
 const username = process.env.USERNAME;
 const password = process.env.PASSWORD;
 const leagueName = "Wisconsin Fantasy Football League";
-// const with users team name to use in site navigation
 // login page for cbs fantasy football w/ redirect to my teams webpage
 const url =
   "https://www.cbssports.com/user/login/?redirectUrl=https%3A%2F%2Fwww.cbssports.com%2Ffantasy%2Fgames%2Fmy-teams%2F";
@@ -63,55 +62,76 @@ const CBS_League_Settings = async () => {
   await page.waitForSelector(
     "xpath/html/body/div[2]/div[6]/div[1]/div/div[2]/div[2]/div[1]/div[1]/div[2]/div/div/div/table/tbody/tr[1]/th[1]"
   );
-  const rulesData = await page.evaluate(() => {
+  const leagueIDData = await page.evaluate(() => {
     const ruleRows = Array.from(
-      document.querySelectorAll(
-        "div:nth-child(2) > div:nth-child(6) > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div > div > div > table > tbody > tr.row1"
-      )
-    ).concat(
-      Array.from(
-        document.querySelectorAll(
-          "div:nth-child(2) > div:nth-child(6) > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div > div > div > table > tbody > tr.row2"
-        )
-      )
+      document.querySelectorAll("table > tbody > tr")
     );
 
-    const data = ruleRows.map((rule: any) => ({
-      rule: rule.querySelector("td:nth-child(1)").innerText,
-      setting: rule.querySelector("td:nth-child(2)").innerText,
-    }));
+    const data = ruleRows.map((rule, index) => {
+      if (index === 0) {
+        const headers = Array.from(rule.querySelectorAll("th"));
+        return null;
+      } else {
+        const cells = Array.from(rule.querySelectorAll("td"));
+        if (cells.length === 2) {
+          return {
+            rule: cells[0].innerText,
+            setting: cells[1].innerText,
+          };
+        } else if (cells.length === 3) {
+          return {
+            rule: cells[0].innerText,
+            name: cells[1].innerText,
+            setting: cells[2].innerText,
+          };
+        } else if (cells.length === 4) {
+          return {
+            position: cells[0].innerText,
+            min: cells[1].innerText,
+            max: cells[2].innerText,
+            total: cells[3].innerText,
+          };
+        } else {
+          // Handle other cases or return null
+          return null;
+        }
+      }
+    });
+
     return data;
   });
-  console.log(rulesData);
-  fs.writeFileSync("CBSLeagueRules.json", JSON.stringify(rulesData));
-  // unable to read null value of inner text
+
+  console.log(leagueIDData);
+
   await page.waitForSelector(
     "#container > div:nth-child(7) > div:nth-child(2) > div > div.box-Rg.box-white > div.fantasyHeaderNav > ul > li:nth-child(2) > a"
   );
-  // await page.click(
-  //   "#container > div:nth-child(7) > div:nth-child(2) > div > div.box-Rg.box-white > div.fantasyHeaderNav > ul > li:nth-child(2) > a"
-  // );
-  // await page.waitForSelector(
-  //   "#container > div:nth-child(7) > div:nth-child(2) > div > div.box-Rg.box-white > table > tbody > tr:nth-child(3) > td:nth-child(1) > a"
-  // );
+  await page.click(
+    "#container > div:nth-child(7) > div:nth-child(2) > div > div.box-Rg.box-white > div.fantasyHeaderNav > ul > li:nth-child(2) > a"
+  );
+  await page.waitForSelector(
+    "#container > div:nth-child(7) > div:nth-child(2) > div > div.box-Rg.box-white > table > tbody > tr:nth-child(3) > td:nth-child(1) > a"
+  );
 
-  // const ownersData = await page.evaluate(() => {
-  //   const ownerRows = Array.from(document.querySelectorAll("tr.row1")).concat(
-  //     Array.from(document.querySelectorAll("tr.row2"))
-  //   );
+  const ownersData = await page.evaluate(() => {
+    const ownerRows = Array.from(document.querySelectorAll("tr.row1")).concat(
+      Array.from(document.querySelectorAll("tr.row2"))
+    );
 
-  //   const data = ownerRows.map((owner: any) => ({
-  //     team: owner.querySelector("td:nth-child(1) > a").innerText,
-  //     manager: owner.querySelector("td:nth-child(2)").innerText,
-  //     email: owner.querySelector("td:nth-child(4) > a").innerText,
-  //   }));
-  //   return data;
-  // });
-  // console.log(ownersData);
-  // go to owners page
-  // scrape owner information
+    const data = ownerRows.map((owner: any) => ({
+      team: owner.querySelector("td:nth-child(1) > a").innerText.slice(1),
+      manager: owner.querySelector("td:nth-child(2)").innerText,
+      email: owner.querySelector("td:nth-child(4) > a").innerText,
+    }));
+    return data;
+  });
+  console.log(ownersData);
+  fs.writeFileSync(
+    "CBSLeagueRules.json",
+    JSON.stringify([leagueIDData, ownersData])
+  );
 
-  // await browser.close();
+  await browser.close();
 };
 
 CBS_League_Settings();

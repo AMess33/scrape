@@ -7,18 +7,14 @@ import { Browser } from "puppeteer";
 puppeteer.use(StealthPlugin());
 
 const { executablePath } = require("puppeteer");
-const email = process.env.EMAIL;
-const password = process.env.PASSWORDN;
-const leagueID = "11864040";
+const username = process.env.USERNAME;
+const password = process.env.PASSWORD;
 const leagueName = "Wisconsin Fantasy Football League";
 // login page for cbs fantasy football w/ redirect to my teams webpage
-const homeURL = "https://id.nfl.com/account/sign-in";
-const fantasyURL = "https://fantasy.nfl.com/myleagues";
-const settingsURL = `https://fantasy.nfl.com/league/${leagueID}/settings`;
-const ownersURL = `https://fantasy.nfl.com/league/${leagueID}/owners`;
+const url =
+  "https://www.cbssports.com/user/login/?redirectUrl=https%3A%2F%2Fwww.cbssports.com%2Ffantasy%2Fgames%2Fmy-teams%2F";
 
-const NFL_League_Settings = async () => {
-  // if user knows league id, go directly to league settings page/ if not, set up log in routes to league settings page
+const CBS_League_Settings = async () => {
   const browser: Browser = await puppeteer.launch({
     headless: false,
     defaultViewport: false,
@@ -28,84 +24,114 @@ const NFL_League_Settings = async () => {
   await page.setUserAgent(
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
   );
-  // if league id is not available, go to login page and run through log in process
-  await page.goto(homeURL, { waitUntil: "domcontentloaded" });
-  // email input, continue click
-  await page.waitForSelector("#email-input-field");
-  await page.type("#email-input-field", `${email}`);
-  await page.click(
-    "#__next > div > div > div > div > div.css-175oi2r.r-qn3fzs > button"
+  await page.goto(url, { waitUntil: "load" });
+
+  // enter login credentials and click login
+  await page.type(
+    "xpath/html/body/div[2]/div[4]/div/main/div/div[1]/form/div[1]/input",
+    `${username}`
   );
-  // wait for password input to load
-  await page.waitForSelector("#password-input-field");
-  // password input, sign in click
-  await page.type("#password-input-field", `${password}`);
-  await page.click(
-    "#__next > div > div > div.styles__BodyWrapper-sc-1858ovt-1.ffwlTn > div > div.css-175oi2r.r-knv0ih.r-w7s2jr > button"
+  await page.type(
+    "xpath/html/body/div[2]/div[4]/div/main/div/div[1]/form/div[2]/input",
+    `${password}`
   );
-  // wait for page load after login, then go to fantasy/myleagues page
-  await page.waitForNavigation({ waitUntil: "domcontentloaded" });
-  await page.goto(fantasyURL, { waitUntil: "domcontentloaded" });
-  // go to league of based on league name
+
+  // click login button after entering credentials
+  await page.click("#app_login > div:nth-child(10) > button");
+
+  // wait for navigation to my teams page
+  // use users team name to select correct team
+  await page.waitForSelector(`text/${leagueName}`);
+
   await page.click(`text/${leagueName}`);
-  // click on settings tab
-  await page.waitForSelector("text/Settings");
-  // scrape settings info table
+
+  // hover over the League nav tab
   await page.waitForSelector(
-    "xpath/html/body/div[1]/div[3]/div/div[1]/div/div/div/div[1]/div/div/div[1]/ul"
+    "#fantNavContainer > div > div > div.fantNavBar > div.fantNavFastFacts > ul > li.fantNavItem.fant-drop.selected.drop.main-nav"
+  );
+  await page.hover(
+    "#fantNavContainer > div > div > div.fantNavBar > div.fantNavFastFacts > ul > li.fantNavItem.fant-drop.selected.drop.main-nav"
   );
 
-  const rulesData = await page.evaluate(() => {
-    const ruleRows = Array.from(document.querySelectorAll("ul.formItems > li"));
+  // click on league details from drop down
+  await page.waitForSelector("text/League Details", { timeout: 10000 });
+  await page.click("text/League Details");
 
-    const data = ruleRows.map((rule: any) => ({
-      rule: rule.querySelector("em").innerText,
-      setting: rule.querySelector("div").innerText,
-    }));
+  // scrape league settings from league details page
+  // league identity/ roster limits/ scoring system/ draft settings
+  await page.waitForSelector(
+    "xpath/html/body/div[2]/div[6]/div[1]/div/div[2]/div[2]/div[1]/div[1]/div[2]/div/div/div/table/tbody/tr[1]/th[1]"
+  );
+  const leagueIDData = await page.evaluate(() => {
+    const ruleRows = Array.from(
+      document.querySelectorAll("table > tbody > tr")
+    );
+
+    const data = ruleRows.map((rule, index) => {
+      if (index === 0) {
+        const headers = Array.from(rule.querySelectorAll("th"));
+        return null;
+      } else {
+        const cells = Array.from(rule.querySelectorAll("td"));
+        if (cells.length === 2) {
+          return {
+            rule: cells[0].innerText,
+            setting: cells[1].innerText,
+          };
+        } else if (cells.length === 3) {
+          return {
+            rule: cells[0].innerText,
+            name: cells[1].innerText,
+            setting: cells[2].innerText,
+          };
+        } else if (cells.length === 4) {
+          return {
+            position: cells[0].innerText,
+            min: cells[1].innerText,
+            max: cells[2].innerText,
+            total: cells[3].innerText,
+          };
+        } else {
+          // Handle other cases or return null
+          return null;
+        }
+      }
+    });
+
     return data;
   });
-  console.log(rulesData);
-  fs.writeFileSync(
-    "NFLLeagueRules.json",
-    JSON.stringify(rulesData),
-    (err: any) => {
-      if (err) throw err;
-    }
+
+  console.log(leagueIDData);
+
+  await page.waitForSelector(
+    "#container > div:nth-child(7) > div:nth-child(2) > div > div.box-Rg.box-white > div.fantasyHeaderNav > ul > li:nth-child(2) > a"
   );
-  // go to owners tabe
-  await page.waitForSelector("text/Team Managers");
-  await page.click("text/Team Managers");
-  await page.goto(ownersURL, { waitUntil: "domcontentloaded" });
+  await page.click(
+    "#container > div:nth-child(7) > div:nth-child(2) > div > div.box-Rg.box-white > div.fantasyHeaderNav > ul > li:nth-child(2) > a"
+  );
+  await page.waitForSelector(
+    "#container > div:nth-child(7) > div:nth-child(2) > div > div.box-Rg.box-white > table > tbody > tr:nth-child(3) > td:nth-child(1) > a"
+  );
 
-  // scrape owners info table
-  await page.waitForSelector("div.tableWrap > table > tbody > tr");
-
-  const ownerData = await page.evaluate(() => {
-    const ownerRows = Array.from(
-      document.querySelectorAll("div.tableWrap > table > tbody > tr")
+  const ownersData = await page.evaluate(() => {
+    const ownerRows = Array.from(document.querySelectorAll("tr.row1")).concat(
+      Array.from(document.querySelectorAll("tr.row2"))
     );
 
     const data = ownerRows.map((owner: any) => ({
-      team: owner.querySelector("td:nth-child(1) > div > a:nth-child(2)")
-        .innerText,
-      manager: owner.querySelector("td:nth-child(2) > ul > li > span")
-        .innerText,
-      waiver: owner.querySelector("td:nth-child(4)").innerText,
-      moves: owner.querySelector("td:nth-child(5)").innerText,
-      trades: owner.querySelector("td:nth-child(6)").innerText,
-      lastActivity: owner.querySelector("td:nth-child(7)").innerText,
+      team: owner.querySelector("td:nth-child(1) > a").innerText.slice(1),
+      manager: owner.querySelector("td:nth-child(2)").innerText,
+      email: owner.querySelector("td:nth-child(4) > a").innerText,
     }));
     return data;
   });
-  console.log(ownerData);
+  console.log(ownersData);
   fs.writeFileSync(
-    "NFLLeagueOwners.json",
-    JSON.stringify(ownerData),
-    (err: any) => {
-      if (err) throw err;
-    }
+    "CBSLeagueRules.json",
+    JSON.stringify([leagueIDData, ownersData])
   );
+
   await browser.close();
 };
 
-NFL_League_Settings();
+CBS_League_Settings();
