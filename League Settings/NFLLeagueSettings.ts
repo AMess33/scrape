@@ -49,7 +49,13 @@ const NFL_League_Settings = async () => {
   // go to league of based on league name
   await page.click(`text/${leagueName}`);
   // click on settings tab
-  await page.waitForSelector("text/Settings");
+  // unable to test or know pathing without 24 leagues being availble or replicating 23 league which i dont have access to
+  // await page.waitForNavigation({ waitUntil: "domcontentloaded" });
+  // await page.waitForSelector("text/League");
+  // await page.hover("text/League");
+  // await page.waitForSelector("text/League Details");
+  // await page.click("text/League Details");
+  // await page.waitForNavigation({ waitUntil: "domcontentloaded" });
   // scrape settings info table
   await page.waitForSelector(
     "xpath/html/body/div[1]/div[3]/div/div[1]/div/div/div/div[1]/div/div/div[1]/ul"
