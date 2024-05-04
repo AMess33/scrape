@@ -7,15 +7,17 @@ import { Browser } from "puppeteer";
 puppeteer.use(StealthPlugin());
 
 const { executablePath } = require("puppeteer");
-const email = process.env.EMAIL;
-const password = process.env.PASSWORDN;
+// email password league name for sign in path
+const email = process.env.NFLUSERNAME;
+const password = process.env.NFLPASSWORD;
+const leagueName = "Draft Hero";
 const leagueID = "11864040";
-const leagueName = "Wisconsin Fantasy Football League";
+// const leagueID = "";
 // login page for cbs fantasy football w/ redirect to my teams webpage
 const homeURL = "https://id.nfl.com/account/sign-in";
 const fantasyURL = "https://fantasy.nfl.com/myleagues";
+// if league ID present go straight to settings and run scraping
 const settingsURL = `https://fantasy.nfl.com/league/${leagueID}/settings`;
-const ownersURL = `https://fantasy.nfl.com/league/${leagueID}/owners`;
 
 const NFL_League_Settings = async () => {
   // if user knows league id, go directly to league settings page/ if not, set up log in routes to league settings page
@@ -29,6 +31,18 @@ const NFL_League_Settings = async () => {
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
   );
   // if league id is not available, go to login page and run through log in process
+  if (!leagueID) {
+    await signInPath(page);
+    await scrapeData(page);
+  } else {
+    await page.goto(settingsURL, { waitUntil: "domcontentloaded" });
+    await scrapeData(page);
+  }
+
+  await browser.close();
+};
+
+const signInPath = async (page) => {
   await page.goto(homeURL, { waitUntil: "domcontentloaded" });
   // email input, continue click
   await page.waitForSelector("#email-input-field");
@@ -47,15 +61,28 @@ const NFL_League_Settings = async () => {
   await page.waitForNavigation({ waitUntil: "domcontentloaded" });
   await page.goto(fantasyURL, { waitUntil: "domcontentloaded" });
   // go to league of based on league name
+  await page.waitForSelector(
+    `xpath/html/body/div[1]/div[1]/div/div/div[1]/div[1]/div[2]/div[2]/div[2]/div/div[1]`
+  );
+  await page.click(
+    "xpath/html/body/div[1]/div[1]/div/div/div[1]/div[1]/div[2]/div[2]/div[2]/div/div[1]"
+  );
+  await page.waitForSelector(`text/${leagueName}`);
   await page.click(`text/${leagueName}`);
+  // click on LEAGUE
+  await page.waitForSelector(
+    "xpath/html/body/div[1]/div[1]/div/div/div[1]/div[1]/div[2]/div[1]/span[2]/a"
+  );
+  await page.click(
+    "xpath/html/body/div[1]/div[1]/div/div/div[1]/div[1]/div[2]/div[1]/span[2]/a"
+  );
   // click on settings tab
-  // unable to test or know pathing without 24 leagues being availble or replicating 23 league which i dont have access to
-  // await page.waitForNavigation({ waitUntil: "domcontentloaded" });
-  // await page.waitForSelector("text/League");
-  // await page.hover("text/League");
-  // await page.waitForSelector("text/League Details");
-  // await page.click("text/League Details");
-  // await page.waitForNavigation({ waitUntil: "domcontentloaded" });
+  const url = await page.url();
+  console.log(url);
+  await page.goto(url + "/settings", { waitUntil: "domcontentloaded" });
+};
+
+const scrapeData = async (page) => {
   // scrape settings info table
   await page.waitForSelector(
     "xpath/html/body/div[1]/div[3]/div/div[1]/div/div/div/div[1]/div/div/div[1]/ul"
@@ -79,11 +106,11 @@ const NFL_League_Settings = async () => {
     }
   );
   // go to owners page
-  await page.waitForSelector("text/Team Managers");
-  await page.click("text/Team Managers");
-  await page.goto(ownersURL, { waitUntil: "domcontentloaded" });
+  const url = await page.url();
+  const newURL = url.replace("/settings", "/owners");
+  await page.goto(newURL, { waitUntil: "domcontentloaded" });
 
-  // scrape owners info table
+  // // scrape owners info table
   await page.waitForSelector("div.tableWrap > table > tbody > tr");
 
   const ownerData = await page.evaluate(() => {
@@ -111,7 +138,6 @@ const NFL_League_Settings = async () => {
       if (err) throw err;
     }
   );
-  await browser.close();
 };
 
 NFL_League_Settings();
