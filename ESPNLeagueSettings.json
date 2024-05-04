@@ -1,0 +1,190 @@
+{
+  "ownerData": [
+    { "team": "Team Kasten", "manager": "Ted Kasten" },
+    { "team": "Team Modelski", "manager": "Bob Modelski" },
+    { "team": "Team Bellville", "manager": "Jay Bellville" },
+    { "team": "Team Hero", "manager": "Draft Hero" }
+  ],
+  "basicSettings": [
+    { "rule": "League Name", "setting": "Draft Hero Test League" },
+    { "rule": "Number of Teams", "setting": "4" },
+    {
+      "rule": "Scoring Type",
+      "setting": "Head to Head Points, Point Per Reception"
+    },
+    { "rule": "Format", "setting": "League Manager" },
+    { "rule": "Make League Viewable to Public", "setting": "Yes" }
+  ],
+  "draftSettings": [
+    { "rule": "Draft Type", "setting": "Snake" },
+    { "rule": "Draft Date", "setting": "Draft not scheduled yet" },
+    { "rule": "Seconds Per Pick", "setting": "30" },
+    { "rule": "Draft Order", "setting": "Manually Set by League Manager" },
+    { "rule": "Allow Draft Pick Trading", "setting": "No" }
+  ],
+  "rosterSettings": [
+    { "rule": "Roster Size", "setting": "16" },
+    { "rule": "Total Starters", "setting": "9" },
+    { "rule": "Total on Bench", "setting": "7 (1 IR)" }
+  ],
+  "positionSettings": [
+    { "position": "Quarterback (QB)", "starters": "0", "maximums": "No Limit" },
+    { "position": "Team Quarterback (TQB)", "starters": "1", "maximums": "1" },
+    { "position": "Running Back (RB)", "starters": "2", "maximums": "8" },
+    {
+      "position": "Running Back/Wide Receiver (RB/WR)",
+      "starters": "0",
+      "maximums": "N/A"
+    },
+    { "position": "Wide Receiver (WR)", "starters": "2", "maximums": "8" },
+    {
+      "position": "Wide Receiver/Tight End (WR/TE)",
+      "starters": "0",
+      "maximums": "N/A"
+    },
+    { "position": "Tight End (TE)", "starters": "1", "maximums": "3" },
+    { "position": "Flex (FLEX)", "starters": "1", "maximums": "N/A" },
+    {
+      "position": "Offensive Player Utility (OP)",
+      "starters": "0",
+      "maximums": "N/A"
+    },
+    {
+      "position": "Defensive Tackle (DT)",
+      "starters": "0",
+      "maximums": "No Limit"
+    },
+    {
+      "position": "Defensive End (DE)",
+      "starters": "0",
+      "maximums": "No Limit"
+    },
+    { "position": "Linebacker (LB)", "starters": "0", "maximums": "No Limit" },
+    { "position": "Defensive Line (DL)", "starters": "0", "maximums": "N/A" },
+    { "position": "Cornerback (CB)", "starters": "0", "maximums": "No Limit" },
+    { "position": "Safety (S)", "starters": "0", "maximums": "No Limit" },
+    { "position": "Defensive Back (DB)", "starters": "0", "maximums": "N/A" },
+    {
+      "position": "Defensive Player Utility (DP)",
+      "starters": "0",
+      "maximums": "N/A"
+    },
+    {
+      "position": "Team Defense/Special Teams (D/ST)",
+      "starters": "1",
+      "maximums": "3"
+    },
+    { "position": "Place Kicker (K)", "starters": "1", "maximums": "3" },
+    { "position": "Punter (P)", "starters": "0", "maximums": "No Limit" },
+    { "position": "Head Coach (HC)", "starters": "0", "maximums": "No Limit" },
+    { "position": "Bench (BE)", "starters": "7", "maximums": "N/A" },
+    { "position": "Injured Reserve (IR)", "starters": "1", "maximums": "N/A" }
+  ],
+  "scoringSettings": [
+    { "rule": "Passing", "setting": null },
+    { "rule": "Passing Yards (PY)", "setting": "0.04" },
+    { "rule": "TD Pass (PTD)", "setting": "4" },
+    { "rule": "Interceptions Thrown (INT)", "setting": "-2" },
+    { "rule": "2pt Passing Conversion (2PC)", "setting": "2" },
+    { "rule": "Rushing", "setting": null },
+    { "rule": "Rushing Yards (RY)", "setting": "0.1" },
+    { "rule": "TD Rush (RTD)", "setting": "6" },
+    { "rule": "2pt Rushing Conversion (2PR)", "setting": "2" },
+    { "rule": "Receiving", "setting": null },
+    { "rule": "Receiving Yards (REY)", "setting": "0.1" },
+    { "rule": "Each reception (REC)", "setting": "1" },
+    { "rule": "TD Reception (RETD)", "setting": "6" },
+    { "rule": "2pt Receiving Conversion (2PRE)", "setting": "2" },
+    { "rule": "Kicking", "setting": null },
+    { "rule": "Each PAT Made (PAT)", "setting": "1" },
+    { "rule": "Total FG Missed (FGM)", "setting": "-1" },
+    { "rule": "FG Made (0-39 yards) (FG0)", "setting": "3" },
+    { "rule": "FG Made (40-49 yards) (FG40)", "setting": "4" },
+    { "rule": "FG Made (50-59 yards) (FG50)", "setting": "5" },
+    { "rule": "FG Made (60+ yards) (FG60)", "setting": "6" },
+    { "rule": "Team Defense / Special Teams", "setting": null },
+    { "rule": "Kickoff Return TD (KRTD)", "setting": "6" },
+    { "rule": "Punt Return TD (PRTD)", "setting": "6" },
+    { "rule": "Interception Return TD (INTTD)", "setting": "6" },
+    { "rule": "Fumble Return TD (FRTD)", "setting": "6" },
+    { "rule": "Blocked Punt or FG return for TD (BLKKRTD)", "setting": "6" },
+    { "rule": "2pt Return (2PTRET)", "setting": "2" },
+    { "rule": "1pt Safety (1PSF)", "setting": "1" },
+    { "rule": "Each Sack (SK)", "setting": "1" },
+    { "rule": "Blocked Punt, PAT or FG (BLKK)", "setting": "2" },
+    { "rule": "Each Interception (INT)", "setting": "2" },
+    { "rule": "Each Fumble Recovered (FR)", "setting": "2" },
+    { "rule": "Each Safety (SF)", "setting": "2" },
+    { "rule": "0 points allowed (PA0)", "setting": "5" },
+    { "rule": "1-6 points allowed (PA1)", "setting": "4" },
+    { "rule": "7-13 points allowed (PA7)", "setting": "3" },
+    { "rule": "14-17 points allowed (PA14)", "setting": "1" },
+    { "rule": "28-34 points allowed (PA28)", "setting": "-1" },
+    { "rule": "35-45 points allowed (PA35)", "setting": "-3" },
+    { "rule": "46+ points allowed (PA46)", "setting": "-5" },
+    { "rule": "Less than 100 total yards allowed (YA100)", "setting": "5" },
+    { "rule": "100-199 total yards allowed (YA199)", "setting": "3" },
+    { "rule": "200-299 total yards allowed (YA299)", "setting": "2" },
+    { "rule": "350-399 total yards allowed (YA399)", "setting": "-1" },
+    { "rule": "400-449 total yards allowed (YA449)", "setting": "-3" },
+    { "rule": "450-499 total yards allowed (YA499)", "setting": "-5" },
+    { "rule": "500-549 total yards allowed (YA549)", "setting": "-6" },
+    { "rule": "550+ total yards allowed (YA550)", "setting": "-7" },
+    { "rule": "Miscellaneous", "setting": null },
+    { "rule": "Kickoff Return TD (KRTD)", "setting": "6" },
+    { "rule": "Punt Return TD (PRTD)", "setting": "6" },
+    { "rule": "Fumble Recovered for TD (FTD)", "setting": "6" },
+    { "rule": "Total Fumbles Lost (FUML)", "setting": "-2" },
+    { "rule": "Interception Return TD (INTTD)", "setting": "6" },
+    { "rule": "Fumble Return TD (FRTD)", "setting": "6" },
+    { "rule": "Blocked Punt or FG return for TD (BLKKRTD)", "setting": "6" },
+    { "rule": "2pt Return (2PTRET)", "setting": "2" },
+    { "rule": "1pt Safety (1PSF)", "setting": "1" }
+  ],
+  "scheduleSettings": [
+    {
+      "rule": "Start of Regular Season",
+      "setting": "NFL Week 1 (Start of Season)"
+    },
+    { "rule": "Weeks Per Matchup", "setting": "1" },
+    { "rule": "Regular Season Matchups", "setting": "14" },
+    { "rule": "Matchup Tie Breaker", "setting": "No tie breakers" },
+    { "rule": "Home Field Advantage", "setting": "None" },
+    { "rule": "Bonus Wins and Losses", "setting": "No" },
+    { "rule": "Playoff Teams", "setting": "4" },
+    { "rule": "Weeks In Round 1 Playoff Matchup", "setting": "2" },
+    { "rule": "Weeks In Championship Round", "setting": "2" },
+    { "rule": "Playoff Seeding Tie Breaker", "setting": "Total Points For" },
+    { "rule": "Playoff Home Field Advantage", "setting": "None" },
+    { "rule": "Allow for Playoff Bracket Reseeding", "setting": "Off" },
+    {
+      "rule": "Lock Transactions for Eliminated Teams During Playoffs",
+      "setting": "No\nTo edit, go to Settings > Transactions and Keepers"
+    }
+  ],
+  "transactionSettings": [
+    { "rule": "Observe ESPN's Undroppable Players List", "setting": "Yes" },
+    { "rule": "Player Universe", "setting": "NFL" },
+    {
+      "rule": "Lineup Changes",
+      "setting": "Lock individually at Scheduled Gametime"
+    },
+    { "rule": "Player Acquisition System", "setting": "Waivers" },
+    { "rule": "Season Acquisition Limit", "setting": "No Limit" },
+    { "rule": "Waiver Period", "setting": "1 Day" },
+    {
+      "rule": "Waiver Order",
+      "setting": "Reset Each Week to Inverse Order of Standings"
+    },
+    {
+      "rule": "Lock Transactions for Eliminated Teams During Playoffs",
+      "setting": "No"
+    },
+    { "rule": "Trade Limit", "setting": "No Limit" },
+    { "rule": "Trade Deadline", "setting": "Nov 27, 2024 @ 11:00 AM CST" },
+    { "rule": "Trade Review Period", "setting": "1 Day" },
+    { "rule": "Votes Required to Veto Trade", "setting": "1" },
+    { "rule": "Use Keepers for 2024 Season", "setting": "No" },
+    { "rule": "Use Keepers for 2025 Season", "setting": "No" }
+  ]
+}

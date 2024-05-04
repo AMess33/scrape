@@ -11,11 +11,11 @@ const username = process.env.ESPNUSERNAME;
 const password = process.env.ESPNPASSWORD;
 
 // login page
-const url = "https://www.espn.com/login";
+// const url = "https://www.espn.com/login";
 
 // scrape testing url
-// const url =
-//   "https://fantasy.espn.com/football/league/settings?leagueId=695637497&view=summary";
+const url =
+  "https://fantasy.espn.com/football/league/settings?leagueId=695637497&view=summary";
 
 const ESPN_League_Settings = async () => {
   const browser: Browser = await puppeteer.launch({
@@ -30,70 +30,70 @@ const ESPN_League_Settings = async () => {
   await page.goto(url, { waitUntil: "load" });
 
   // login form is inside an IFrame
-  let frame: Frame | null = null;
+  // let frame: Frame | null = null;
 
-  for (const f of page.frames()) {
-    const element = await f.frameElement();
-    const id = await element?.evaluate((f) => f.id);
-    if (id === "disneyid-iframe") {
-      frame = f;
-      break;
-    }
-  }
-  console.log(frame);
+  // for (const f of page.frames()) {
+  //   const element = await f.frameElement();
+  //   const id = await element?.evaluate((f) => f.id);
+  //   if (id === "disneyid-iframe") {
+  //     frame = f;
+  //     break;
+  //   }
+  // }
+  // console.log(frame);
 
-  await frame?.waitForSelector(
-    "#did-ui-view > div > section > section > form > section > div:nth-child(1) > div > label > span.input-wrapper > input"
-  );
-  // await frame?.click("text/Username or Email Address");
-  await frame?.type(
-    "#did-ui-view > div > section > section > form > section > div:nth-child(1) > div > label > span.input-wrapper > input",
-    `${username}`
-  );
+  // await frame?.waitForSelector(
+  //   "#did-ui-view > div > section > section > form > section > div:nth-child(1) > div > label > span.input-wrapper > input"
+  // );
+  // // await frame?.click("text/Username or Email Address");
+  // await frame?.type(
+  //   "#did-ui-view > div > section > section > form > section > div:nth-child(1) > div > label > span.input-wrapper > input",
+  //   `${username}`
+  // );
 
-  await frame?.type(
-    "#did-ui-view > div > section > section > form > section > div:nth-child(2) > div > label > span.input-wrapper > input",
-    `${password}`
-  );
-  // log in
-  await frame?.click(
-    "#did-ui-view > div > section > section > form > section > div.btn-group.touch-print-btn-group-wrapper > button"
-  );
-  // wait for redirect to espn.com
-  await page.waitForSelector(
-    "#global-nav > ul > li.pillar.logo.fantasy.fantasy > a > span > span.link-text"
-  );
-  // hover to show fantasy drop down
-  await page.hover(
-    "#global-nav > ul > li.pillar.logo.fantasy.fantasy > a > span > span.link-text"
-  );
-  // click on fantasy football page
-  await page.click(
-    "#submenu-pillarlogofantasyfantasy > ul:nth-child(1) > li:nth-child(8) > a"
-  );
+  // await frame?.type(
+  //   "#did-ui-view > div > section > section > form > section > div:nth-child(2) > div > label > span.input-wrapper > input",
+  //   `${password}`
+  // );
+  // // log in
+  // await frame?.click(
+  //   "#did-ui-view > div > section > section > form > section > div.btn-group.touch-print-btn-group-wrapper > button"
+  // );
+  // // wait for redirect to espn.com
+  // await page.waitForSelector(
+  //   "#global-nav > ul > li.pillar.logo.fantasy.fantasy > a > span > span.link-text"
+  // );
+  // // hover to show fantasy drop down
+  // await page.hover(
+  //   "#global-nav > ul > li.pillar.logo.fantasy.fantasy > a > span > span.link-text"
+  // );
+  // // click on fantasy football page
+  // await page.click(
+  //   "#submenu-pillarlogofantasyfantasy > ul:nth-child(1) > li:nth-child(8) > a"
+  // );
 
-  // wait for selector to load
-  // await page.waitForSelector(`text/${leagueName}`);
-  await page.waitForSelector(
-    "#fantasy-feed-items > div.favItem.favItem--offseason > a.favItem__team > div > div.favItem__headline > div.favItem__subHead"
-  );
-  // click on team based on users league name
-  // await page.click(`text/${leagueName}`);
-  await page.click(
-    "#fantasy-feed-items > div.favItem.favItem--offseason > a.favItem__team > div > div.favItem__headline > div.favItem__subHead"
-  );
+  // // wait for selector to load
+  // // await page.waitForSelector(`text/${leagueName}`);
+  // await page.waitForSelector(
+  //   "#fantasy-feed-items > div.favItem.favItem--offseason > a.favItem__team > div > div.favItem__headline > div.favItem__subHead"
+  // );
+  // // click on team based on users league name
+  // // await page.click(`text/${leagueName}`);
+  // await page.click(
+  //   "#fantasy-feed-items > div.favItem.favItem--offseason > a.favItem__team > div > div.favItem__headline > div.favItem__subHead"
+  // );
 
-  await page.waitForNavigation({ waitUntil: "domcontentloaded" });
-  // hover on 'league' drop down
-  await page.waitForSelector("text/League");
-  await page.hover("text/League");
-  // click 'settings' in drop down menu
-  await page.waitForSelector("text/Settings");
-  await page.click("text/Settings");
+  // await page.waitForNavigation({ waitUntil: "domcontentloaded" });
+  // // hover on 'league' drop down
+  // await page.waitForSelector("text/League");
+  // await page.hover("text/League");
+  // // click 'settings' in drop down menu
+  // await page.waitForSelector("text/Settings");
+  // await page.click("text/Settings");
 
-  await page.waitForNavigation({ waitUntil: "domcontentloaded" });
+  // await page.waitForNavigation({ waitUntil: "domcontentloaded" });
 
-  // navigate to basic settings
+  // // navigate to basic settings
   await page.waitForSelector("text/Basic Settings");
   await page.click("text/Basic Settings");
   await page.waitForSelector("text/Format");
@@ -126,7 +126,7 @@ const ESPN_League_Settings = async () => {
         "#fitt-analytics > div > div.jsx-3010562182.shell-container > div > div.layout.is-full > div > div > div:nth-child(4) > div.league--settings--table.draft--settings.isViewing > div > div > div.flex > div > div:nth-child(2) > table > tbody > tr"
       )
     );
-    const data = rulesRows.map((rule: any) => ({
+    const data = rulesRows.flatMap((rule: any) => ({
       rule: rule.querySelector("td:nth-child(1) > div > span").innerText,
       setting: rule.querySelector("td:nth-child(2) > div > span").innerText,
     }));
@@ -191,7 +191,7 @@ const ESPN_League_Settings = async () => {
         "#fitt-analytics > div > div.jsx-3010562182.shell-container > div > div.layout.is-full > div > div > div:nth-child(4) > div.league--settings--table.scoring--settings.multipleCategories.isViewing > div > div "
       )
     );
-    const tableData = tables.map((table: any) => {
+    const tableData = tables.flatMap((table: any) => {
       const rows = Array.from(table.querySelectorAll("tr"));
 
       const data: RowData[] = rows.map((row: any) => {
@@ -242,7 +242,7 @@ const ESPN_League_Settings = async () => {
       )
     );
 
-    const tableData = tables.map((table: any) => {
+    const tableData = tables.flatMap((table: any) => {
       const rows = Array.from(table.querySelectorAll("tr"));
 
       const data = rows.map((row: any) => ({
@@ -269,7 +269,7 @@ const ESPN_League_Settings = async () => {
         "#fitt-analytics > div > div.jsx-3010562182.shell-container > div > div.layout.is-full > div > div > div:nth-child(4) > div.league--settings--table.schedule--settings.isViewing > div"
       )
     );
-    const tableData = tables.map((table: any) => {
+    const tableData = tables.flatMap((table: any) => {
       const rows = Array.from(table.querySelectorAll("tr"));
 
       const data = rows.map((row: any) => ({
@@ -319,16 +319,18 @@ const ESPN_League_Settings = async () => {
   // create json file with all scraped data
   fs.writeFileSync(
     "ESPNLeagueSettings.json",
-    JSON.stringify([
+    JSON.stringify({
       ownerData,
-      basicSettings,
-      draftSettings,
-      rosterSettings,
+      basicSettings: basicSettings.filter((rule) => rule.rule !== null),
+      draftSettings: draftSettings.filter((rule) => rule.rule !== null),
+      rosterSettings: rosterSettings.filter((rule) => rule.rule !== null),
       positionSettings,
-      scoringSettings,
-      scheduleSettings,
-      transactionSettings,
-    ]),
+      scoringSettings: scoringSettings.filter((rule) => rule.rule !== null),
+      scheduleSettings: scheduleSettings.filter((rule) => rule.rule !== null),
+      transactionSettings: transactionSettings.filter(
+        (rule) => rule.rule !== null
+      ),
+    }),
     (err): any => {
       if (err) throw err;
     }
