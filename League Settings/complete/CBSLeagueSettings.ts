@@ -63,20 +63,21 @@ const CBS_League_Settings = async () => {
     "xpath/html/body/div[2]/div[6]/div[1]/div/div[2]/div[2]/div[1]/div[1]/div[2]/div/div/div/table/tbody/tr[1]/th[1]"
   );
 
-  const leagueIDData = await page.evaluate(() => {
+  const leagueSettingsData = await page.evaluate(() => {
     const ruleRows = Array.from(
       document.querySelectorAll("table > tbody > tr")
     );
-    const leagueSettings = [];
-    const rosterLimits = [];
-    const scoringSystem = [];
-    const draftSettings = [];
+    const leagueSettings: any[] = [];
+    const leagueIdentity: any[] = [];
+    const rosterLimits: any[] = [];
+    const scoringSystem: any[] = [];
+    const draftSettings: any[] = [];
+    let tableName = null;
 
     ruleRows.forEach((row) => {
       const headers = Array.from(row.querySelectorAll("th"));
-      let tableName = "";
       if (headers.length > 0) {
-        const tableName =
+        tableName =
           headers[0].parentElement?.parentElement?.parentElement?.parentElement
             ?.parentElement?.parentElement?.parentElement?.parentElement
             ?.firstChild?.firstChild?.innerText;
@@ -85,6 +86,11 @@ const CBS_League_Settings = async () => {
         const cells = Array.from(row.querySelectorAll("td"));
         if (cells.length === 2 && tableName === "DRAFT SETTINGS") {
           draftSettings.push({
+            rule: cells[0].innerText.trim(),
+            setting: cells[1].innerText.trim(),
+          });
+        } else if (cells.length === 2 && tableName === "LEAGUE IDENTITY") {
+          leagueIdentity.push({
             rule: cells[0].innerText.trim(),
             setting: cells[1].innerText.trim(),
           });
@@ -113,7 +119,13 @@ const CBS_League_Settings = async () => {
     });
 
     // Return an object containing all arrays
-    return { leagueSettings, rosterLimits, scoringSystem, draftSettings };
+    return {
+      leagueIdentity,
+      rosterLimits,
+      scoringSystem,
+      draftSettings,
+      leagueSettings,
+    };
   });
 
   // Click on the link or button to navigate to another page
@@ -148,7 +160,7 @@ const CBS_League_Settings = async () => {
   // Write collected data to a file
   fs.writeFileSync(
     "CBSLeagueRules.json",
-    JSON.stringify({ leagueIDData, ownersData })
+    JSON.stringify({ leagueSettingsData, ownersData })
   );
 
   await browser.close();
