@@ -62,62 +62,76 @@ const CBS_League_Settings = async () => {
   await page.waitForSelector(
     "xpath/html/body/div[2]/div[6]/div[1]/div/div[2]/div[2]/div[1]/div[1]/div[2]/div/div/div/table/tbody/tr[1]/th[1]"
   );
-  const leagueIDData = await page.evaluate(() => {
-    let currentSection = "";
-    let rosterLimits = [];
 
+  const leagueIDData = await page.evaluate(() => {
     const ruleRows = Array.from(
       document.querySelectorAll("table > tbody > tr")
     );
+    const leagueSettings = [];
+    const rosterLimits = [];
+    const scoringSystem = [];
+    const draftSettings = [];
 
-    const data = ruleRows.map((rule, index) => {
-      const headers = Array.from(rule.querySelectorAll("th"));
+    ruleRows.forEach((row) => {
+      const headers = Array.from(row.querySelectorAll("th"));
+      let tableName = "";
       if (headers.length > 0) {
-        return headers[0].parentElement?.parentElement?.parentElement
-          ?.parentElement?.parentElement?.parentElement?.parentElement
-          ?.parentElement?.firstChild?.firstChild?.innerText;
+        const tableName =
+          headers[0].parentElement?.parentElement?.parentElement?.parentElement
+            ?.parentElement?.parentElement?.parentElement?.parentElement
+            ?.firstChild?.firstChild?.innerText;
+        console.log(tableName);
       } else {
-        const cells = Array.from(rule.querySelectorAll("td"));
-        if (cells.length === 2) {
-          return {
-            rule: cells[0].innerText,
-            setting: cells[1].innerText,
-          };
+        const cells = Array.from(row.querySelectorAll("td"));
+        if (cells.length === 2 && tableName === "DRAFT SETTINGS") {
+          draftSettings.push({
+            rule: cells[0].innerText.trim(),
+            setting: cells[1].innerText.trim(),
+          });
         } else if (cells.length === 3) {
-          return {
+          scoringSystem.push({
             rule: cells[0].innerText,
             name: cells[1].innerText,
             setting: cells[2].innerText,
-          };
+          });
         } else if (cells.length === 4) {
-          return {
+          rosterLimits.push({
             position: cells[0].innerText,
             min: cells[1].innerText,
             max: cells[2].innerText,
             total: cells[3].innerText,
-          };
+          });
+        } else if (cells.length === 2) {
+          leagueSettings.push({
+            rule: cells[0].innerText,
+            setting: cells[1].innerText,
+          });
         } else {
           // Handle other cases or return null
-          return null;
         }
       }
     });
 
-    return data;
+    // Return an object containing all arrays
+    return { leagueSettings, rosterLimits, scoringSystem, draftSettings };
   });
 
-  console.log(leagueIDData);
+  // Click on the link or button to navigate to another page
+  await Promise.all([
+    page.waitForSelector(
+      "#container > div:nth-child(7) > div:nth-child(2) > div > div.box-Rg.box-white > div.fantasyHeaderNav > ul > li:nth-child(2) > a"
+    ),
+    page.click(
+      "#container > div:nth-child(7) > div:nth-child(2) > div > div.box-Rg.box-white > div.fantasyHeaderNav > ul > li:nth-child(2) > a"
+    ),
+  ]);
 
-  await page.waitForSelector(
-    "#container > div:nth-child(7) > div:nth-child(2) > div > div.box-Rg.box-white > div.fantasyHeaderNav > ul > li:nth-child(2) > a"
-  );
-  await page.click(
-    "#container > div:nth-child(7) > div:nth-child(2) > div > div.box-Rg.box-white > div.fantasyHeaderNav > ul > li:nth-child(2) > a"
-  );
+  // Wait for selector on the new page
   await page.waitForSelector(
     "#container > div:nth-child(7) > div:nth-child(2) > div > div.box-Rg.box-white > table > tbody > tr:nth-child(3) > td:nth-child(1) > a"
   );
 
+  // Collect data from the new page
   const ownersData = await page.evaluate(() => {
     const ownerRows = Array.from(document.querySelectorAll("tr.row1")).concat(
       Array.from(document.querySelectorAll("tr.row2"))
@@ -130,10 +144,11 @@ const CBS_League_Settings = async () => {
     }));
     return data;
   });
-  console.log(ownersData);
+
+  // Write collected data to a file
   fs.writeFileSync(
     "CBSLeagueRules.json",
-    JSON.stringify({ leagueIDData: leagueIDData.filter((x) => x), ownersData })
+    JSON.stringify({ leagueIDData, ownersData })
   );
 
   await browser.close();
