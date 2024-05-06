@@ -97,14 +97,7 @@ const scrapeData = async (page) => {
     }));
     return data;
   });
-  console.log(rulesData);
-  fs.writeFileSync(
-    "NFLLeagueRules.json",
-    JSON.stringify(rulesData),
-    (err: any) => {
-      if (err) throw err;
-    }
-  );
+
   // go to owners page
   const url = await page.url();
   const newURL = url.replace("/settings", "/owners");
@@ -132,8 +125,8 @@ const scrapeData = async (page) => {
   });
   console.log(ownerData);
   fs.writeFileSync(
-    "NFLLeagueOwners.json",
-    JSON.stringify(ownerData),
+    "NFLLeagueSettings.json",
+    JSON.stringify({ rulesData, ownerData }),
     (err: any) => {
       if (err) throw err;
     }
