@@ -22,8 +22,13 @@ const Underdog_ADP = async () => {
   const browser = await puppeteer.launch({
     headless: false,
     executablePath: executablePath(),
+    devtools: true,
   });
+
   const page = await browser.newPage();
+
+  page.on("console", (msg: any) => console.log("PAGE LOG:", msg.text()));
+
   const context = browser.defaultBrowserContext();
   await context.overridePermissions(
     "https://underdogfantasy.com/login?next=%2Frankings%2Fnfl",
@@ -57,44 +62,143 @@ const Underdog_ADP = async () => {
     "xpath/html/body/div[1]/div/div/div[2]/div[1]/div[2]/div[2]/div[1]/div/div/div[1]"
   );
 
+  function waitFor(ms: number) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
+  async function scrollToBottom(page: any) {
+    console.log("*** SCROLLING TO BOTTOM ***");
+
+    let retryScrollCount = 3;
+
+    while (retryScrollCount > 0) {
+      try {
+        let scrollPosition = await page.$eval(
+          "#root > div > div > div.styles__rankingSection__jCB_w > div.styles__playerListColumn__va0Um > div.styles__playerListWrapper__mF2u0 > div.styles__autoSizer__puLtf > div:nth-child(1) > div",
+          (wrapper: any) => wrapper.scrollTop
+        );
+
+        await page.evaluate(() =>
+          document
+            .querySelector(
+              "#root > div > div > div.styles__rankingSection__jCB_w > div.styles__playerListColumn__va0Um > div.styles__playerListWrapper__mF2u0 > div.styles__autoSizer__puLtf > div:nth-child(1) > div"
+            )
+            .scrollBy({ top: 200, behavior: "smooth" })
+        );
+
+        await waitFor(200);
+
+        await page.waitForFunction(
+          `document.querySelector('#root > div > div > div.styles__rankingSection__jCB_w > div.styles__playerListColumn__va0Um > div.styles__playerListWrapper__mF2u0 > div.styles__autoSizer__puLtf > div:nth-child(1) > div').scrollTop > ${scrollPosition}`,
+          { timeout: 1000 }
+        );
+
+        retryScrollCount = 3;
+      } catch {
+        retryScrollCount--;
+      }
+    }
+  }
+
+  const players: any[] = [];
+
+  await page.exposeFunction("doSomethingCrazy", (data: any) => {
+    console.log("*** DATA ***");
+    console.log(data);
+
+    players.push(data);
+
+    console.log(JSON.stringify(players));
+
+    // save scraped data into file or database
+    // console.dir({ data }, { depth: null });
+  });
+
+  await page.evaluate(async () => {
+    console.log("*** SETTING UP MUTATION OBSERVER ***");
+
+    const observer = new MutationObserver(async (mutationsList: any) => {
+      for (let mutation of mutationsList) {
+        if (mutation.addedNodes.length) {
+          for (let node of mutation.addedNodes) {
+            const player = {
+              playerName: node.querySelector(
+                "div > div > div.styles__playerInfo__CyzKu > div.styles__playerName__tC8I7"
+              ).innerText,
+              position: node.querySelector(
+                "div > div.styles__playerInfo__CyzKu > div.styles__playerPosition__ziprS > div"
+              ).innerText,
+              team: node.querySelector(
+                "div > div.styles__playerInfo__CyzKu > div.styles__playerPosition__ziprS > p > strong"
+              ).innerText,
+              adp: node.querySelector(
+                "div > div.styles__rightSide__uDVQf > div:nth-child(1) > p.styles__statValue__g8zd5"
+              ).innerText,
+            };
+
+            console.log(player.playerName);
+
+            // @ts-expect-error
+            await window.doSomethingCrazy(player);
+          }
+        }
+      }
+    });
+
+    const virtualListNode = document.querySelector(
+      "#root > div > div > div.styles__rankingSection__jCB_w > div.styles__playerListColumn__va0Um > div.styles__playerListWrapper__mF2u0 > div.styles__autoSizer__puLtf > div:nth-child(1) > div"
+    );
+
+    console.log("*** OBSERVING ***");
+
+    observer.observe(virtualListNode, { childList: true, subtree: true });
+  });
+
+  await scrollToBottom(page);
+
   const adpData = await page.evaluate(() => {
     const playerRows = Array.from(
       document.querySelectorAll(
         "#root > div > div > div.styles__rankingSection__jCB_w > div.styles__playerListColumn__va0Um > div.styles__playerListWrapper__mF2u0 > div.styles__autoSizer__puLtf > div:nth-child(1) > div > div > div"
       )
     );
+
     let players: any[] = [];
-    while (players.length < 250) {
-      // map each row in the table
-      playerRows.forEach((player: any) => {
-        players.push({
-          playerName: player.querySelector(
-            "div > div > div > div.styles__playerInfo__CyzKu > div.styles__playerName__tC8I7"
-          ).innerText,
-          position: player.querySelector(
-            "div > div > div.styles__playerInfo__CyzKu > div.styles__playerPosition__ziprS > div"
-          ).innerText,
-          team: player.querySelector(
-            "div > div > div.styles__playerInfo__CyzKu > div.styles__playerPosition__ziprS > p > strong"
-          ).innerText,
-          adp: player.querySelector(
-            "div > div > div.styles__rightSide__uDVQf > div:nth-child(1) > p.styles__statValue__g8zd5"
-          ).innerText,
-        });
-      });
-    }
+
+    // while (players.length < 250) {
+    //   // map each row in the table
+    //   playerRows.forEach((player: any) => {
+    //     players.push({
+    //       playerName: player.querySelector(
+    //         "div > div > div > div.styles__playerInfo__CyzKu > div.styles__playerName__tC8I7"
+    //       ).innerText,
+    //       position: player.querySelector(
+    //         "div > div > div.styles__playerInfo__CyzKu > div.styles__playerPosition__ziprS > div"
+    //       ).innerText,
+    //       team: player.querySelector(
+    //         "div > div > div.styles__playerInfo__CyzKu > div.styles__playerPosition__ziprS > p > strong"
+    //       ).innerText,
+    //       adp: player.querySelector(
+    //         "div > div > div.styles__rightSide__uDVQf > div:nth-child(1) > p.styles__statValue__g8zd5"
+    //       ).innerText,
+    //     });
+    //   });
+    // }
+
     return players;
   });
 
-  await page.hover(
-    "#root > div > div > div.styles__rankingSection__jCB_w > div.styles__playerListColumn__va0Um > div.styles__playerListWrapper__mF2u0 > div.styles__autoSizer__puLtf > div:nth-child(1) > div > div > div:nth-child(1) > div > div"
-  );
-  await page.mouse.wheel({ deltaY: 528 });
-  await page.waitForSelector(
-    "#root > div > div > div.styles__rankingSection__jCB_w > div.styles__playerListColumn__va0Um > div.styles__playerListWrapper__mF2u0 > div.styles__autoSizer__puLtf > div:nth-child(1) > div > div > div:nth-child(11)"
-  );
+  console.log({ adpData });
 
-  fs.writeFile("adp.json", JSON.stringify({ adpData }), (err) => {});
+  // await page.hover(
+  //   "#root > div > div > div.styles__rankingSection__jCB_w > div.styles__playerListColumn__va0Um > div.styles__playerListWrapper__mF2u0 > div.styles__autoSizer__puLtf > div:nth-child(1) > div > div > div:nth-child(1) > div > div"
+  // );
+  // await page.mouse.wheel({ deltaY: 528 });
+  // await page.waitForSelector(
+  //   "#root > div > div > div.styles__rankingSection__jCB_w > div.styles__playerListColumn__va0Um > div.styles__playerListWrapper__mF2u0 > div.styles__autoSizer__puLtf > div:nth-child(1) > div > div > div:nth-child(11)"
+  // );
+
+  // fs.writeFile("adp.json", JSON.stringify({ adpData }), (err) => {});
 };
 
 Underdog_ADP();
