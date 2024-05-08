@@ -61,16 +61,42 @@ const Underdog_ADP = async () => {
   await page.waitForSelector(
     "xpath/html/body/div[1]/div/div/div[2]/div[1]/div[2]/div[2]/div[1]/div/div/div[1]"
   );
+  const adpData = await page.evaluate(() => {
+    const playerRows = Array.from(
+      document.querySelectorAll(
+        "#root > div > div > div.styles__rankingSection__jCB_w > div.styles__playerListColumn__va0Um > div.styles__playerListWrapper__mF2u0 > div.styles__autoSizer__puLtf > div:nth-child(1) > div > div > div"
+      )
+    );
+    let players: any[] = [];
+
+    // map each row in the table
+    playerRows.forEach((player: any) => {
+      players.push({
+        playerName: player.querySelector(
+          "div > div > div > div.styles__playerInfo__CyzKu > div.styles__playerName__tC8I7"
+        ).innerText,
+        position: player.querySelector(
+          "div > div > div.styles__playerInfo__CyzKu > div.styles__playerPosition__ziprS > div"
+        ).innerText,
+        team: player.querySelector(
+          "div > div > div.styles__playerInfo__CyzKu > div.styles__playerPosition__ziprS > p > strong"
+        ).innerText,
+        adp: player.querySelector(
+          "div > div > div.styles__rightSide__uDVQf > div:nth-child(1) > p.styles__statValue__g8zd5"
+        ).innerText,
+      });
+    });
+
+    return players;
+  });
 
   function waitFor(ms: number) {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
-  const players: any[] = [];
-
-  await page.exposeFunction("doSomethingCrazy", (data: any) => {
+  await page.exposeFunction("addPlayers", (data: any) => {
     console.log(data.playerName);
-    players.push(data);
+    adpData.push(data);
   });
 
   await page.evaluate(async () => {
@@ -96,7 +122,7 @@ const Underdog_ADP = async () => {
             };
 
             // @ts-expect-error
-            await window.doSomethingCrazy(player);
+            await window.addPlayers(player);
           }
         }
       }
@@ -112,7 +138,7 @@ const Underdog_ADP = async () => {
 
     let retryScrollCount = 3;
 
-    while (retryScrollCount > 0 && players.length < 100) {
+    while (retryScrollCount > 0 && adpData.length < 100) {
       try {
         let scrollPosition = await page.$eval(
           ".ReactVirtualized__List",
@@ -142,9 +168,9 @@ const Underdog_ADP = async () => {
   await scrollToBottom(page);
   await browser.close();
 
-  console.dir({ players }, { depth: null });
+  console.dir({ adpData }, { depth: null });
 
-  fs.writeFileSync("adp.json", JSON.stringify({ players }));
+  fs.writeFileSync("UnderDogADP.json", JSON.stringify({ adpData }));
 };
 
 Underdog_ADP();
