@@ -7,6 +7,7 @@ import { Browser } from "puppeteer";
 puppeteer.use(StealthPlugin());
 
 const { executablePath } = require("puppeteer");
+// need users login creds and league name
 const username = process.env.USERNAME;
 const password = process.env.PASSWORD;
 const leagueName = "Wisconsin Fantasy Football League";
@@ -81,7 +82,6 @@ const CBS_League_Settings = async () => {
           headers[0].parentElement?.parentElement?.parentElement?.parentElement
             ?.parentElement?.parentElement?.parentElement?.parentElement
             ?.firstChild?.firstChild?.innerText;
-        console.log(tableName);
       } else {
         const cells = Array.from(row.querySelectorAll("td"));
         if (cells.length === 2 && tableName === "DRAFT SETTINGS") {
