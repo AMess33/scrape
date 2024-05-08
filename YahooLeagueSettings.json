@@ -1,0 +1,239 @@
+{
+  "rulesData": [
+    { "rule": "League ID#:", "setting": "393" },
+    { "rule": "League Name:", "setting": "KCMFC Fantasy League" },
+    { "rule": "Auto-renew Enabled:", "setting": "Yes" },
+    {
+      "rule": "Custom League URL:",
+      "setting": "https://football.fantasysports.yahoo.com/league/amessfts"
+    },
+    { "rule": "Draft Type:", "setting": "Offline Draft" },
+    {
+      "rule": "Cash League Settings:",
+      "setting": "Not a cash league Convert to cash league"
+    },
+    { "rule": "Max Teams:", "setting": "12" },
+    {
+      "rule": "Keeper Settings:",
+      "setting": "Yes, enable Keeper League Management tools"
+    },
+    { "rule": "Keeper Deadline Date:", "setting": "Wed Sep 4 2:00am CDT" },
+    { "rule": "Scoring Type:", "setting": "Head-to-Head" },
+    { "rule": "Start Scoring on:", "setting": "Week 1" },
+    { "rule": "Can't Cut List Provider:", "setting": "Yahoo Sports" },
+    { "rule": "Max Acquisitions for Entire Season:", "setting": "No maximum" },
+    { "rule": "Max Acquisitions per Week:", "setting": "No maximum" },
+    { "rule": "Max Trades for Entire Season", "setting": "No maximum" },
+    { "rule": "Trade End Date:", "setting": "November 16, 2024" },
+    { "rule": "Allow Draft Pick Trades:", "setting": "Yes" },
+    { "rule": "Trade Review:", "setting": "Commissioner" },
+    { "rule": "Trade Reject Time:", "setting": "2 days" },
+    { "rule": "Waiver Time:", "setting": "2 days" },
+    {
+      "rule": "Waiver Type:",
+      "setting": "FAB w/ Continual rolling list tiebreak"
+    },
+    { "rule": "Weekly Waivers", "setting": "Game Time - Tuesday" },
+    {
+      "rule": "Allow injured players from waivers or free agents to be added directly to injury slot:",
+      "setting": "No"
+    },
+    { "rule": "Post Draft Players:", "setting": "Follow Waiver Rules" },
+    { "rule": "Invite Sharing Tools:", "setting": "Enabled" },
+    {
+      "rule": "Playoffs:",
+      "setting": "6 teams - Week 15, 16 and 17 (ends Monday, Dec 30)"
+    },
+    {
+      "rule": "Playoff Tie-Breaker:",
+      "setting": "Best regular season record vs opponent wins"
+    },
+    { "rule": "Playoff Reseeding:", "setting": "No" },
+    { "rule": "Divisions:", "setting": "No" },
+    { "rule": "Lock Eliminated Teams:", "setting": "No" },
+    { "rule": "Apply Injured Status For Postponed Games", "setting": "Yes" },
+    {
+      "rule": "Roster Positions:",
+      "setting": "QB, WR, WR, WR, RB, RB, TE, W/R, DEF, D, D, D, BN, BN, BN, BN, BN, BN, BN, BN, BN, IR, IR, IR"
+    },
+    { "rule": "Fractional Points:", "setting": "Yes" },
+    { "rule": "Negative Points:", "setting": "Yes" },
+    { "rule": "Lock Benched Players:", "setting": "No" },
+    { "rule": "Make League Publicly Viewable:", "setting": "Yes" },
+    { "rule": "Invite Permissions:", "setting": "Commissioner Only" },
+    {
+      "rule": "Passing Yards",
+      "setting": "25 yards per point; 2 points at 300 yards; 3 points at 350 yards; 5 points at 400 yards"
+    },
+    { "rule": "Passing Touchdowns", "setting": "4" },
+    { "rule": "Interceptions", "setting": "-1" },
+    {
+      "rule": "Rushing Yards",
+      "setting": "10 yards per point; 2 points at 100 yards; 3 points at 125 yards; 5 points at 150 yards"
+    },
+    { "rule": "Rushing Touchdowns", "setting": "6" },
+    {
+      "rule": "Receiving Yards",
+      "setting": "10 yards per point; 2 points at 100 yards; 3 points at 125 yards; 5 points at 150 yards"
+    },
+    { "rule": "Receiving Touchdowns", "setting": "6" },
+    { "rule": "Return Yards", "setting": "25 yards per point" },
+    { "rule": "Return Touchdowns", "setting": "6" },
+    { "rule": "2-Point Conversions", "setting": "2" },
+    { "rule": "Fumbles\nYahoo Default", "setting": "-1" },
+    { "rule": "Fumbles Lost\nYahoo Default", "setting": "-1" },
+    { "rule": "Offensive Fumble Return TD", "setting": "6" },
+    { "rule": "40+ Yard Passing Touchdowns\nYahoo Default", "setting": "2" },
+    { "rule": "40+ Yard Rushing Touchdowns\nYahoo Default", "setting": "2" },
+    { "rule": "40+ Yard Receiving Touchdowns\nYahoo Default", "setting": "2" },
+    { "rule": "Sack", "setting": "1" },
+    { "rule": "Interception", "setting": "2" },
+    { "rule": "Fumble Recovery", "setting": "2" },
+    { "rule": "Touchdown", "setting": "6" },
+    { "rule": "Safety", "setting": "2" },
+    { "rule": "Block Kick", "setting": "2" },
+    { "rule": "Kickoff and Punt Return Touchdowns", "setting": "6" },
+    { "rule": "Points Allowed 0 points", "setting": "10" },
+    { "rule": "Points Allowed 1-6 points", "setting": "7" },
+    { "rule": "Points Allowed 7-13 points", "setting": "4" },
+    { "rule": "Points Allowed 14-20 points", "setting": "1" },
+    { "rule": "Points Allowed 21-27 points", "setting": "0" },
+    { "rule": "Points Allowed 28-34 points", "setting": "-1" },
+    { "rule": "Points Allowed 35+ points", "setting": "-4" },
+    { "rule": "Extra Point Returned", "setting": "2" },
+    { "rule": "Tackle Solo", "setting": "1" },
+    { "rule": "Tackle Assist", "setting": "0.5" },
+    { "rule": "Sack\nYahoo Default", "setting": "3" },
+    { "rule": "Interception", "setting": "3" },
+    { "rule": "Fumble Force", "setting": "2" },
+    { "rule": "Fumble Recovery", "setting": "2" },
+    { "rule": "Defensive Touchdown", "setting": "6" },
+    { "rule": "Safety", "setting": "2" },
+    { "rule": "Pass Defended", "setting": "1" },
+    { "rule": "Block Kick", "setting": "2" },
+    { "rule": "Tackles for Loss\nYahoo Default", "setting": "1" },
+    { "rule": "Extra Point Returned", "setting": "2" }
+  ],
+  "ownerData": [
+    {
+      "team": "cole murrin",
+      "owner": "Cole",
+      "email": "murrin_c@yahoo.com",
+      "budget": "$100",
+      "priority": "0",
+      "moves": "0",
+      "trades": "0",
+      "active": "Mon Apr 15 5:31pm CDT"
+    },
+    {
+      "team": "Diamond Dawgs",
+      "owner": "Jonathan",
+      "email": "jskint34@yahoo.com",
+      "budget": "$100",
+      "priority": "0",
+      "moves": "0",
+      "trades": "0",
+      "active": "Mon Apr 15 5:31pm CDT"
+    },
+    {
+      "team": "Ed",
+      "owner": "Sterling",
+      "email": "sterling.braun@yahoo.com",
+      "budget": "$100",
+      "priority": "0",
+      "moves": "0",
+      "trades": "0",
+      "active": "Mon Apr 15 5:31pm CDT"
+    },
+    {
+      "team": "El Cuñado",
+      "owner": "Benjamin",
+      "email": "benjaminsinn@gmail.com",
+      "budget": "$100",
+      "priority": "0",
+      "moves": "0",
+      "trades": "0",
+      "active": "Mon Apr 15 5:31pm CDT"
+    },
+    {
+      "team": "He Hate Me",
+      "owner": "Tyson",
+      "email": "tysonwoodson@gmail.com",
+      "budget": "$100",
+      "priority": "0",
+      "moves": "0",
+      "trades": "0",
+      "active": "Mon Apr 15 5:31pm CDT"
+    },
+    {
+      "team": "Mitch-A-Palooza",
+      "owner": "Mitchell",
+      "email": "mitchellstoughton@yahoo.com",
+      "budget": "$100",
+      "priority": "0",
+      "moves": "0",
+      "trades": "0",
+      "active": "Mon Apr 15 5:31pm CDT"
+    },
+    {
+      "team": "Off Constantly",
+      "owner": "Paul Norris",
+      "email": "nor_man_90@yahoo.com",
+      "budget": "$100",
+      "priority": "0",
+      "moves": "0",
+      "trades": "0",
+      "active": "Mon Apr 15 5:31pm CDT"
+    },
+    {
+      "team": "Run The League",
+      "owner": "Mess33",
+      "email": "dmesser_19@yahoo.com",
+      "budget": "$100",
+      "priority": "0",
+      "moves": "0",
+      "trades": "0",
+      "active": "Mon Apr 15 5:31pm CDT"
+    },
+    {
+      "team": "Team Tallywhacker",
+      "owner": "Devin",
+      "email": "dtally_22@hotmail.com",
+      "budget": "$100",
+      "priority": "0",
+      "moves": "0",
+      "trades": "0",
+      "active": "Mon Apr 15 5:31pm CDT"
+    },
+    {
+      "team": "The Brettholes",
+      "owner": "Brett",
+      "email": "brett.guthery13@gmail.com",
+      "budget": "$100",
+      "priority": "0",
+      "moves": "0",
+      "trades": "0",
+      "active": "Mon Apr 15 5:31pm CDT"
+    },
+    {
+      "team": "TheBear",
+      "owner": "PolarBear",
+      "email": "dustin.willard92@gmail.com",
+      "budget": "$100",
+      "priority": "0",
+      "moves": "0",
+      "trades": "0",
+      "active": "Mon Apr 15 5:31pm CDT"
+    },
+    {
+      "team": "кנ∂",
+      "owner": "KJD ✈",
+      "email": "kholtondwyer@hotmail.com",
+      "budget": "$100",
+      "priority": "0",
+      "moves": "0",
+      "trades": "0",
+      "active": "Mon Apr 15 5:31pm CDT"
+    }
+  ]
+}

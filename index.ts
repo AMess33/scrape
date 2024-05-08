@@ -3,151 +3,97 @@ const puppeteer = require("puppeteer-extra");
 const StealthPlugin = require("puppeteer-extra-plugin-stealth");
 const fs = require("fs");
 import { Browser } from "puppeteer";
-const dayjs = require("dayjs");
 
-const currentDate = dayjs().format("MM-DD-YYYY");
 puppeteer.use(StealthPlugin());
 
 const { executablePath } = require("puppeteer");
+const username = "dmesser_19";
+const password = process.env.PASSWORDY;
 
-const username = process.env.DKUSERNAME;
-const password = process.env.DKPASSWORD;
+// users league name needed in site navigation
+const leagueName = "KCMFC Fantasy League";
+// sign in then redirect to league settings page based off league id
+const signInURL = `https://login.yahoo.com/config/login?.intl=us&.lang=en-US&.src=ym&.done=https://football.fantasysports.yahoo.com`;
 
-const url =
-  "https://myaccount.draftkings.com/login?returnPath=%2Fdraft%2Frankings%2Fnfl%2F";
-
-const DraftKings_ADP = async () => {
-  const browser = await puppeteer.launch({
+const Yahoo_League_Settings = async () => {
+  const browser: Browser = await puppeteer.launch({
     headless: false,
     executablePath: executablePath(),
-    devtools: true,
   });
-
+  // if account does not have 2FA activated nothing needed here
+  // if 2fa enabled will need to pass cookies into browser instance to access leagues page
+  // page.setcookies();
   const page = await browser.newPage();
-
-  page.on("console", (msg: any) => console.log("PAGE LOG:", msg.text()));
-
-  const context = browser.defaultBrowserContext();
-  await context.overridePermissions(
-    "https://myaccount.draftkings.com/login?returnPath=%2Fdraft%2Frankings%2Fnfl%2F",
-    ["geolocation"]
+  await page.setUserAgent(
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
   );
-  page.once("dialog", async (dialog) => {
-    await dialog.accept();
-  });
-  await page.setGeolocation({ latitude: 39, longitude: -94 });
+  // sign in pathing w/ redirect to fantasy football home page
+  await page.goto(signInURL, { waitUntil: "load" });
+  await page.waitForSelector("#login-username");
+  await page.type("#login-username", `${username}`);
+  await page.click("#login-signin");
+  await page.waitForSelector("#login-passwd");
+  await page.type("#login-passwd", `${password}`);
+  await page.click("#login-signin");
 
-  await page.goto(url, {
-    waitUntil: "networkidle0",
-  });
-  await page.waitForSelector("#login-username-input");
-  await page.type("#login-username-input", `${username}`);
-  await page.type("#login-password-input", `${password}`);
-  await page.click("#login-submit");
+  // click on league from my leagues table
+  await page.waitForNavigation({ waitUntil: "networkidle0" });
+  await page.waitForSelector(`section#home-myleagues ::-p-text(${leagueName})`);
+  await page.click(`section#home-myleagues ::-p-text(${leagueName})`);
+  // grab league url and go to /settings page
+  const url = await page.url();
+  await page.goto(url + "/settings", { waitUntil: "domcontentloaded" });
+  await page.waitForSelector("text/League ID#:");
+  // scrape league settings from league details page
 
-  await page.waitForNavigation({ waitUntil: "domcontentloaded" });
+  const rulesData = await page.evaluate(() => {
+    const ruleRows = Array.from(
+      document.querySelectorAll("table > tbody > tr")
+    );
+
+    const data = ruleRows.map((rule: any) => ({
+      rule: rule.querySelector("td:nth-child(1)").innerText,
+      setting: rule.querySelector("td:nth-child(2)").innerText,
+    }));
+    return data;
+  });
+  // grab current url and replace settings with teams to go to the teams page and scrape owner info
+  const settingsURL = await page.url();
+  const teamsURL = settingsURL.replace("/settings", "/teams");
+  await page.goto(teamsURL, { waitUntil: "domcontentloaded" });
+
   await page.waitForSelector(
-    "xpath/html/body/div[1]/div/div/div[2]/div[1]/div[2]/div[2]/div[1]/div/div/div[1]"
+    "xpath/html/body/div[1]/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/section/div/div/div[3]/section/div/table/tbody/tr"
   );
-  const adpData = await page.evaluate(() => {
-    const playerRows = Array.from(document.querySelectorAll("div.row"));
-    let players: any[] = [];
-
-    // map each row in the table
-    playerRows.forEach((player: any) => {
-      players.push({
-        rank: player.querySelector("div:nth-child(2)").innerText,
-        playerName: player.querySelector("div.PlayerCell_player-name")
-          .innerText,
-        position: player.querySelector("div.player-position").innerText,
-        team: player.querySelector("div.player-team > div").innerText,
-        adp: player.querySelector("div:nth-child(6) > div > span > span")
-          .innerText,
-      });
-    });
-
-    return players;
+  // scrape owner table
+  const ownerData = await page.evaluate(() => {
+    const ownerRows = Array.from(
+      document.querySelectorAll("table > tbody > tr")
+    );
+    // yahoo hides manager name and email without being logged in
+    const data = ownerRows.map((owner: any) => ({
+      team: owner.querySelector("td:nth-child(1) > a:nth-child(2)").innerText,
+      owner: owner.querySelector("td:nth-child(2) > span > a").innerText,
+      email: owner.querySelector("td:nth-child(3) > a").innerText,
+      budget: owner.querySelector("td:nth-child(4)").innerText,
+      priority: owner.querySelector("td:nth-child(5)").innerText,
+      moves: owner.querySelector("td:nth-child(6)").innerText,
+      trades: owner.querySelector("td:nth-child(7)").innerText,
+      active: owner.querySelector("td:nth-child(8)").innerText,
+    }));
+    return data;
   });
-
-  function waitFor(ms: number) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-  }
-
-  await page.exposeFunction("addPlayers", (data: any) => {
-    console.log(data.playerName);
-    adpData.push(data);
-  });
-
-  await page.evaluate(async () => {
-    console.log("*** SETTING UP MUTATION OBSERVER ***");
-
-    const observer = new MutationObserver(async (mutationsList: any) => {
-      for (let mutation of mutationsList) {
-        if (mutation.addedNodes.length) {
-          for (let node of mutation.addedNodes) {
-            const player = {
-              rank: node.querySelector("div:nth-child(2)").innerText,
-              playerName: node.querySelector("div.PlayerCell_player-name")
-                .innerText,
-              position: node.querySelector("div.player-position").innerText,
-              team: node.querySelector("div.player-team > div").innerText,
-              adp: node.querySelector("div:nth-child(6) > div > span > span")
-                .innerText,
-            };
-
-            // @ts-expect-error
-            await window.addPlayers(player);
-          }
-        }
-      }
-    });
-
-    const virtualListNode = document.querySelector(".DKResponsiveGrid_dk-grid");
-
-    observer.observe(virtualListNode, { childList: true, subtree: true });
-  });
-
-  async function scrollToBottom(page: any) {
-    console.log("*** SCROLLING TO BOTTOM ***");
-
-    let retryScrollCount = 3;
-    // change adpData.length to determine how many rows of the adp tabel you want returned, table is over 900 rows in total
-    while (retryScrollCount > 0 && adpData.length < 300) {
-      try {
-        let scrollPosition = await page.$eval(
-          ".DKResponsiveGrid_dk-grid",
-          (wrapper: any) => wrapper.scrollTop
-        );
-
-        await page.evaluate(() =>
-          document
-            .querySelector(".DKResponsiveGrid_dk-grid")
-            .scrollBy({ top: 200, behavior: "smooth" })
-        );
-
-        await waitFor(200);
-
-        await page.waitForFunction(
-          `document.querySelector('.DKResponsiveGrid_dk-grid').scrollTop > ${scrollPosition}`,
-          { timeout: 1000 }
-        );
-
-        retryScrollCount = 3;
-      } catch {
-        retryScrollCount--;
-      }
-    }
-  }
-
-  await scrollToBottom(page);
-  await browser.close();
-
-  console.dir({ adpData }, { depth: null });
+  console.log(ownerData);
 
   fs.writeFileSync(
-    `DraftKingsADP${currentDate}.json`,
-    JSON.stringify({ adpData })
+    "YahooLeagueSettings.json",
+    JSON.stringify({ rulesData, ownerData }),
+    (err): any => {
+      if (err) throw err;
+    }
   );
+
+  await browser.close();
 };
 
-DraftKings_ADP();
+Yahoo_League_Settings();
