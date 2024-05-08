@@ -66,52 +66,11 @@ const Underdog_ADP = async () => {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
-  async function scrollToBottom(page: any) {
-    console.log("*** SCROLLING TO BOTTOM ***");
-
-    let retryScrollCount = 3;
-
-    while (retryScrollCount > 0) {
-      try {
-        let scrollPosition = await page.$eval(
-          "#root > div > div > div.styles__rankingSection__jCB_w > div.styles__playerListColumn__va0Um > div.styles__playerListWrapper__mF2u0 > div.styles__autoSizer__puLtf > div:nth-child(1) > div",
-          (wrapper: any) => wrapper.scrollTop
-        );
-
-        await page.evaluate(() =>
-          document
-            .querySelector(
-              "#root > div > div > div.styles__rankingSection__jCB_w > div.styles__playerListColumn__va0Um > div.styles__playerListWrapper__mF2u0 > div.styles__autoSizer__puLtf > div:nth-child(1) > div"
-            )
-            .scrollBy({ top: 200, behavior: "smooth" })
-        );
-
-        await waitFor(200);
-
-        await page.waitForFunction(
-          `document.querySelector('#root > div > div > div.styles__rankingSection__jCB_w > div.styles__playerListColumn__va0Um > div.styles__playerListWrapper__mF2u0 > div.styles__autoSizer__puLtf > div:nth-child(1) > div').scrollTop > ${scrollPosition}`,
-          { timeout: 1000 }
-        );
-
-        retryScrollCount = 3;
-      } catch {
-        retryScrollCount--;
-      }
-    }
-  }
-
   const players: any[] = [];
 
   await page.exposeFunction("doSomethingCrazy", (data: any) => {
-    console.log("*** DATA ***");
-    console.log(data);
-
+    console.log(data.playerName);
     players.push(data);
-
-    console.log(JSON.stringify(players));
-
-    // save scraped data into file or database
-    // console.dir({ data }, { depth: null });
   });
 
   await page.evaluate(async () => {
@@ -136,8 +95,6 @@ const Underdog_ADP = async () => {
               ).innerText,
             };
 
-            console.log(player.playerName);
-
             // @ts-expect-error
             await window.doSomethingCrazy(player);
           }
@@ -145,60 +102,49 @@ const Underdog_ADP = async () => {
       }
     });
 
-    const virtualListNode = document.querySelector(
-      "#root > div > div > div.styles__rankingSection__jCB_w > div.styles__playerListColumn__va0Um > div.styles__playerListWrapper__mF2u0 > div.styles__autoSizer__puLtf > div:nth-child(1) > div"
-    );
-
-    console.log("*** OBSERVING ***");
+    const virtualListNode = document.querySelector(".ReactVirtualized__List");
 
     observer.observe(virtualListNode, { childList: true, subtree: true });
   });
 
+  async function scrollToBottom(page: any) {
+    console.log("*** SCROLLING TO BOTTOM ***");
+
+    let retryScrollCount = 3;
+
+    while (retryScrollCount > 0 && players.length < 100) {
+      try {
+        let scrollPosition = await page.$eval(
+          ".ReactVirtualized__List",
+          (wrapper: any) => wrapper.scrollTop
+        );
+
+        await page.evaluate(() =>
+          document
+            .querySelector(".ReactVirtualized__List")
+            .scrollBy({ top: 200, behavior: "smooth" })
+        );
+
+        await waitFor(200);
+
+        await page.waitForFunction(
+          `document.querySelector('.ReactVirtualized__List').scrollTop > ${scrollPosition}`,
+          { timeout: 1000 }
+        );
+
+        retryScrollCount = 3;
+      } catch {
+        retryScrollCount--;
+      }
+    }
+  }
+
   await scrollToBottom(page);
+  await browser.close();
 
-  const adpData = await page.evaluate(() => {
-    const playerRows = Array.from(
-      document.querySelectorAll(
-        "#root > div > div > div.styles__rankingSection__jCB_w > div.styles__playerListColumn__va0Um > div.styles__playerListWrapper__mF2u0 > div.styles__autoSizer__puLtf > div:nth-child(1) > div > div > div"
-      )
-    );
+  console.dir({ players }, { depth: null });
 
-    let players: any[] = [];
-
-    // while (players.length < 250) {
-    //   // map each row in the table
-    //   playerRows.forEach((player: any) => {
-    //     players.push({
-    //       playerName: player.querySelector(
-    //         "div > div > div > div.styles__playerInfo__CyzKu > div.styles__playerName__tC8I7"
-    //       ).innerText,
-    //       position: player.querySelector(
-    //         "div > div > div.styles__playerInfo__CyzKu > div.styles__playerPosition__ziprS > div"
-    //       ).innerText,
-    //       team: player.querySelector(
-    //         "div > div > div.styles__playerInfo__CyzKu > div.styles__playerPosition__ziprS > p > strong"
-    //       ).innerText,
-    //       adp: player.querySelector(
-    //         "div > div > div.styles__rightSide__uDVQf > div:nth-child(1) > p.styles__statValue__g8zd5"
-    //       ).innerText,
-    //     });
-    //   });
-    // }
-
-    return players;
-  });
-
-  console.log({ adpData });
-
-  // await page.hover(
-  //   "#root > div > div > div.styles__rankingSection__jCB_w > div.styles__playerListColumn__va0Um > div.styles__playerListWrapper__mF2u0 > div.styles__autoSizer__puLtf > div:nth-child(1) > div > div > div:nth-child(1) > div > div"
-  // );
-  // await page.mouse.wheel({ deltaY: 528 });
-  // await page.waitForSelector(
-  //   "#root > div > div > div.styles__rankingSection__jCB_w > div.styles__playerListColumn__va0Um > div.styles__playerListWrapper__mF2u0 > div.styles__autoSizer__puLtf > div:nth-child(1) > div > div > div:nth-child(11)"
-  // );
-
-  // fs.writeFile("adp.json", JSON.stringify({ adpData }), (err) => {});
+  fs.writeFileSync("adp.json", JSON.stringify({ players }));
 };
 
 Underdog_ADP();
