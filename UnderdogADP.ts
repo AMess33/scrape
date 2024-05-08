@@ -9,36 +9,35 @@ const currentDate = dayjs().format("MM-DD-YYYY");
 puppeteer.use(StealthPlugin());
 
 const { executablePath } = require("puppeteer");
-
+// use your username and password from dotenv
 const username = process.env.UDUSERNAME;
 const password = process.env.UDPASSWORD;
 
 const url = "https://underdogfantasy.com/login?next=%2Frankings%2Fnfl";
-// will need to send headers to avoid sign in
-// scroll and scrape function
-// while array.length < 250 scrape, scroll x pixels
-// scrape for adp data
+
 const Underdog_ADP = async () => {
   const browser = await puppeteer.launch({
-    headless: false,
+    // headless: false,
     executablePath: executablePath(),
-    devtools: true,
+    // devtools: true,
   });
 
   const page = await browser.newPage();
 
-  page.on("console", (msg: any) => console.log("PAGE LOG:", msg.text()));
+  // page.on("console", (msg: any) => console.log("PAGE LOG:", msg.text()));
 
   const context = browser.defaultBrowserContext();
   await context.overridePermissions(
     "https://underdogfantasy.com/login?next=%2Frankings%2Fnfl",
     ["geolocation"]
   );
+  // listen for dialog box that requests location verification
   page.once("dialog", async (dialog) => {
     await dialog.accept();
   });
+  // set geolocation to location where site is accessable
   await page.setGeolocation({ latitude: 39, longitude: -94 });
-
+  // sign in path
   await page.goto(url, {
     waitUntil: "networkidle0",
   });
@@ -56,11 +55,12 @@ const Underdog_ADP = async () => {
   await page.click(
     "#root > div > div > div.styles__content__UZPqb > div.styles__splashContent__ncVyR > div.styles__formContent__PdEcR > form > button"
   );
-
+  // after sign in redirected to adp page, wait for document to load
   await page.waitForNavigation({ waitUntil: "domcontentloaded" });
   await page.waitForSelector(
     "xpath/html/body/div[1]/div/div/div[2]/div[1]/div[2]/div[2]/div[1]/div/div/div[1]"
   );
+  // scrape table for rendered rows
   const adpData = await page.evaluate(() => {
     const playerRows = Array.from(
       document.querySelectorAll(
@@ -69,7 +69,7 @@ const Underdog_ADP = async () => {
     );
     let players: any[] = [];
 
-    // map each row in the table
+    // grab the initial rendered rows on the page and adds them to the player array and then exports to adpData
     playerRows.forEach((player: any) => {
       players.push({
         playerName: player.querySelector(
@@ -93,15 +93,12 @@ const Underdog_ADP = async () => {
   function waitFor(ms: number) {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
-
+  // push scrolled data into the adpData array
   await page.exposeFunction("addPlayers", (data: any) => {
-    console.log(data.playerName);
     adpData.push(data);
   });
-
+  // watch DOM for mutations and capture newly rendered rows
   await page.evaluate(async () => {
-    console.log("*** SETTING UP MUTATION OBSERVER ***");
-
     const observer = new MutationObserver(async (mutationsList: any) => {
       for (let mutation of mutationsList) {
         if (mutation.addedNodes.length) {
@@ -133,9 +130,8 @@ const Underdog_ADP = async () => {
     observer.observe(virtualListNode, { childList: true, subtree: true });
   });
 
+  // scroll function, scrolls to bottom of table or until adpData.legth reaches your desired size
   async function scrollToBottom(page: any) {
-    console.log("*** SCROLLING TO BOTTOM ***");
-
     let retryScrollCount = 3;
     // change adpData.length to determine how many rows of the adp tabel you want returned, table is over 900 rows in total
     while (retryScrollCount > 0 && adpData.length < 300) {
@@ -157,7 +153,7 @@ const Underdog_ADP = async () => {
           `document.querySelector('.ReactVirtualized__List').scrollTop > ${scrollPosition}`,
           { timeout: 1000 }
         );
-
+        // scroll counter will reach 0 when you have reached the bottom of the table
         retryScrollCount = 3;
       } catch {
         retryScrollCount--;
@@ -168,9 +164,10 @@ const Underdog_ADP = async () => {
   await scrollToBottom(page);
   await browser.close();
 
-  console.dir({ adpData }, { depth: null });
-
-  fs.writeFileSync("UnderDogADP.json", JSON.stringify({ adpData }));
+  fs.writeFileSync(
+    `UnderDogADP${currentDate}.json`,
+    JSON.stringify({ adpData })
+  );
 };
 
 Underdog_ADP();

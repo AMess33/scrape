@@ -10,45 +10,13 @@ puppeteer.use(StealthPlugin());
 
 const { executablePath } = require("puppeteer");
 
-const username = process.env.UDUSERNAME;
-const password = process.env.UDPASSWORD;
+const username = process.env.DKUSERNAME;
+const password = process.env.DKPASSWORD;
 
-const url = "https://underdogfantasy.com/login?next=%2Frankings%2Fnfl";
+const url =
+  "https://myaccount.draftkings.com/login?returnPath=%2Fdraft%2Frankings%2Fnfl%2F";
 
-function waitFor(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-let players: any[] = [];
-async function scrollToBottom(page) {
-  let retryScrollCount = 3;
-
-  while (retryScrollCount > 0 || players.length < 100) {
-    try {
-      let scrollPosition = await page.$eval(
-        ".ReactVirtualized__List",
-        (wrapper) => wrapper.scrollTop
-      );
-
-      await page.evaluate(() =>
-        document
-          .querySelector(".ReactVirtualized__List")
-          .scrollBy({ top: 200, behavior: "smooth" })
-      );
-      await waitFor(200);
-
-      await page.waitForFunction(
-        `document.querySelector('.ReactVirtualized__List').scrollTop > ${scrollPosition}`,
-        { timeout: 1_000 }
-      );
-
-      retryScrollCount = 3;
-    } catch {
-      retryScrollCount--;
-    }
-  }
-}
-
-async function run() {
+const DraftKings_ADP = async () => {
   const browser = await puppeteer.launch({
     headless: false,
     executablePath: executablePath(),
@@ -61,91 +29,45 @@ async function run() {
 
   const context = browser.defaultBrowserContext();
   await context.overridePermissions(
-    "https://underdogfantasy.com/login?next=%2Frankings%2Fnfl",
+    "https://myaccount.draftkings.com/login?returnPath=%2Fdraft%2Frankings%2Fnfl%2F",
     ["geolocation"]
   );
   page.once("dialog", async (dialog) => {
     await dialog.accept();
   });
   await page.setGeolocation({ latitude: 39, longitude: -94 });
-  await page.goto(url, { waitUntil: "networkidle0" });
-  await page.waitForSelector(
-    "#root > div > div > div.styles__content__UZPqb > div.styles__splashContent__ncVyR > div.styles__formContent__PdEcR > form > div:nth-child(1) > label > div.styles__field__Q6LKF > input"
-  );
-  await page.type(
-    "#root > div > div > div.styles__content__UZPqb > div.styles__splashContent__ncVyR > div.styles__formContent__PdEcR > form > div:nth-child(1) > label > div.styles__field__Q6LKF > input",
-    `${username}`
-  );
-  await page.type(
-    "#root > div > div > div.styles__content__UZPqb > div.styles__splashContent__ncVyR > div.styles__formContent__PdEcR > form > div:nth-child(2) > label > div.styles__field__Q6LKF > input",
-    `${password}`
-  );
-  await page.click(
-    "#root > div > div > div.styles__content__UZPqb > div.styles__splashContent__ncVyR > div.styles__formContent__PdEcR > form > button"
-  );
+
+  await page.goto(url, {
+    waitUntil: "networkidle0",
+  });
+  await page.waitForSelector("#login-username-input");
+  await page.type("#login-username-input", `${username}`);
+  await page.type("#login-password-input", `${password}`);
+  await page.click("#login-submit");
 
   await page.waitForNavigation({ waitUntil: "domcontentloaded" });
   await page.waitForSelector(
     "xpath/html/body/div[1]/div/div/div[2]/div[1]/div[2]/div[2]/div[1]/div/div/div[1]"
   );
   const adpData = await page.evaluate(() => {
-    const playerRows = Array.from(
-      document.querySelectorAll(
-        "#root > div > div > div.styles__rankingSection__jCB_w > div.styles__playerListColumn__va0Um > div.styles__playerListWrapper__mF2u0 > div.styles__autoSizer__puLtf > div:nth-child(1) > div > div > div"
-      )
-    );
+    const playerRows = Array.from(document.querySelectorAll("div.row"));
     let players: any[] = [];
 
     // map each row in the table
     playerRows.forEach((player: any) => {
       players.push({
-        playerName: player.querySelector(
-          "div > div > div > div.styles__playerInfo__CyzKu > div.styles__playerName__tC8I7"
-        ).innerText,
-        position: player.querySelector(
-          "div > div > div.styles__playerInfo__CyzKu > div.styles__playerPosition__ziprS > div"
-        ).innerText,
-        team: player.querySelector(
-          "div > div > div.styles__playerInfo__CyzKu > div.styles__playerPosition__ziprS > p > strong"
-        ).innerText,
-        adp: player.querySelector(
-          "div > div > div.styles__rightSide__uDVQf > div:nth-child(1) > p.styles__statValue__g8zd5"
-        ).innerText,
+        rank: player.querySelector("div:nth-child(2)").innerText,
+        playerName: player.querySelector("div.PlayerCell_player-name")
+          .innerText,
+        position: player.querySelector("div.player-position").innerText,
+        team: player.querySelector("div.player-team > div").innerText,
+        adp: player.querySelector("div:nth-child(6) > div > span > span")
+          .innerText,
       });
     });
 
     return players;
   });
-  await page.evaluate(() => {
-    const observer = new MutationObserver(async (mutationsList) => {
-      for (let mutation of mutationsList) {
-        if (mutation.addedNodes.length) {
-          for (let node of mutation.addedNodes) {
-            let playerName = node.querySelector(
-              "div > div > div.styles__playerInfo__CyzKu > div.styles__playerName__tC8I7"
-            ).textContent;
-            let position = node.querySelector(
-              "div > div.styles__playerInfo__CyzKu > div.styles__playerPosition__ziprS > div"
-            ).textContent;
-            let team = node.querySelector(
-              "div > div.styles__playerInfo__CyzKu > div.styles__playerPosition__ziprS > p > strong"
-            ).textContent;
-            let adp = node.querySelector(
-              "div > div.styles__rightSide__uDVQf > div:nth-child(1) > p.styles__statValue__g8zd5"
-            );
-            console.log(playerName);
-            await window.playerData({ playerName, position, team, adp });
-          }
-        }
-      }
-    });
-    const virtualListNode = document.querySelector(".ReactVirtualized__List");
-    observer.observe(virtualListNode, { childList: true, subtree: true });
-  });
-  await scrollToBottom(page);
-  fs.writeFileSync("players.json", JSON.stringify({ players }));
-  await browser.close();
-}
 
   function waitFor(ms: number) {
     return new Promise((resolve) => setTimeout(resolve, ms));
@@ -164,18 +86,13 @@ async function run() {
         if (mutation.addedNodes.length) {
           for (let node of mutation.addedNodes) {
             const player = {
-              playerName: node.querySelector(
-                "div > div > div.styles__playerInfo__CyzKu > div.styles__playerName__tC8I7"
-              ).innerText,
-              position: node.querySelector(
-                "div > div.styles__playerInfo__CyzKu > div.styles__playerPosition__ziprS > div"
-              ).innerText,
-              team: node.querySelector(
-                "div > div.styles__playerInfo__CyzKu > div.styles__playerPosition__ziprS > p > strong"
-              ).innerText,
-              adp: node.querySelector(
-                "div > div.styles__rightSide__uDVQf > div:nth-child(1) > p.styles__statValue__g8zd5"
-              ).innerText,
+              rank: node.querySelector("div:nth-child(2)").innerText,
+              playerName: node.querySelector("div.PlayerCell_player-name")
+                .innerText,
+              position: node.querySelector("div.player-position").innerText,
+              team: node.querySelector("div.player-team > div").innerText,
+              adp: node.querySelector("div:nth-child(6) > div > span > span")
+                .innerText,
             };
 
             // @ts-expect-error
@@ -185,7 +102,7 @@ async function run() {
       }
     });
 
-    const virtualListNode = document.querySelector(".ReactVirtualized__List");
+    const virtualListNode = document.querySelector(".DKResponsiveGrid_dk-grid");
 
     observer.observe(virtualListNode, { childList: true, subtree: true });
   });
@@ -194,24 +111,24 @@ async function run() {
     console.log("*** SCROLLING TO BOTTOM ***");
 
     let retryScrollCount = 3;
-
-    while (retryScrollCount > 0 && adpData.length < 100) {
+    // change adpData.length to determine how many rows of the adp tabel you want returned, table is over 900 rows in total
+    while (retryScrollCount > 0 && adpData.length < 300) {
       try {
         let scrollPosition = await page.$eval(
-          ".ReactVirtualized__List",
+          ".DKResponsiveGrid_dk-grid",
           (wrapper: any) => wrapper.scrollTop
         );
 
         await page.evaluate(() =>
           document
-            .querySelector(".ReactVirtualized__List")
+            .querySelector(".DKResponsiveGrid_dk-grid")
             .scrollBy({ top: 200, behavior: "smooth" })
         );
 
         await waitFor(200);
 
         await page.waitForFunction(
-          `document.querySelector('.ReactVirtualized__List').scrollTop > ${scrollPosition}`,
+          `document.querySelector('.DKResponsiveGrid_dk-grid').scrollTop > ${scrollPosition}`,
           { timeout: 1000 }
         );
 
@@ -227,7 +144,10 @@ async function run() {
 
   console.dir({ adpData }, { depth: null });
 
-  fs.writeFileSync("UnderDogADP.json", JSON.stringify({ adpData }));
+  fs.writeFileSync(
+    `DraftKingsADP${currentDate}.json`,
+    JSON.stringify({ adpData })
+  );
 };
 
-Underdog_ADP();
+DraftKings_ADP();
