@@ -10,10 +10,14 @@ const { executablePath } = require("puppeteer");
 // email password league name for sign in path
 const email = process.env.NFLUSERNAME;
 const password = process.env.NFLPASSWORD;
-const leagueName = "Draft Hero";
-const leagueID = "11864040";
-// const leagueID = "";
-// login page for cbs fantasy football w/ redirect to my teams webpage
+
+// need league name for navigation
+const leagueName = "Test League";
+
+// if league ID present we can go straight to settings and run scraping
+const leagueID = "12239069";
+
+// login page for cbs then url for fantasy for new goto
 const homeURL = "https://id.nfl.com/account/sign-in";
 const fantasyURL = "https://fantasy.nfl.com/myleagues";
 // if league ID present go straight to settings and run scraping
@@ -58,35 +62,27 @@ const signInPath = async (page) => {
     "#__next > div > div > div.styles__BodyWrapper-sc-1858ovt-1.ffwlTn > div > div.css-175oi2r.r-knv0ih.r-w7s2jr > button"
   );
   // wait for page load after login, then go to fantasy/myleagues page
-  await page.waitForNavigation({ waitUntil: "domcontentloaded" });
+  await page.waitForNavigation({ waitUntil: "networkidle0" });
   await page.goto(fantasyURL, { waitUntil: "domcontentloaded" });
-  // go to league of based on league name
+  // click on the league drop down menu in the nav bar
   await page.waitForSelector(
     `xpath/html/body/div[1]/div[1]/div/div/div[1]/div[1]/div[2]/div[2]/div[2]/div/div[1]`
   );
   await page.click(
     "xpath/html/body/div[1]/div[1]/div/div/div[1]/div[1]/div[2]/div[2]/div[2]/div/div[1]"
   );
-  await page.waitForSelector(`text/${leagueName}`);
-  await page.click(`text/${leagueName}`);
-  // click on LEAGUE
-  await page.waitForSelector(
-    "xpath/html/body/div[1]/div[1]/div/div/div[1]/div[1]/div[2]/div[1]/span[2]/a"
-  );
-  await page.click(
-    "xpath/html/body/div[1]/div[1]/div/div/div[1]/div[1]/div[2]/div[1]/span[2]/a"
-  );
-  // click on settings tab
+  // click on the league based off league name from drop down menu
+  await page.waitForSelector(`a.league-name ::-p-text(${leagueName})`);
+  await page.click(`a.league-name ::-p-text(${leagueName})`);
+
+  // get current url and add /settings to go to league settings page
   const url = await page.url();
-  console.log(url);
   await page.goto(url + "/settings", { waitUntil: "domcontentloaded" });
 };
 
 const scrapeData = async (page) => {
   // scrape settings info table
-  await page.waitForSelector(
-    "xpath/html/body/div[1]/div[3]/div/div[1]/div/div/div/div[1]/div/div/div[1]/ul"
-  );
+  await page.waitForSelector("ul.formItems");
 
   const rulesData = await page.evaluate(() => {
     const ruleRows = Array.from(document.querySelectorAll("ul.formItems > li"));
@@ -123,7 +119,6 @@ const scrapeData = async (page) => {
     }));
     return data;
   });
-  console.log(ownerData);
   fs.writeFileSync(
     "NFLLeagueSettings.json",
     JSON.stringify({ rulesData, ownerData }),

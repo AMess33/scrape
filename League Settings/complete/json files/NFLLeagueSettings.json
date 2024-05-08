@@ -1,12 +1,17 @@
 {
   "rulesData": [
-    { "rule": "League ID:", "setting": "11864040" },
+    { "rule": "Commissioner:", "setting": "Andrew" },
+    { "rule": "League ID:", "setting": "12239069" },
     {
       "rule": "Draft Type:",
-      "setting": "Live Tuesday, Aug 29, 2023 3:00pm EDT"
+      "setting": "Live Wednesday, Sep 4, 2024 11:00am EDT"
     },
     { "rule": "Draft Format:", "setting": "Standard" },
     { "rule": "Time Per Pick:", "setting": "90 seconds" },
+    {
+      "rule": "Custom Url:",
+      "setting": "https://testleague1313.league.fantasy.nfl.com"
+    },
     { "rule": "Divisions", "setting": "No" },
     { "rule": "Weeks Per Playoff Matchup", "setting": "1 Week" },
     { "rule": "Playoffs", "setting": "Weeks 16 & 17 - 4 teams" },
@@ -20,7 +25,7 @@
       "setting": "League Votes (by team managers)"
     },
     { "rule": "Trade Reject Time", "setting": "2 days" },
-    { "rule": "Trade Deadline", "setting": "November 24, 2023" },
+    { "rule": "Trade Deadline", "setting": "November 22, 2024" },
     { "rule": "Waiver Period", "setting": "1 day" },
     { "rule": "Waiver Type", "setting": "Resets to Inverse Standings Order" },
     { "rule": "Post Draft Players", "setting": "Follow Waiver Rules" },
@@ -81,84 +86,12 @@
   ],
   "ownerData": [
     {
-      "team": "macedonia 2",
-      "manager": "kiril",
-      "waiver": "9",
-      "moves": "18",
-      "trades": "0",
-      "lastActivity": "Sun, Dec 31, 3:13am"
-    },
-    {
-      "team": "Juneau Whats",
-      "manager": "Greg",
-      "waiver": "8",
-      "moves": "11",
-      "trades": "0",
-      "lastActivity": "Thu, Dec 28, 9:01pm"
-    },
-    {
-      "team": "Vikings1",
-      "manager": "Rodney",
-      "waiver": "1",
-      "moves": "22",
-      "trades": "0",
-      "lastActivity": "Wed, Dec 13, 8:17am"
-    },
-    {
-      "team": "Draft Hero",
-      "manager": "Ted",
-      "waiver": "2",
+      "team": "Fiasco",
+      "manager": "Andrew",
+      "waiver": "",
       "moves": "0",
       "trades": "0",
       "lastActivity": ""
-    },
-    {
-      "team": "BQD",
-      "manager": "Jose Manuel",
-      "waiver": "5",
-      "moves": "25",
-      "trades": "0",
-      "lastActivity": "Thu, Dec 28, 6:36am"
-    },
-    {
-      "team": "500 Miles Sanders",
-      "manager": "Andy",
-      "waiver": "6",
-      "moves": "33",
-      "trades": "0",
-      "lastActivity": "Sat, Dec 30, 11:34pm"
-    },
-    {
-      "team": "Nora",
-      "manager": "Nora",
-      "waiver": "7",
-      "moves": "9",
-      "trades": "0",
-      "lastActivity": "Tue, Dec 26, 12:43am"
-    },
-    {
-      "team": "Andrik",
-      "manager": "Andrik",
-      "waiver": "10",
-      "moves": "5",
-      "trades": "0",
-      "lastActivity": "Thu, Dec 28, 3:49pm"
-    },
-    {
-      "team": "U r bad",
-      "manager": "ZEV",
-      "waiver": "3",
-      "moves": "0",
-      "trades": "0",
-      "lastActivity": "Tue, Oct 10, 7:30am"
-    },
-    {
-      "team": "Seepy Agenda",
-      "manager": "Philip",
-      "waiver": "4",
-      "moves": "24",
-      "trades": "0",
-      "lastActivity": "Thu, Dec 21, 6:32am"
     }
   ]
 }
