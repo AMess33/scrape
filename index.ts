@@ -3,129 +3,158 @@ const puppeteer = require("puppeteer-extra");
 const StealthPlugin = require("puppeteer-extra-plugin-stealth");
 const fs = require("fs");
 import { Browser } from "puppeteer";
+const dayjs = require("dayjs");
 
+const currentDate = dayjs().format("MM-DD-YYYY");
 puppeteer.use(StealthPlugin());
 
 const { executablePath } = require("puppeteer");
-// email password league name for sign in path
-const email = process.env.NFLUSERNAME;
-const password = process.env.NFLPASSWORD;
 
-// need league name for navigation
-const leagueName = "Test League";
+const username = process.env.DKUSERNAME;
+const password = process.env.DKPASSWORD;
 
-// if league ID present we can go straight to settings and run scraping
-const leagueID = "12239069";
+const url =
+  "https://myaccount.draftkings.com/login?returnPath=%2Fdraft%2Frankings%2Fnfl%2F";
 
-// login page for cbs then url for fantasy for new goto
-const homeURL = "https://id.nfl.com/account/sign-in";
-const fantasyURL = "https://fantasy.nfl.com/myleagues";
-// if league ID present go straight to settings and run scraping
-const settingsURL = `https://fantasy.nfl.com/league/${leagueID}/settings`;
-
-const NFL_League_Settings = async () => {
-  // if user knows league id, go directly to league settings page/ if not, set up log in routes to league settings page
-  const browser: Browser = await puppeteer.launch({
+const DraftKings_ADP = async () => {
+  const browser = await puppeteer.launch({
     headless: false,
-    defaultViewport: false,
     executablePath: executablePath(),
+    devtools: true,
   });
+
   const page = await browser.newPage();
-  await page.setUserAgent(
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
+
+  // page.on("console", (msg: any) => console.log("PAGE LOG:", msg.text()));
+
+  const context = browser.defaultBrowserContext();
+  await context.overridePermissions(
+    "https://myaccount.draftkings.com/login?returnPath=%2Fdraft%2Frankings%2Fnfl%2F",
+    ["geolocation"]
   );
-  // if league id is not available, go to login page and run through log in process
-  if (!leagueID) {
-    await signInPath(page);
-    await scrapeData(page);
-  } else {
-    await page.goto(settingsURL, { waitUntil: "domcontentloaded" });
-    await scrapeData(page);
+  page.once("dialog", async (dialog) => {
+    await dialog.accept();
+  });
+  await page.setGeolocation({ latitude: 39, longitude: -94 });
+
+  await page.goto(url, {
+    waitUntil: "networkidle0",
+  });
+  await page.waitForSelector("#login-username-input");
+  await page.type("#login-username-input", `${username}`);
+  await page.type("#login-password-input", `${password}`);
+  await page.click("#login-submit");
+
+  await page.waitForNavigation({ waitUntil: "domcontentloaded" });
+  await page.waitForSelector("div.PlayerCell_player-name");
+  const adpData = await page.evaluate(() => {
+    const playerRows = Array.from(
+      document.querySelectorAll("div.BaseTable__row")
+    );
+    let players: any[] = [];
+
+    // map each row in the table
+    playerRows.forEach((player: any) => {
+      players.push({
+        rank: player.querySelector("div:nth-child(2) > div > span").innerText,
+        playerName: player.querySelector(
+          "div:nth-child(3) > div > div.PlayerCell_player-details-container > div.PlayerCell_player-name-container > div.PlayerCell_player-name"
+        ).innerText,
+        position: player.querySelector(
+          "div:nth-child(3) > div > div.PlayerCell_player-details-container > div.PlayerCell_player-position-and-team > div.player-position"
+        ).innerText,
+        team: player.querySelector(
+          "div:nth-child(3) > div > div.PlayerCell_player-details-container > div.PlayerCell_player-position-and-team > div.PlayerCell_player-team > div"
+        ).innerText,
+        adp: player.querySelector("div:nth-child(5) > div > span").innerText,
+      });
+    });
+
+    return players;
+  });
+
+  function waitFor(ms: number) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
-  await browser.close();
-};
-
-const signInPath = async (page) => {
-  await page.goto(homeURL, { waitUntil: "domcontentloaded" });
-  // email input, continue click
-  await page.waitForSelector("#email-input-field");
-  await page.type("#email-input-field", `${email}`);
-  await page.click(
-    "#__next > div > div > div > div > div.css-175oi2r.r-qn3fzs > button"
-  );
-  // wait for password input to load
-  await page.waitForSelector("#password-input-field");
-  // password input, sign in click
-  await page.type("#password-input-field", `${password}`);
-  await page.click(
-    "#__next > div > div > div.styles__BodyWrapper-sc-1858ovt-1.ffwlTn > div > div.css-175oi2r.r-knv0ih.r-w7s2jr > button"
-  );
-  // wait for page load after login, then go to fantasy/myleagues page
-  await page.waitForNavigation({ waitUntil: "networkidle0" });
-  await page.goto(fantasyURL, { waitUntil: "domcontentloaded" });
-  // click on the league drop down menu in the nav bar
-  await page.waitForSelector(
-    `xpath/html/body/div[1]/div[1]/div/div/div[1]/div[1]/div[2]/div[2]/div[2]/div/div[1]`
-  );
-  await page.click(
-    "xpath/html/body/div[1]/div[1]/div/div/div[1]/div[1]/div[2]/div[2]/div[2]/div/div[1]"
-  );
-  // click on the league based off league name from drop down menu
-  await page.waitForSelector(`a.league-name ::-p-text(${leagueName})`);
-  await page.click(`a.league-name ::-p-text(${leagueName})`);
-
-  // get current url and add /settings to go to league settings page
-  const url = await page.url();
-  await page.goto(url + "/settings", { waitUntil: "domcontentloaded" });
-};
-
-const scrapeData = async (page) => {
-  // scrape settings info table
-  await page.waitForSelector("ul.formItems");
-
-  const rulesData = await page.evaluate(() => {
-    const ruleRows = Array.from(document.querySelectorAll("ul.formItems > li"));
-
-    const data = ruleRows.map((rule: any) => ({
-      rule: rule.querySelector("em").innerText,
-      setting: rule.querySelector("div").innerText,
-    }));
-    return data;
+  await page.exposeFunction("addPlayers", (data: any) => {
+    adpData.push(data);
   });
 
-  // go to owners page
-  const url = await page.url();
-  const newURL = url.replace("/settings", "/owners");
-  await page.goto(newURL, { waitUntil: "domcontentloaded" });
+  await page.evaluate(async () => {
+    console.log("*** SETTING UP MUTATION OBSERVER ***");
 
-  // // scrape owners info table
-  await page.waitForSelector("div.tableWrap > table > tbody > tr");
+    const observer = new MutationObserver(async (mutationsList: any) => {
+      for (let mutation of mutationsList) {
+        if (mutation.addedNodes.length) {
+          for (let node of mutation.addedNodes) {
+            const player = {
+              rank: node.querySelector("div:nth-child(2) > div > span")
+                .innerText,
+              playerName: node.querySelector(
+                "div:nth-child(3) > div > div.PlayerCell_player-details-container > div.PlayerCell_player-name-container > div.PlayerCell_player-name"
+              ).innerText,
+              position: node.querySelector(
+                "div:nth-child(3) > div > div.PlayerCell_player-details-container > div.PlayerCell_player-position-and-team > div.player-position"
+              ).innerText,
+              team: node.querySelector(
+                "div:nth-child(3) > div > div.PlayerCell_player-details-container > div.PlayerCell_player-position-and-team > div.PlayerCell_player-team > div"
+              ).innerText,
+              adp: node.querySelector("div:nth-child(5) > div > span")
+                .innerText,
+            };
 
-  const ownerData = await page.evaluate(() => {
-    const ownerRows = Array.from(
-      document.querySelectorAll("div.tableWrap > table > tbody > tr")
-    );
+            // @ts-expect-error
+            await window.addPlayers(player);
+          }
+        }
+      }
+    });
 
-    const data = ownerRows.map((owner: any) => ({
-      team: owner.querySelector("td:nth-child(1) > div > a:nth-child(2)")
-        .innerText,
-      manager: owner.querySelector("td:nth-child(2) > ul > li > span")
-        .innerText,
-      waiver: owner.querySelector("td:nth-child(4)").innerText,
-      moves: owner.querySelector("td:nth-child(5)").innerText,
-      trades: owner.querySelector("td:nth-child(6)").innerText,
-      lastActivity: owner.querySelector("td:nth-child(7)").innerText,
-    }));
-    return data;
+    const virtualListNode = document.querySelector(".BaseTable__body");
+
+    observer.observe(virtualListNode, { childList: true, subtree: true });
   });
-  fs.writeFileSync(
-    "NFLLeagueSettings.json",
-    JSON.stringify({ rulesData, ownerData }),
-    (err: any) => {
-      if (err) throw err;
+
+  async function scrollToBottom(page: any) {
+    console.log("*** SCROLLING TO BOTTOM ***");
+
+    let retryScrollCount = 3;
+    // change adpData.length to determine how many rows of the adp tabel you want returned, table is over 900 rows in total
+    while (retryScrollCount > 0 && adpData.length < 300) {
+      try {
+        let scrollPosition = await page.$eval(
+          ".BaseTable__body",
+          (wrapper: any) => wrapper.scrollTop
+        );
+
+        await page.evaluate(() =>
+          document
+            .querySelector(".BaseTable__body")
+            .scrollBy({ top: 200, behavior: "smooth" })
+        );
+
+        await waitFor(200);
+
+        await page.waitForFunction(
+          `document.querySelector('.BaseTable__body').scrollTop > ${scrollPosition}`,
+          { timeout: 1000 }
+        );
+
+        retryScrollCount = 3;
+      } catch {
+        retryScrollCount--;
+      }
     }
+  }
+
+  await scrollToBottom(page);
+  await browser.close();
+
+  fs.writeFileSync(
+    `DraftKingsADP${currentDate}.json`,
+    JSON.stringify({ adpData })
   );
 };
 
-NFL_League_Settings();
+DraftKings_ADP();

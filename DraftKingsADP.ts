@@ -25,7 +25,7 @@ const DraftKings_ADP = async () => {
 
   const page = await browser.newPage();
 
-  page.on("console", (msg: any) => console.log("PAGE LOG:", msg.text()));
+  // page.on("console", (msg: any) => console.log("PAGE LOG:", msg.text()));
 
   const context = browser.defaultBrowserContext();
   await context.overridePermissions(
@@ -46,23 +46,27 @@ const DraftKings_ADP = async () => {
   await page.click("#login-submit");
 
   await page.waitForNavigation({ waitUntil: "domcontentloaded" });
-  await page.waitForSelector(
-    "xpath/html/body/div[1]/div/div/div[2]/div[1]/div[2]/div[2]/div[1]/div/div/div[1]"
-  );
+  await page.waitForSelector("div.PlayerCell_player-name");
   const adpData = await page.evaluate(() => {
-    const playerRows = Array.from(document.querySelectorAll("div.row"));
+    const playerRows = Array.from(
+      document.querySelectorAll("div.BaseTable__row")
+    );
     let players: any[] = [];
 
     // map each row in the table
     playerRows.forEach((player: any) => {
       players.push({
-        rank: player.querySelector("div:nth-child(2)").innerText,
-        playerName: player.querySelector("div.PlayerCell_player-name")
-          .innerText,
-        position: player.querySelector("div.player-position").innerText,
-        team: player.querySelector("div.player-team > div").innerText,
-        adp: player.querySelector("div:nth-child(6) > div > span > span")
-          .innerText,
+        rank: player.querySelector("div:nth-child(2) > div > span").innerText,
+        playerName: player.querySelector(
+          "div:nth-child(3) > div > div.PlayerCell_player-details-container > div.PlayerCell_player-name-container > div.PlayerCell_player-name"
+        ).innerText,
+        position: player.querySelector(
+          "div:nth-child(3) > div > div.PlayerCell_player-details-container > div.PlayerCell_player-position-and-team > div.player-position"
+        ).innerText,
+        team: player.querySelector(
+          "div:nth-child(3) > div > div.PlayerCell_player-details-container > div.PlayerCell_player-position-and-team > div.PlayerCell_player-team > div"
+        ).innerText,
+        adp: player.querySelector("div:nth-child(5) > div > span").innerText,
       });
     });
 
@@ -74,7 +78,6 @@ const DraftKings_ADP = async () => {
   }
 
   await page.exposeFunction("addPlayers", (data: any) => {
-    console.log(data.playerName);
     adpData.push(data);
   });
 
@@ -86,12 +89,18 @@ const DraftKings_ADP = async () => {
         if (mutation.addedNodes.length) {
           for (let node of mutation.addedNodes) {
             const player = {
-              rank: node.querySelector("div:nth-child(2)").innerText,
-              playerName: node.querySelector("div.PlayerCell_player-name")
+              rank: node.querySelector("div:nth-child(2) > div > span")
                 .innerText,
-              position: node.querySelector("div.player-position").innerText,
-              team: node.querySelector("div.player-team > div").innerText,
-              adp: node.querySelector("div:nth-child(6) > div > span > span")
+              playerName: node.querySelector(
+                "div:nth-child(3) > div > div.PlayerCell_player-details-container > div.PlayerCell_player-name-container > div.PlayerCell_player-name"
+              ).innerText,
+              position: node.querySelector(
+                "div:nth-child(3) > div > div.PlayerCell_player-details-container > div.PlayerCell_player-position-and-team > div.player-position"
+              ).innerText,
+              team: node.querySelector(
+                "div:nth-child(3) > div > div.PlayerCell_player-details-container > div.PlayerCell_player-position-and-team > div.PlayerCell_player-team > div"
+              ).innerText,
+              adp: node.querySelector("div:nth-child(5) > div > span")
                 .innerText,
             };
 
@@ -102,7 +111,7 @@ const DraftKings_ADP = async () => {
       }
     });
 
-    const virtualListNode = document.querySelector(".DKResponsiveGrid_dk-grid");
+    const virtualListNode = document.querySelector(".BaseTable__body");
 
     observer.observe(virtualListNode, { childList: true, subtree: true });
   });
@@ -115,20 +124,20 @@ const DraftKings_ADP = async () => {
     while (retryScrollCount > 0 && adpData.length < 300) {
       try {
         let scrollPosition = await page.$eval(
-          ".DKResponsiveGrid_dk-grid",
+          ".BaseTable__body",
           (wrapper: any) => wrapper.scrollTop
         );
 
         await page.evaluate(() =>
           document
-            .querySelector(".DKResponsiveGrid_dk-grid")
+            .querySelector(".BaseTable__body")
             .scrollBy({ top: 200, behavior: "smooth" })
         );
 
         await waitFor(200);
 
         await page.waitForFunction(
-          `document.querySelector('.DKResponsiveGrid_dk-grid').scrollTop > ${scrollPosition}`,
+          `document.querySelector('.BaseTable__body').scrollTop > ${scrollPosition}`,
           { timeout: 1000 }
         );
 
@@ -141,8 +150,6 @@ const DraftKings_ADP = async () => {
 
   await scrollToBottom(page);
   await browser.close();
-
-  console.dir({ adpData }, { depth: null });
 
   fs.writeFileSync(
     `DraftKingsADP${currentDate}.json`,
