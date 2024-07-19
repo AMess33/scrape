@@ -12,6 +12,7 @@ const url = "https://fantasy.nfl.com/draftcenter/breakdown";
 (async () => {
   const browser: Browser = await puppeteer.launch({
     headless: false,
+    devtools: true,
     defaultViewport: false,
     executablePath: executablePath(),
   });
@@ -29,12 +30,12 @@ const url = "https://fantasy.nfl.com/draftcenter/breakdown";
   while (!isBtnDisabled) {
     console.log("*** RUNNING SCRAPE ***");
     console.log({ firstPlayer });
-
+    // wait for next button
     await page.waitForFunction(
       (p) => {
-        const player =
-          document.querySelector<HTMLDivElement>(".playerName")?.title;
-
+        const player = document.querySelector<HTMLDivElement>(
+          "table > tbody > tr > td:nth-child(1) > div > a"
+        )?.title;
         if (!p || player !== p) {
           console.log("*** NEW PAGE, SETTING PLAYER ***");
           return true;
@@ -47,7 +48,9 @@ const url = "https://fantasy.nfl.com/draftcenter/breakdown";
     );
 
     const first = await page.evaluate(() => {
-      return document.querySelector<HTMLElement>(".playerName")?.title;
+      return document.querySelector<HTMLElement>(
+        "table > tbody > tr > td:nth-child(1) > div > a"
+      )?.title;
     });
     firstPlayer = first ?? "";
 
@@ -139,10 +142,27 @@ const url = "https://fantasy.nfl.com/draftcenter/breakdown";
       }
     );
 
-    const is_disabled =
-      (await page.$(
-        "xpath/html/body/div[1]/div[3]/div/div[1]/div/div/div/div[1]/div[2]/div/ul/li[11]/*"
-      )) !== null;
+    const element = await page.$(
+      "xpath/html/body/div[1]/div[3]/div/div[1]/div/div/div/div[1]/div[2]/div/ul/li[11]/*"
+    );
+
+    let is_disabled = false;
+    if (element) {
+      const tagName = await page.evaluate((el) => el.tagName, element);
+      if (tagName === "A") {
+        console.log("The last element is an <a> tag.");
+      } else if (tagName === "SPAN") {
+        console.log("The last element is a <span> tag. Button is disabled.");
+        is_disabled = true;
+      } else {
+        console.log("The last element is neither an <a> nor a <span> tag.");
+        is_disabled = true;
+      }
+    } else {
+      console.log("The element does not exist. Button is disabled.");
+      is_disabled = true;
+    }
+
     isBtnDisabled = is_disabled;
     console.log("*** DISABLED:", is_disabled, "***");
 
