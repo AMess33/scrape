@@ -23,7 +23,9 @@ const url = "https://www.fantasylife.com/scott-fish-bowl-tool";
   let isBtnDisabled = false;
   let firstPlayer = "";
   // wait for page load
-  await page.waitForNavigation({ waitUntil: "networkidle0" });
+  await page.waitForSelector(
+    "xpath/html/body/div[1]/div/section/div[2]/div/div[2]/ul/li[2]"
+  );
 
   await page.click(
     "xpath/html/body/div[1]/div/section/div[2]/div/div[2]/ul/li[2]"
