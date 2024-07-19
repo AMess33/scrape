@@ -7,7 +7,7 @@ puppeteer.use(StealthPlugin());
 
 const { executablePath } = require("puppeteer");
 
-const url = "https://www.fantasylife.com/scott-fish-bowl-tool";
+const url = "https://joshadhd.com/sfb/#tab-6068-2";
 
 (async () => {
   const browser: Browser = await puppeteer.launch({
@@ -23,13 +23,9 @@ const url = "https://www.fantasylife.com/scott-fish-bowl-tool";
   let isBtnDisabled = false;
   let firstPlayer = "";
   // wait for page load
-  await page.waitForSelector(
-    "xpath/html/body/div[1]/div/section/div[2]/div/div[2]/ul/li[2]"
-  );
+  await page.waitForSelector("text/ADP");
 
-  await page.click(
-    "xpath/html/body/div[1]/div/section/div[2]/div/div[2]/ul/li[2]"
-  );
+  await page.click("text/ADP");
 
   await page.waitForSelector(
     "xpath/html/body/div[1]/div/section/div[2]/div/div[2]/div/div[2]/div/div/div[3]/div/div/div/div[1]/div/div[3]/div/table/tbody/tr[1]/td[1]",
@@ -164,7 +160,7 @@ const url = "https://www.fantasylife.com/scott-fish-bowl-tool";
     });
 
     const is_disabled =
-      (await page.$(".paginate_button next disabled")) !== null;
+      (await page.$(".paginate_button.next.disabled")) !== null;
 
     isBtnDisabled = is_disabled;
     console.log("*** DISABLED:", is_disabled, "***");
@@ -175,7 +171,7 @@ const url = "https://www.fantasylife.com/scott-fish-bowl-tool";
     }
   }
 
-  fs.writeFile("sfbADP.json", JSON.stringify({ players }), (err: any) => {
+  fs.writeFile("SFB_ADP.json", JSON.stringify({ players }), (err: any) => {
     if (err) throw err;
   });
 
