@@ -2,72 +2,129 @@ const puppeteer = require("puppeteer-extra");
 const StealthPlugin = require("puppeteer-extra-plugin-stealth");
 const fs = require("fs");
 import { Browser } from "puppeteer";
-const dayjs = require("dayjs");
 
-const currentDate = dayjs().format("MM-DD-YYYY");
 puppeteer.use(StealthPlugin());
 
 const { executablePath } = require("puppeteer");
 
-let draftTypes = [
-  {
-    url: "https://www.freedraftguide.com/fantasy-football/average-draft-position?STYLE=1&CHANGE=7",
-    lable: "RTS PPR",
-  },
-  {
-    url: "https://www.freedraftguide.com/fantasy-football/average-draft-position?STYLE=600&CHANGE=7",
-    lable: "RTS Best Ball",
-  },
-  {
-    url: "https://www.freedraftguide.com/fantasy-football/average-draft-position?STYLE=910&CHANGE=7",
-    lable: "RTS TFC",
-  },
-  {
-    url: "https://www.freedraftguide.com/fantasy-football/average-draft-position?STYLE=6&CHANGE=7",
-    lable: "RTS Super Flex",
-  },
-  {
-    url: "https://www.freedraftguide.com/fantasy-football/average-draft-position?STYLE=800&CHANGE=7",
-    lable: "RTS Dynasty",
-  },
-];
+const url = "https://fantasy.nfl.com/draftcenter/breakdown";
 
-const RTS_ADP = async (draftTypes: { url: string; lable: string }) => {
+(async () => {
   const browser: Browser = await puppeteer.launch({
     headless: false,
+    devtools: true,
     defaultViewport: false,
     executablePath: executablePath(),
   });
   const page = await browser.newPage();
-  await page.goto(draftTypes.url, { waitUntil: "domcontentloaded" });
-  await page.waitForSelector("table > tbody > tr");
+  await page.goto(url);
 
-  const adpData = await page.evaluate(() => {
-    const playerRows = Array.from(
-      document.querySelectorAll("table > tbody > tr")
+  let players = new Array();
+  let firstPlayer = "";
+
+  while (players.length < 500) {
+    await page.waitForSelector(
+      "table > tbody > tr > td:nth-child(1) > div > a"
     );
-    // map each row in the table
-    const data = playerRows.map((player: any) => ({
-      // player adp data saved as adp
-      adp: player.querySelector("td:nth-child(1)").innerText,
-      // player name data saved as playerName
-      playerName: player.querySelector("td:nth-child(3) > a").innerText,
-      // player position data saved as position
-      position: player.querySelector("td:nth-child(4)").innerText.trim(),
-      // player team data saved as team
-      team: player.querySelector("td:nth-child(5)").innerText.trim(),
-      // player bye week saved as bye
-      bye: player.querySelector("td:nth-child(6)").innerText.trim(),
-    }));
-    return data;
-  });
-  fs.writeFileSync(
-    `${draftTypes.lable} ${currentDate}.json`,
-    JSON.stringify(adpData),
-    (err: any) => {
-      if (err) throw err;
+
+    // console.log({ firstPlayer });
+
+    await page.waitForFunction(
+      (p) => {
+        const player = document.querySelector<HTMLAnchorElement>(
+          "table > tbody > tr > td:nth-child(1) > div > a"
+        )?.innerText;
+        if (!p || player !== p) {
+          console.log("*** NEW PAGE, SETTING PLAYER ***");
+          return true;
+        }
+        return false;
+      },
+      { polling: 5000, timeout: 30000 },
+      firstPlayer
+    );
+
+    const first = await page.evaluate(() => {
+      return document.querySelector<HTMLElement>(
+        "table > tbody > tr > td:nth-child(1) > div > a"
+      )?.innerText;
+    });
+    firstPlayer = first ?? "";
+    // console.log("*** GETTING PLAYER ROWS ***");
+
+    const playerRows = await page.$$("table > tbody > tr");
+    for (const playerData of playerRows) {
+      let adp: any = "Null";
+      let playerName: any = "Null";
+      let position: any = "Null";
+      let team: any = "Null";
+      let round: any = "Null";
+      let salary: any = "Null";
+
+      try {
+        adp = await page.evaluate(
+          (el: any) => el.querySelector("td:nth-child(2)").innerText,
+          playerData
+        );
+      } catch (error) {}
+
+      try {
+        playerName = await page.evaluate(
+          (el: any) => el.querySelector("td:nth-child(1) > div > a").innerText,
+          playerData
+        );
+      } catch (error) {}
+
+      try {
+        position = await page.evaluate(
+          (el: any) =>
+            el
+              .querySelector("td:nth-child(1) > div > em")
+              .innerText.slice(0, 2)
+              .trim(),
+          playerData
+        );
+      } catch (error) {}
+
+      try {
+        team = await page.evaluate(
+          (el: any) =>
+            el
+              .querySelector("td:nth-child(1) > div > em")
+              .innerText.slice(-3)
+              .trim(),
+          playerData
+        );
+      } catch (error) {}
+
+      try {
+        round = await page.evaluate(
+          (el: any) => el.querySelector("td:nth-child(3)").innerText,
+          playerData
+        );
+      } catch (error) {}
+
+      try {
+        salary = await page.evaluate(
+          (el: any) => el.querySelector("td:nth-child(4)").innerText,
+          playerData
+        );
+      } catch (error) {}
+
+      if (adp !== "Null") {
+        players.push({ adp, playerName, position, team, round, salary });
+      }
     }
-  );
+
+    await page.waitForSelector(
+      "xpath/html/body/div[1]/div[3]/div/div[1]/div/div/div/div[1]/div[2]/div/ul/li[11]/a"
+    );
+    await page.click(
+      "xpath/html/body/div[1]/div[3]/div/div[1]/div/div/div/div[1]/div[2]/div/ul/li[11]/a"
+    );
+  }
+
+  fs.writeFileSync("NFLADP.json", JSON.stringify(players));
+  console.log("*** DONE ***");
   await browser.close();
-};
-draftTypes.forEach((url) => RTS_ADP(url));
+})();
