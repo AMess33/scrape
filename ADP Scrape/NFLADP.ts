@@ -40,7 +40,7 @@ const url = "https://fantasy.nfl.com/draftcenter/breakdown";
         }
         return false;
       },
-      { polling: 5000, timeout: 30000 },
+      { polling: "mutation", timeout: 30000 },
       firstPlayer
     );
 
