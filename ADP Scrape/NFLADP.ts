@@ -11,8 +11,8 @@ const url = "https://fantasy.nfl.com/draftcenter/breakdown";
 
 (async () => {
   const browser: Browser = await puppeteer.launch({
-    headless: false,
-    devtools: true,
+    // headless: false,
+    // devtools: true,
     defaultViewport: false,
     executablePath: executablePath(),
   });
@@ -125,6 +125,6 @@ const url = "https://fantasy.nfl.com/draftcenter/breakdown";
   }
 
   fs.writeFileSync("NFLADP.json", JSON.stringify(players));
-  console.log("*** DONE ***");
+  // console.log("*** DONE ***");
   await browser.close();
 })();
