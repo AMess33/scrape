@@ -1,4 +1,3 @@
-require("dotenv").config();
 const puppeteer = require("puppeteer-extra");
 const StealthPlugin = require("puppeteer-extra-plugin-stealth");
 const fs = require("fs");
@@ -9,11 +8,6 @@ const currentDate = dayjs().format("MM-DD-YYYY");
 puppeteer.use(StealthPlugin());
 
 const { executablePath } = require("puppeteer");
-
-const username = process.env.DLFUSERNAME;
-const password = process.env.DLFPASSWORD;
-
-const homepageURL = "https://dynastyleaguefootball.com/";
 
 let draftTypes = [
   {
@@ -36,49 +30,14 @@ let draftTypes = [
 
 const DLF_Rankings = async (draftTypes: { url: string; lable: string }) => {
   const browser = await puppeteer.launch({
-    headless: false,
+    headless: true,
     defaultViewport: false,
-    slowMo: 10,
     executablePath: executablePath(),
   });
 
   const page = await browser.newPage();
-
-  await page.goto(homepageURL, { waitUntil: "domcontentloaded" });
-
-  await page.waitForSelector(
-    "xpath/html/body/div[1]/section/div/div/div/section[2]/div/div[3]/div/div[2]/div/div/ul/li[2]/a"
-  );
-
-  await page.click(
-    "xpath/html/body/div[1]/section/div/div/div/section[2]/div/div[3]/div/div[2]/div/div/ul/li[2]/a"
-  );
-
-  await page.waitForSelector(
-    "xpath/html/body/div[4]/div/div[2]/div/div/div/form/div[1]/input"
-  );
-
-  await page.type(
-    "xpath/html/body/div[4]/div/div[2]/div/div/div/form/div[1]/input",
-    `${username}`
-  );
-
-  await page.type(
-    "xpath/html/body/div[4]/div/div[2]/div/div/div/form/div[2]/div/div/input",
-    `${password}`
-  );
-
-  await page.click(
-    "xpath/html/body/div[4]/div/div[2]/div/div/div/form/div[5]/input[1]"
-  );
-
   await page.goto(draftTypes.url, { waitUntil: "domcontentloaded" });
-
-  await page.waitForSelector(
-    "xpath/html/body/div[1]/section/div/div/div/section[2]/div/div[3]/div/div[1]/div/nav[1]/ul/li[2]/a/img"
-  );
-
-  await page.waitForSelector("table > tbody > tr > td:nth-child(4) > a");
+  await page.waitForSelector("table > tbody > tr");
 
   const rankingsData = await page.evaluate(() => {
     const playerRows = Array.from(
@@ -88,16 +47,15 @@ const DLF_Rankings = async (draftTypes: { url: string; lable: string }) => {
     const data = playerRows.map((player: any) => ({
       // player rank data saved as rank
       rank: player.querySelector("td:nth-child(1)").innerText,
-
       playerName: player.querySelector("td:nth-child(4)").innerText,
-
-      positionRank: player.querySelector("td:nth-child(3)").innerText,
-
-      team: player.querySelector("td:nth-child(5)").innerText,
-
-      age: player.querySelector("td:nth-child(6)").innerText,
-
-      avgRank: player.querySelector("td:nth-child(2)").innerText,
+      // player position data saved as position
+      positionRank: player.querySelector("td:nth-child(3)").innerText.trim(),
+      // player team data saved as team
+      team: player.querySelector("td:nth-child(5)").innerText.trim(),
+      // player bye week saved as bye
+      age: player.querySelector("td:nth-child(6)").innerText.trim(),
+      // player points saved as points
+      avgRank: player.querySelector("td:nth-child(2)").innerText.trim(),
     }));
     return data;
   });
