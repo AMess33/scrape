@@ -1,0 +1,474 @@
+[
+  {
+    "rank": "1",
+    "playerName": "Caleb Williams",
+    "positionRank": "QB1",
+    "team": "CHI",
+    "age": "21",
+    "avgRank": "1.33"
+  },
+  {
+    "rank": "2",
+    "playerName": "Marvin Harrison Jr",
+    "positionRank": "WR1",
+    "team": "ARI",
+    "age": "22",
+    "avgRank": "1.83"
+  },
+  {
+    "rank": "3",
+    "playerName": "Malik Nabers",
+    "positionRank": "WR2",
+    "team": "NYG",
+    "age": "21",
+    "avgRank": "3.50"
+  },
+  {
+    "rank": "4",
+    "playerName": "Jayden Daniels",
+    "positionRank": "QB2",
+    "team": "WAS",
+    "age": "23",
+    "avgRank": "3.83"
+  },
+  {
+    "rank": "5",
+    "playerName": "Rome Odunze",
+    "positionRank": "WR3",
+    "team": "CHI",
+    "age": "22",
+    "avgRank": "5.33"
+  },
+  {
+    "rank": "6",
+    "playerName": "Drake Maye",
+    "positionRank": "QB3",
+    "team": "NE",
+    "age": "21",
+    "avgRank": "5.50"
+  },
+  {
+    "rank": "7",
+    "playerName": "Brock Bowers",
+    "positionRank": "TE1",
+    "team": "LV",
+    "age": "21",
+    "avgRank": "8.33"
+  },
+  {
+    "rank": "8",
+    "playerName": "Xavier Worthy",
+    "positionRank": "WR4",
+    "team": "KC",
+    "age": "21",
+    "avgRank": "8.83"
+  },
+  {
+    "rank": "9",
+    "playerName": "JJ McCarthy",
+    "positionRank": "QB4",
+    "team": "MIN",
+    "age": "21",
+    "avgRank": "8.83"
+  },
+  {
+    "rank": "10",
+    "playerName": "Brian Thomas",
+    "positionRank": "WR5",
+    "team": "JAC",
+    "age": "21",
+    "avgRank": "9.17"
+  },
+  {
+    "rank": "11",
+    "playerName": "Jonathon Brooks",
+    "positionRank": "RB1",
+    "team": "CAR",
+    "age": "21",
+    "avgRank": "10.67"
+  },
+  {
+    "rank": "12",
+    "playerName": "Trey Benson",
+    "positionRank": "RB2",
+    "team": "ARI",
+    "age": "22",
+    "avgRank": "13.33"
+  },
+  {
+    "rank": "13",
+    "playerName": "Ladd McConkey",
+    "positionRank": "WR6",
+    "team": "LAC",
+    "age": "22",
+    "avgRank": "13.67"
+  },
+  {
+    "rank": "14",
+    "playerName": "Bo Nix",
+    "positionRank": "QB5",
+    "team": "DEN",
+    "age": "24",
+    "avgRank": "14.00"
+  },
+  {
+    "rank": "15",
+    "playerName": "Keon Coleman",
+    "positionRank": "WR7",
+    "team": "BUF",
+    "age": "21",
+    "avgRank": "15.17"
+  },
+  {
+    "rank": "16",
+    "playerName": "Adonai Mitchell",
+    "positionRank": "WR8",
+    "team": "IND",
+    "age": "22",
+    "avgRank": "17.50"
+  },
+  {
+    "rank": "17",
+    "playerName": "Xavier Legette",
+    "positionRank": "WR9",
+    "team": "CAR",
+    "age": "23",
+    "avgRank": "17.83"
+  },
+  {
+    "rank": "18",
+    "playerName": "Ricky Pearsall",
+    "positionRank": "WR10",
+    "team": "SF",
+    "age": "23",
+    "avgRank": "18.17"
+  },
+  {
+    "rank": "19",
+    "playerName": "Blake Corum",
+    "positionRank": "RB3",
+    "team": "LAR",
+    "age": "23",
+    "avgRank": "19.00"
+  },
+  {
+    "rank": "20",
+    "playerName": "Michael Penix",
+    "positionRank": "QB6",
+    "team": "ATL",
+    "age": "24",
+    "avgRank": "19.00"
+  },
+  {
+    "rank": "21",
+    "playerName": "Jaylen Wright",
+    "positionRank": "RB4",
+    "team": "MIA",
+    "age": "21",
+    "avgRank": "21.33"
+  },
+  {
+    "rank": "22",
+    "playerName": "Roman Wilson",
+    "positionRank": "WR11",
+    "team": "PIT",
+    "age": "23",
+    "avgRank": "23.33"
+  },
+  {
+    "rank": "23",
+    "playerName": "Ja'Lynn Polk",
+    "positionRank": "WR12",
+    "team": "NE",
+    "age": "22",
+    "avgRank": "23.50"
+  },
+  {
+    "rank": "24",
+    "playerName": "MarShawn Lloyd",
+    "positionRank": "RB5",
+    "team": "GB",
+    "age": "22",
+    "avgRank": "25.67"
+  },
+  {
+    "rank": "25",
+    "playerName": "Jermaine Burton",
+    "positionRank": "WR13",
+    "team": "CIN",
+    "age": "23",
+    "avgRank": "26.17"
+  },
+  {
+    "rank": "26",
+    "playerName": "Malachi Corley",
+    "positionRank": "WR14",
+    "team": "NYJ",
+    "age": "22",
+    "avgRank": "28.00"
+  },
+  {
+    "rank": "27",
+    "playerName": "Jalen McMillan",
+    "positionRank": "WR15",
+    "team": "TB",
+    "age": "22",
+    "avgRank": "29.00"
+  },
+  {
+    "rank": "28",
+    "playerName": "Ray Davis",
+    "positionRank": "RB6",
+    "team": "BUF",
+    "age": "24",
+    "avgRank": "30.50"
+  },
+  {
+    "rank": "29",
+    "playerName": "Bucky Irving",
+    "positionRank": "RB7",
+    "team": "TB",
+    "age": "22",
+    "avgRank": "30.83"
+  },
+  {
+    "rank": "30",
+    "playerName": "Ben Sinnott",
+    "positionRank": "TE2",
+    "team": "WAS",
+    "age": "22",
+    "avgRank": "31.00"
+  },
+  {
+    "rank": "31",
+    "playerName": "Braelon Allen",
+    "positionRank": "RB8",
+    "team": "NYJ",
+    "age": "20",
+    "avgRank": "33.50"
+  },
+  {
+    "rank": "32",
+    "playerName": "Javon Baker",
+    "positionRank": "WR16",
+    "team": "NE",
+    "age": "22",
+    "avgRank": "33.67"
+  },
+  {
+    "rank": "33",
+    "playerName": "Audric Estime",
+    "positionRank": "RB9",
+    "team": "DEN",
+    "age": "20",
+    "avgRank": "33.83"
+  },
+  {
+    "rank": "34",
+    "playerName": "Tyrone Tracy",
+    "positionRank": "RB10",
+    "team": "NYG",
+    "age": "24",
+    "avgRank": "33.83"
+  },
+  {
+    "rank": "35",
+    "playerName": "Troy Franklin",
+    "positionRank": "WR17",
+    "team": "DEN",
+    "age": "21",
+    "avgRank": "34.17"
+  },
+  {
+    "rank": "36",
+    "playerName": "Devontez Walker",
+    "positionRank": "WR18",
+    "team": "BAL",
+    "age": "23",
+    "avgRank": "35.83"
+  },
+  {
+    "rank": "37",
+    "playerName": "Kimani Vidal",
+    "positionRank": "RB11",
+    "team": "LAC",
+    "age": "22",
+    "avgRank": "36.50"
+  },
+  {
+    "rank": "38",
+    "playerName": "Ja'Tavion Sanders",
+    "positionRank": "TE3",
+    "team": "CAR",
+    "age": "21",
+    "avgRank": "37.33"
+  },
+  {
+    "rank": "39",
+    "playerName": "Luke McCaffrey",
+    "positionRank": "WR19",
+    "team": "WAS",
+    "age": "23",
+    "avgRank": "37.83"
+  },
+  {
+    "rank": "40",
+    "playerName": "Spencer Rattler",
+    "positionRank": "QB7",
+    "team": "NO",
+    "age": "23",
+    "avgRank": "38.67"
+  },
+  {
+    "rank": "41",
+    "playerName": "Will Shipley",
+    "positionRank": "RB12",
+    "team": "PHI",
+    "age": "22",
+    "avgRank": "39.83"
+  },
+  {
+    "rank": "42",
+    "playerName": "Isaac Guerendo",
+    "positionRank": "RB13",
+    "team": "SF",
+    "age": "24",
+    "avgRank": "40.83"
+  },
+  {
+    "rank": "43",
+    "playerName": "Jordan Whittington",
+    "positionRank": "WR20",
+    "team": "LAR",
+    "age": "23",
+    "avgRank": "42.17"
+  },
+  {
+    "rank": "44",
+    "playerName": "Jacob Cowing",
+    "positionRank": "WR21",
+    "team": "SF",
+    "age": "23",
+    "avgRank": "42.50"
+  },
+  {
+    "rank": "45",
+    "playerName": "Theo Johnson",
+    "positionRank": "TE4",
+    "team": "NYG",
+    "age": "23",
+    "avgRank": "43.67"
+  },
+  {
+    "rank": "46",
+    "playerName": "Dylan Laube",
+    "positionRank": "RB14",
+    "team": "LV",
+    "age": "24",
+    "avgRank": "46.00"
+  },
+  {
+    "rank": "47",
+    "playerName": "Rasheen Ali",
+    "positionRank": "RB15",
+    "team": "BAL",
+    "age": "23",
+    "avgRank": "46.50"
+  },
+  {
+    "rank": "48",
+    "playerName": "Malik Washington",
+    "positionRank": "WR22",
+    "team": "MIA",
+    "age": "23",
+    "avgRank": "47.00"
+  },
+  {
+    "rank": "49",
+    "playerName": "Johnny Wilson",
+    "positionRank": "WR23",
+    "team": "PHI",
+    "age": "23",
+    "avgRank": "47.67"
+  },
+  {
+    "rank": "50",
+    "playerName": "Jordan Travis",
+    "positionRank": "QB8",
+    "team": "NYJ",
+    "age": "24",
+    "avgRank": "48.50"
+  },
+  {
+    "rank": "51",
+    "playerName": "Jared Wiley",
+    "positionRank": "TE5",
+    "team": "KC",
+    "age": "23",
+    "avgRank": "48.83"
+  },
+  {
+    "rank": "52",
+    "playerName": "Jamari Thrash",
+    "positionRank": "WR24",
+    "team": "CLE",
+    "age": "23",
+    "avgRank": "49.17"
+  },
+  {
+    "rank": "53",
+    "playerName": "Brenden Rice",
+    "positionRank": "WR25",
+    "team": "LAC",
+    "age": "22",
+    "avgRank": "49.83"
+  },
+  {
+    "rank": "54",
+    "playerName": "Cade Stover",
+    "positionRank": "TE6",
+    "team": "HOU",
+    "age": "24",
+    "avgRank": "49.83"
+  },
+  {
+    "rank": "55",
+    "playerName": "Carson Steele",
+    "positionRank": "RB16",
+    "team": "KC",
+    "age": "21",
+    "avgRank": "50.17"
+  },
+  {
+    "rank": "56",
+    "playerName": "Isaiah Davis",
+    "positionRank": "RB17",
+    "team": "NYJ",
+    "age": "22",
+    "avgRank": "50.33"
+  },
+  {
+    "rank": "57",
+    "playerName": "Erick All",
+    "positionRank": "TE7",
+    "team": "CIN",
+    "age": "23",
+    "avgRank": "50.33"
+  },
+  {
+    "rank": "58",
+    "playerName": "Michael Pratt",
+    "positionRank": "QB9",
+    "team": "Free Agent",
+    "age": "22",
+    "avgRank": "50.67"
+  },
+  {
+    "rank": "59",
+    "playerName": "Blake Watson",
+    "positionRank": "RB18",
+    "team": "DEN",
+    "age": "24",
+    "avgRank": "50.83"
+  }
+]
